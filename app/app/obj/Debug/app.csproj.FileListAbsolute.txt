@@ -1,0 +1,10 @@
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\app.exe.config
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\app.exe
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\app.pdb
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.AssemblyReference.cache
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Home.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Properties.Resources.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.GenerateResource.cache
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CoreCompileInputs.cache
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.exe
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.pdb

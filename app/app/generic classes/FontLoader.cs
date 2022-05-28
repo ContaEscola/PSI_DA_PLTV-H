@@ -30,42 +30,34 @@ namespace app
         }
 
         /// <summary>
-        /// Carrega as fontes nos controlos, sequencialmente.
+        /// Carrega as fontes nos controlos.
         /// </summary>
-        /// <param name="controls"></param>
-        /// <param name="fontWeights"></param>
-        public void LoadFontToControls(Control[] controls, string[] fonts)
+        /// <param name="controlsWithFonts"></param>
+        public void LoadFontToControls(Dictionary<Control, string> controlsWithFonts)
         {
-            int counter = 0;
-
-            foreach(Control control in controls)
+            foreach(KeyValuePair<Control, string> kvp in controlsWithFonts)
             {
                 
-                FontFamily font = Array.Find(_pfc.Families, familie => String.Equals(familie.Name, fonts[counter]));
+                FontFamily font = Array.Find(_pfc.Families, familie => String.Equals(familie.Name, kvp.Value));
 
-                control.Font = new Font(font, control.Font.Size);
-
-                counter++;
+                kvp.Key.Font = new Font(font, kvp.Key.Font.Size);
             }
         }
 
         /// <summary>
-        /// Carrega as fontes nos toolStripMenuItems, sequencialmente.
+        /// Carrega as fontes nos toolStripMenuItems.
         /// </summary>
-        /// <param name="controls"></param>
-        /// <param name="fontWeights"></param>
-        public void LoadFontToToolStrips(ToolStripMenuItem[] toolStripItems, string[] fonts)
+        /// <param name="toolStripItemsWithFonts"></param>
+        public void LoadFontToToolStrips(Dictionary<ToolStripMenuItem, string> toolStripItemsWithFonts)
         {
-            int counter = 0;
 
-            foreach (ToolStripMenuItem toolStripItem in toolStripItems)
+            foreach (KeyValuePair<ToolStripMenuItem, string> kvp in toolStripItemsWithFonts)
             {
 
-                FontFamily font = Array.Find(_pfc.Families, familie => String.Equals(familie.Name, fonts[counter]));
+                FontFamily font = Array.Find(_pfc.Families, familie => String.Equals(familie.Name, kvp.Value));
 
-                toolStripItem.Font = new Font(font, toolStripItem.Font.Size);
+                kvp.Key.Font = new Font(font, kvp.Key.Font.Size);
 
-                counter++;
             }
         }
 

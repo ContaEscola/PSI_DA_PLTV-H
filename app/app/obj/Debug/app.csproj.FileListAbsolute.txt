@@ -24,3 +24,4 @@ C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CoreCompil
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.exe
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.pdb
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GlobalRestaurants.resources
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Orders.resources

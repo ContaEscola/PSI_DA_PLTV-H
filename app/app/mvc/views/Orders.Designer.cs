@@ -29,90 +29,90 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Lbl_Orders = new System.Windows.Forms.Label();
+            this.Lbl_Restaurant = new System.Windows.Forms.Label();
+            this.Lbl_RestaurantName = new System.Windows.Forms.Label();
             this.Lbl_AddOrder = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_AddNewOrder = new System.Windows.Forms.Button();
-            this.Btn_SelectClient = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Btn_SelectWorker = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Btn_ChooseClient = new System.Windows.Forms.Button();
+            this.Lbl_Client = new System.Windows.Forms.Label();
+            this.Btn_ChooseWorker = new System.Windows.Forms.Button();
+            this.Lbl_Worker = new System.Windows.Forms.Label();
             this.Lbl_AddItem = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.Btn_AddItem = new System.Windows.Forms.Button();
+            this.Btn_ChooseItem = new System.Windows.Forms.Button();
+            this.Lbl_Item = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Lbl_AddPaymentMethod = new System.Windows.Forms.Label();
+            this.MaskedTxtBox_PaymentValue = new System.Windows.Forms.MaskedTextBox();
+            this.Lbl_PaymentValue = new System.Windows.Forms.Label();
+            this.Btn_AddPayment = new System.Windows.Forms.Button();
+            this.Btn_ChoosePaymentMethod = new System.Windows.Forms.Button();
+            this.Lbl_PaymentMethod = new System.Windows.Forms.Label();
+            this.Lbl_AddPayment = new System.Windows.Forms.Label();
             this.Panel_PaddingBottom = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Btn_Change = new System.Windows.Forms.Button();
+            this.DataGridView_Orders = new System.Windows.Forms.DataGridView();
+            this.Btn_ChangeRestaurant = new System.Windows.Forms.Button();
             this.Btn_ProgressOrder = new System.Windows.Forms.Button();
             this.Btn_ExportOrder = new System.Windows.Forms.Button();
             this.Btn_ConcludeOrder = new System.Windows.Forms.Button();
             this.Btn_CancelOrder = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Orders)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Lbl_Orders
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label1.Location = new System.Drawing.Point(119, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pedidos";
+            this.Lbl_Orders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Orders.AutoSize = true;
+            this.Lbl_Orders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Orders.Location = new System.Drawing.Point(103, 108);
+            this.Lbl_Orders.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Orders.Name = "Lbl_Orders";
+            this.Lbl_Orders.Size = new System.Drawing.Size(132, 37);
+            this.Lbl_Orders.TabIndex = 0;
+            this.Lbl_Orders.Text = "Pedidos";
             // 
-            // label2
+            // Lbl_Restaurant
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label2.Location = new System.Drawing.Point(119, 150);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Restaurante:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Lbl_Restaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Restaurant.AutoSize = true;
+            this.Lbl_Restaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Restaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Restaurant.Location = new System.Drawing.Point(105, 150);
+            this.Lbl_Restaurant.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Restaurant.Name = "Lbl_Restaurant";
+            this.Lbl_Restaurant.Size = new System.Drawing.Size(123, 25);
+            this.Lbl_Restaurant.TabIndex = 1;
+            this.Lbl_Restaurant.Text = "Restaurante:";
+            this.Lbl_Restaurant.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // Lbl_RestaurantName
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label3.Location = new System.Drawing.Point(238, 154);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "######";
+            this.Lbl_RestaurantName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_RestaurantName.AutoSize = true;
+            this.Lbl_RestaurantName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_RestaurantName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_RestaurantName.Location = new System.Drawing.Point(228, 154);
+            this.Lbl_RestaurantName.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_RestaurantName.Name = "Lbl_RestaurantName";
+            this.Lbl_RestaurantName.Size = new System.Drawing.Size(63, 20);
+            this.Lbl_RestaurantName.TabIndex = 2;
+            this.Lbl_RestaurantName.Text = "######";
             // 
             // Lbl_AddOrder
             // 
             this.Lbl_AddOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Lbl_AddOrder.AutoSize = true;
-            this.Lbl_AddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Lbl_AddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_AddOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddOrder.Location = new System.Drawing.Point(139, 217);
+            this.Lbl_AddOrder.Location = new System.Drawing.Point(130, 217);
             this.Lbl_AddOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_AddOrder.Name = "Lbl_AddOrder";
             this.Lbl_AddOrder.Size = new System.Drawing.Size(198, 29);
@@ -125,11 +125,11 @@ namespace app
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel1.Controls.Add(this.Btn_AddNewOrder);
-            this.panel1.Controls.Add(this.Btn_SelectClient);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.Btn_SelectWorker);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(119, 236);
+            this.panel1.Controls.Add(this.Btn_ChooseClient);
+            this.panel1.Controls.Add(this.Lbl_Client);
+            this.panel1.Controls.Add(this.Btn_ChooseWorker);
+            this.panel1.Controls.Add(this.Lbl_Worker);
+            this.panel1.Location = new System.Drawing.Point(110, 236);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 171);
@@ -138,78 +138,77 @@ namespace app
             // Btn_AddNewOrder
             // 
             this.Btn_AddNewOrder.AutoSize = true;
-            this.Btn_AddNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_AddNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddNewOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Btn_AddNewOrder.Location = new System.Drawing.Point(20, 91);
             this.Btn_AddNewOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_AddNewOrder.Name = "Btn_AddNewOrder";
-            this.Btn_AddNewOrder.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.Btn_AddNewOrder.Size = new System.Drawing.Size(480, 40);
             this.Btn_AddNewOrder.TabIndex = 5;
             this.Btn_AddNewOrder.Text = "Adicionar";
             this.Btn_AddNewOrder.UseVisualStyleBackColor = true;
             // 
-            // Btn_SelectClient
+            // Btn_ChooseClient
             // 
-            this.Btn_SelectClient.AutoSize = true;
-            this.Btn_SelectClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Btn_SelectClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_SelectClient.Location = new System.Drawing.Point(356, 37);
-            this.Btn_SelectClient.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_SelectClient.Name = "Btn_SelectClient";
-            this.Btn_SelectClient.Size = new System.Drawing.Size(144, 27);
-            this.Btn_SelectClient.TabIndex = 6;
-            this.Btn_SelectClient.Text = "escolher";
-            this.Btn_SelectClient.UseVisualStyleBackColor = true;
+            this.Btn_ChooseClient.AutoSize = true;
+            this.Btn_ChooseClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ChooseClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ChooseClient.Location = new System.Drawing.Point(356, 37);
+            this.Btn_ChooseClient.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ChooseClient.Name = "Btn_ChooseClient";
+            this.Btn_ChooseClient.Size = new System.Drawing.Size(144, 27);
+            this.Btn_ChooseClient.TabIndex = 6;
+            this.Btn_ChooseClient.Text = "escolher";
+            this.Btn_ChooseClient.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // Lbl_Client
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label6.Location = new System.Drawing.Point(284, 40);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 20);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Cliente:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Client.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Client.AutoSize = true;
+            this.Lbl_Client.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Client.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Client.Location = new System.Drawing.Point(284, 40);
+            this.Lbl_Client.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Client.Name = "Lbl_Client";
+            this.Lbl_Client.Size = new System.Drawing.Size(62, 20);
+            this.Lbl_Client.TabIndex = 7;
+            this.Lbl_Client.Text = "Cliente:";
+            this.Lbl_Client.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Btn_SelectWorker
+            // Btn_ChooseWorker
             // 
-            this.Btn_SelectWorker.AutoSize = true;
-            this.Btn_SelectWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Btn_SelectWorker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_SelectWorker.Location = new System.Drawing.Point(135, 37);
-            this.Btn_SelectWorker.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_SelectWorker.Name = "Btn_SelectWorker";
-            this.Btn_SelectWorker.Size = new System.Drawing.Size(130, 27);
-            this.Btn_SelectWorker.TabIndex = 5;
-            this.Btn_SelectWorker.Text = "escolher";
-            this.Btn_SelectWorker.UseVisualStyleBackColor = true;
+            this.Btn_ChooseWorker.AutoSize = true;
+            this.Btn_ChooseWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ChooseWorker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ChooseWorker.Location = new System.Drawing.Point(135, 37);
+            this.Btn_ChooseWorker.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ChooseWorker.Name = "Btn_ChooseWorker";
+            this.Btn_ChooseWorker.Size = new System.Drawing.Size(130, 27);
+            this.Btn_ChooseWorker.TabIndex = 5;
+            this.Btn_ChooseWorker.Text = "escolher";
+            this.Btn_ChooseWorker.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // Lbl_Worker
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label5.Location = new System.Drawing.Point(20, 40);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Trabalhador:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Worker.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Worker.AutoSize = true;
+            this.Lbl_Worker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Worker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Worker.Location = new System.Drawing.Point(20, 40);
+            this.Lbl_Worker.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Worker.Name = "Lbl_Worker";
+            this.Lbl_Worker.Size = new System.Drawing.Size(98, 20);
+            this.Lbl_Worker.TabIndex = 5;
+            this.Lbl_Worker.Text = "Trabalhador:";
+            this.Lbl_Worker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Lbl_AddItem
             // 
             this.Lbl_AddItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Lbl_AddItem.AutoSize = true;
-            this.Lbl_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Lbl_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_AddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddItem.Location = new System.Drawing.Point(139, 473);
+            this.Lbl_AddItem.Location = new System.Drawing.Point(130, 473);
             this.Lbl_AddItem.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_AddItem.Name = "Lbl_AddItem";
             this.Lbl_AddItem.Size = new System.Drawing.Size(166, 29);
@@ -221,125 +220,148 @@ namespace app
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(119, 492);
+            this.panel2.Controls.Add(this.Btn_AddItem);
+            this.panel2.Controls.Add(this.Btn_ChooseItem);
+            this.panel2.Controls.Add(this.Lbl_Item);
+            this.panel2.Location = new System.Drawing.Point(110, 492);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 171);
             this.panel2.TabIndex = 6;
             // 
-            // button2
+            // Btn_AddItem
             // 
-            this.button2.AutoSize = true;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button2.Location = new System.Drawing.Point(20, 91);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.button2.Size = new System.Drawing.Size(289, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Adicionar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_AddItem.AutoSize = true;
+            this.Btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_AddItem.Location = new System.Drawing.Point(20, 91);
+            this.Btn_AddItem.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_AddItem.Name = "Btn_AddItem";
+            this.Btn_AddItem.Size = new System.Drawing.Size(289, 40);
+            this.Btn_AddItem.TabIndex = 7;
+            this.Btn_AddItem.Text = "Adicionar";
+            this.Btn_AddItem.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Btn_ChooseItem
             // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button1.Location = new System.Drawing.Point(72, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 27);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "escolher";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_ChooseItem.AutoSize = true;
+            this.Btn_ChooseItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ChooseItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ChooseItem.Location = new System.Drawing.Point(72, 37);
+            this.Btn_ChooseItem.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ChooseItem.Name = "Btn_ChooseItem";
+            this.Btn_ChooseItem.Size = new System.Drawing.Size(237, 27);
+            this.Btn_ChooseItem.TabIndex = 7;
+            this.Btn_ChooseItem.Text = "escolher";
+            this.Btn_ChooseItem.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // Lbl_Item
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label9.Location = new System.Drawing.Point(20, 40);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Item:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Item.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Item.AutoSize = true;
+            this.Lbl_Item.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Item.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Item.Location = new System.Drawing.Point(20, 40);
+            this.Lbl_Item.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Item.Name = "Lbl_Item";
+            this.Lbl_Item.Size = new System.Drawing.Size(45, 20);
+            this.Lbl_Item.TabIndex = 8;
+            this.Lbl_Item.Text = "Item:";
+            this.Lbl_Item.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.panel3.Controls.Add(this.maskedTextBox1);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(119, 747);
+            this.panel3.Controls.Add(this.MaskedTxtBox_PaymentValue);
+            this.panel3.Controls.Add(this.Lbl_PaymentValue);
+            this.panel3.Controls.Add(this.Btn_AddPayment);
+            this.panel3.Controls.Add(this.Btn_ChoosePaymentMethod);
+            this.panel3.Controls.Add(this.Lbl_PaymentMethod);
+            this.panel3.Location = new System.Drawing.Point(110, 747);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(402, 202);
             this.panel3.TabIndex = 8;
             // 
-            // button3
+            // MaskedTxtBox_PaymentValue
             // 
-            this.button3.AutoSize = true;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button3.Location = new System.Drawing.Point(20, 122);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.button3.Size = new System.Drawing.Size(362, 40);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Adicionar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.MaskedTxtBox_PaymentValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.MaskedTxtBox_PaymentValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaskedTxtBox_PaymentValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.MaskedTxtBox_PaymentValue.Location = new System.Drawing.Point(80, 70);
+            this.MaskedTxtBox_PaymentValue.Margin = new System.Windows.Forms.Padding(0);
+            this.MaskedTxtBox_PaymentValue.Name = "MaskedTxtBox_PaymentValue";
+            this.MaskedTxtBox_PaymentValue.Size = new System.Drawing.Size(112, 23);
+            this.MaskedTxtBox_PaymentValue.TabIndex = 17;
             // 
-            // button4
+            // Lbl_PaymentValue
             // 
-            this.button4.AutoSize = true;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button4.Location = new System.Drawing.Point(213, 37);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 27);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "escolher";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Lbl_PaymentValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_PaymentValue.AutoSize = true;
+            this.Lbl_PaymentValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_PaymentValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_PaymentValue.Location = new System.Drawing.Point(21, 73);
+            this.Lbl_PaymentValue.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_PaymentValue.Name = "Lbl_PaymentValue";
+            this.Lbl_PaymentValue.Size = new System.Drawing.Size(50, 20);
+            this.Lbl_PaymentValue.TabIndex = 17;
+            this.Lbl_PaymentValue.Text = "Valor:";
+            this.Lbl_PaymentValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // Btn_AddPayment
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label4.Location = new System.Drawing.Point(20, 40);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Método de Pagamento:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Btn_AddPayment.AutoSize = true;
+            this.Btn_AddPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_AddPayment.Location = new System.Drawing.Point(20, 122);
+            this.Btn_AddPayment.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_AddPayment.Name = "Btn_AddPayment";
+            this.Btn_AddPayment.Size = new System.Drawing.Size(362, 40);
+            this.Btn_AddPayment.TabIndex = 7;
+            this.Btn_AddPayment.Text = "Adicionar";
+            this.Btn_AddPayment.UseVisualStyleBackColor = true;
             // 
-            // Lbl_AddPaymentMethod
+            // Btn_ChoosePaymentMethod
             // 
-            this.Lbl_AddPaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_AddPaymentMethod.AutoSize = true;
-            this.Lbl_AddPaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Lbl_AddPaymentMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddPaymentMethod.Location = new System.Drawing.Point(139, 728);
-            this.Lbl_AddPaymentMethod.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_AddPaymentMethod.Name = "Lbl_AddPaymentMethod";
-            this.Lbl_AddPaymentMethod.Size = new System.Drawing.Size(243, 29);
-            this.Lbl_AddPaymentMethod.TabIndex = 7;
-            this.Lbl_AddPaymentMethod.Text = "Adicionar Pagamento";
-            this.Lbl_AddPaymentMethod.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btn_ChoosePaymentMethod.AutoSize = true;
+            this.Btn_ChoosePaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ChoosePaymentMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ChoosePaymentMethod.Location = new System.Drawing.Point(213, 37);
+            this.Btn_ChoosePaymentMethod.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ChoosePaymentMethod.Name = "Btn_ChoosePaymentMethod";
+            this.Btn_ChoosePaymentMethod.Size = new System.Drawing.Size(169, 27);
+            this.Btn_ChoosePaymentMethod.TabIndex = 7;
+            this.Btn_ChoosePaymentMethod.Text = "escolher";
+            this.Btn_ChoosePaymentMethod.UseVisualStyleBackColor = true;
+            // 
+            // Lbl_PaymentMethod
+            // 
+            this.Lbl_PaymentMethod.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_PaymentMethod.AutoSize = true;
+            this.Lbl_PaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_PaymentMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_PaymentMethod.Location = new System.Drawing.Point(20, 40);
+            this.Lbl_PaymentMethod.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_PaymentMethod.Name = "Lbl_PaymentMethod";
+            this.Lbl_PaymentMethod.Size = new System.Drawing.Size(175, 20);
+            this.Lbl_PaymentMethod.TabIndex = 8;
+            this.Lbl_PaymentMethod.Text = "Método de Pagamento:";
+            this.Lbl_PaymentMethod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lbl_AddPayment
+            // 
+            this.Lbl_AddPayment.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_AddPayment.AutoSize = true;
+            this.Lbl_AddPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_AddPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_AddPayment.Location = new System.Drawing.Point(130, 728);
+            this.Lbl_AddPayment.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_AddPayment.Name = "Lbl_AddPayment";
+            this.Lbl_AddPayment.Size = new System.Drawing.Size(243, 29);
+            this.Lbl_AddPayment.TabIndex = 7;
+            this.Lbl_AddPayment.Text = "Adicionar Pagamento";
+            this.Lbl_AddPayment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Panel_PaddingBottom
             // 
@@ -349,56 +371,56 @@ namespace app
             this.Panel_PaddingBottom.Size = new System.Drawing.Size(1, 75);
             this.Panel_PaddingBottom.TabIndex = 9;
             // 
-            // dataGridView1
+            // DataGridView_Orders
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.dataGridView1.Location = new System.Drawing.Point(692, 217);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 601);
-            this.dataGridView1.TabIndex = 11;
+            this.DataGridView_Orders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_Orders.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.DataGridView_Orders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView_Orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Orders.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_Orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.DataGridView_Orders.Location = new System.Drawing.Point(683, 217);
+            this.DataGridView_Orders.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_Orders.Name = "DataGridView_Orders";
+            this.DataGridView_Orders.Size = new System.Drawing.Size(622, 601);
+            this.DataGridView_Orders.TabIndex = 11;
             // 
-            // Btn_Change
+            // Btn_ChangeRestaurant
             // 
-            this.Btn_Change.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Change.AutoSize = true;
-            this.Btn_Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.Btn_Change.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_Change.Location = new System.Drawing.Point(1091, 108);
-            this.Btn_Change.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_Change.Name = "Btn_Change";
-            this.Btn_Change.Size = new System.Drawing.Size(223, 51);
-            this.Btn_Change.TabIndex = 12;
-            this.Btn_Change.Text = "Mudar de Restaurante";
-            this.Btn_Change.UseVisualStyleBackColor = true;
+            this.Btn_ChangeRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_ChangeRestaurant.AutoSize = true;
+            this.Btn_ChangeRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ChangeRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ChangeRestaurant.Location = new System.Drawing.Point(1082, 108);
+            this.Btn_ChangeRestaurant.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ChangeRestaurant.Name = "Btn_ChangeRestaurant";
+            this.Btn_ChangeRestaurant.Size = new System.Drawing.Size(223, 51);
+            this.Btn_ChangeRestaurant.TabIndex = 12;
+            this.Btn_ChangeRestaurant.Text = "Mudar de Restaurante";
+            this.Btn_ChangeRestaurant.UseVisualStyleBackColor = true;
             // 
             // Btn_ProgressOrder
             // 
             this.Btn_ProgressOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ProgressOrder.AutoSize = true;
-            this.Btn_ProgressOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_ProgressOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ProgressOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ProgressOrder.Location = new System.Drawing.Point(692, 839);
+            this.Btn_ProgressOrder.Location = new System.Drawing.Point(683, 839);
             this.Btn_ProgressOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ProgressOrder.Name = "Btn_ProgressOrder";
             this.Btn_ProgressOrder.Size = new System.Drawing.Size(179, 51);
@@ -410,9 +432,9 @@ namespace app
             // 
             this.Btn_ExportOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ExportOrder.AutoSize = true;
-            this.Btn_ExportOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_ExportOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ExportOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ExportOrder.Location = new System.Drawing.Point(1141, 898);
+            this.Btn_ExportOrder.Location = new System.Drawing.Point(1132, 898);
             this.Btn_ExportOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ExportOrder.Name = "Btn_ExportOrder";
             this.Btn_ExportOrder.Size = new System.Drawing.Size(173, 51);
@@ -424,9 +446,9 @@ namespace app
             // 
             this.Btn_ConcludeOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ConcludeOrder.AutoSize = true;
-            this.Btn_ConcludeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_ConcludeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ConcludeOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ConcludeOrder.Location = new System.Drawing.Point(692, 898);
+            this.Btn_ConcludeOrder.Location = new System.Drawing.Point(683, 898);
             this.Btn_ConcludeOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ConcludeOrder.Name = "Btn_ConcludeOrder";
             this.Btn_ConcludeOrder.Size = new System.Drawing.Size(179, 51);
@@ -438,40 +460,15 @@ namespace app
             // 
             this.Btn_CancelOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_CancelOrder.AutoSize = true;
-            this.Btn_CancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_CancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_CancelOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_CancelOrder.Location = new System.Drawing.Point(897, 898);
+            this.Btn_CancelOrder.Location = new System.Drawing.Point(888, 898);
             this.Btn_CancelOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_CancelOrder.Name = "Btn_CancelOrder";
             this.Btn_CancelOrder.Size = new System.Drawing.Size(174, 51);
             this.Btn_CancelOrder.TabIndex = 16;
             this.Btn_CancelOrder.Text = "Cancelar Pedido";
             this.Btn_CancelOrder.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label7.Location = new System.Drawing.Point(21, 73);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 20);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Valor:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.maskedTextBox1.Location = new System.Drawing.Point(71, 70);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(112, 26);
-            this.maskedTextBox1.TabIndex = 17;
             // 
             // Orders
             // 
@@ -484,29 +481,30 @@ namespace app
             this.Controls.Add(this.Btn_ConcludeOrder);
             this.Controls.Add(this.Btn_ExportOrder);
             this.Controls.Add(this.Btn_ProgressOrder);
-            this.Controls.Add(this.Btn_Change);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Btn_ChangeRestaurant);
+            this.Controls.Add(this.DataGridView_Orders);
             this.Controls.Add(this.Panel_PaddingBottom);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.Lbl_AddPaymentMethod);
+            this.Controls.Add(this.Lbl_AddPayment);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Lbl_AddItem);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Lbl_AddOrder);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Lbl_RestaurantName);
+            this.Controls.Add(this.Lbl_Restaurant);
+            this.Controls.Add(this.Lbl_Orders);
             this.Name = "Orders";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.Text = "Pedidos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Orders_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Orders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,34 +512,34 @@ namespace app
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label Lbl_Orders;
+        private System.Windows.Forms.Label Lbl_Restaurant;
+        private System.Windows.Forms.Label Lbl_RestaurantName;
         private System.Windows.Forms.Label Lbl_AddOrder;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Btn_AddNewOrder;
-        private System.Windows.Forms.Button Btn_SelectClient;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Btn_SelectWorker;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Btn_ChooseClient;
+        private System.Windows.Forms.Label Lbl_Client;
+        private System.Windows.Forms.Button Btn_ChooseWorker;
+        private System.Windows.Forms.Label Lbl_Worker;
         private System.Windows.Forms.Label Lbl_AddItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button Btn_AddItem;
+        private System.Windows.Forms.Button Btn_ChooseItem;
+        private System.Windows.Forms.Label Lbl_Item;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label Lbl_AddPaymentMethod;
+        private System.Windows.Forms.Button Btn_AddPayment;
+        private System.Windows.Forms.Button Btn_ChoosePaymentMethod;
+        private System.Windows.Forms.Label Lbl_PaymentMethod;
+        private System.Windows.Forms.Label Lbl_AddPayment;
         private System.Windows.Forms.Panel Panel_PaddingBottom;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button Btn_Change;
+        private System.Windows.Forms.DataGridView DataGridView_Orders;
+        private System.Windows.Forms.Button Btn_ChangeRestaurant;
         private System.Windows.Forms.Button Btn_ProgressOrder;
         private System.Windows.Forms.Button Btn_ExportOrder;
         private System.Windows.Forms.Button Btn_ConcludeOrder;
         private System.Windows.Forms.Button Btn_CancelOrder;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox MaskedTxtBox_PaymentValue;
+        private System.Windows.Forms.Label Lbl_PaymentValue;
     }
 }

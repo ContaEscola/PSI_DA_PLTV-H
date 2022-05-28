@@ -85,7 +85,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-<<<<<<< HEAD
     <None Include="assets\fonts\RobotoSlab-Bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -96,9 +95,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="assets\fonts\RobotoSlab-Regular.ttf">
-=======
-    <None Include="RobotoSlab-Regular.ttf">
->>>>>>> d65cb56 (DPH-30 /Parte do form feita)
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

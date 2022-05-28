@@ -29,73 +29,82 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Lbl_Restaurantes = new System.Windows.Forms.Label();
+            this.DataGridView_Restaurants = new System.Windows.Forms.DataGridView();
             this.Btn_RegisterNewRestaurant = new System.Windows.Forms.Button();
             this.Btn_ManageRestaurant = new System.Windows.Forms.Button();
             this.Btn_EditRestaurant = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Btn_ManageCategories = new System.Windows.Forms.Button();
+            this.Btn_ManagePaymentMethods = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Restaurants)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Lbl_Restaurantes
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.label1.Location = new System.Drawing.Point(128, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Restaurantes";
+            this.Lbl_Restaurantes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_Restaurantes.AutoSize = true;
+            this.Lbl_Restaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Restaurantes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_Restaurantes.Location = new System.Drawing.Point(121, 108);
+            this.Lbl_Restaurantes.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_Restaurantes.Name = "Lbl_Restaurantes";
+            this.Lbl_Restaurantes.Size = new System.Drawing.Size(206, 37);
+            this.Lbl_Restaurantes.TabIndex = 0;
+            this.Lbl_Restaurantes.Text = "Restaurantes";
+            this.Lbl_Restaurantes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridView1
+            // DataGridView_Restaurants
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.dataGridView1.Location = new System.Drawing.Point(128, 217);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(1195, 404);
-            this.dataGridView1.TabIndex = 1;
+            this.DataGridView_Restaurants.AllowUserToAddRows = false;
+            this.DataGridView_Restaurants.AllowUserToDeleteRows = false;
+            this.DataGridView_Restaurants.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_Restaurants.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.DataGridView_Restaurants.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Restaurants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.DataGridView_Restaurants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Restaurants.DefaultCellStyle = dataGridViewCellStyle17;
+            this.DataGridView_Restaurants.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.DataGridView_Restaurants.Location = new System.Drawing.Point(128, 217);
+            this.DataGridView_Restaurants.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_Restaurants.Name = "DataGridView_Restaurants";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Restaurants.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.DataGridView_Restaurants.Size = new System.Drawing.Size(1195, 404);
+            this.DataGridView_Restaurants.TabIndex = 1;
             // 
             // Btn_RegisterNewRestaurant
             // 
             this.Btn_RegisterNewRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_RegisterNewRestaurant.AutoSize = true;
-            this.Btn_RegisterNewRestaurant.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btn_RegisterNewRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_RegisterNewRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_RegisterNewRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Btn_RegisterNewRestaurant.Location = new System.Drawing.Point(128, 688);
             this.Btn_RegisterNewRestaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_RegisterNewRestaurant.Name = "Btn_RegisterNewRestaurant";
-            this.Btn_RegisterNewRestaurant.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.Btn_RegisterNewRestaurant.Size = new System.Drawing.Size(232, 40);
+            this.Btn_RegisterNewRestaurant.Size = new System.Drawing.Size(260, 51);
             this.Btn_RegisterNewRestaurant.TabIndex = 2;
             this.Btn_RegisterNewRestaurant.Text = "Registar Novo Restaurante";
             this.Btn_RegisterNewRestaurant.UseVisualStyleBackColor = true;
@@ -104,14 +113,12 @@ namespace app
             // 
             this.Btn_ManageRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ManageRestaurant.AutoSize = true;
-            this.Btn_ManageRestaurant.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btn_ManageRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_ManageRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ManageRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Btn_ManageRestaurant.Location = new System.Drawing.Point(128, 806);
             this.Btn_ManageRestaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ManageRestaurant.Name = "Btn_ManageRestaurant";
-            this.Btn_ManageRestaurant.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.Btn_ManageRestaurant.Size = new System.Drawing.Size(167, 40);
+            this.Btn_ManageRestaurant.Size = new System.Drawing.Size(186, 51);
             this.Btn_ManageRestaurant.TabIndex = 3;
             this.Btn_ManageRestaurant.Text = "Gerir Restaurante";
             this.Btn_ManageRestaurant.UseVisualStyleBackColor = true;
@@ -120,52 +127,43 @@ namespace app
             // 
             this.Btn_EditRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_EditRestaurant.AutoSize = true;
-            this.Btn_EditRestaurant.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btn_EditRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.Btn_EditRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_EditRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Btn_EditRestaurant.Location = new System.Drawing.Point(388, 806);
             this.Btn_EditRestaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_EditRestaurant.Name = "Btn_EditRestaurant";
-            this.Btn_EditRestaurant.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.Btn_EditRestaurant.Size = new System.Drawing.Size(179, 40);
+            this.Btn_EditRestaurant.Size = new System.Drawing.Size(203, 51);
             this.Btn_EditRestaurant.TabIndex = 4;
             this.Btn_EditRestaurant.Text = "Alterar Restaurante";
-            this.Btn_EditRestaurant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_EditRestaurant.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Btn_ManageCategories
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button1.Location = new System.Drawing.Point(1150, 688);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.button1.Size = new System.Drawing.Size(155, 40);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Gerir Categorias";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_ManageCategories.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_ManageCategories.AutoSize = true;
+            this.Btn_ManageCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ManageCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ManageCategories.Location = new System.Drawing.Point(1150, 688);
+            this.Btn_ManageCategories.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ManageCategories.Name = "Btn_ManageCategories";
+            this.Btn_ManageCategories.Size = new System.Drawing.Size(173, 51);
+            this.Btn_ManageCategories.TabIndex = 5;
+            this.Btn_ManageCategories.Text = "Gerir Categorias";
+            this.Btn_ManageCategories.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Btn_ManagePaymentMethods
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.AutoSize = true;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.button2.Location = new System.Drawing.Point(1037, 806);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.button2.Size = new System.Drawing.Size(248, 40);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Gerir Métodos de Pagamento";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_ManagePaymentMethods.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_ManagePaymentMethods.AutoSize = true;
+            this.Btn_ManagePaymentMethods.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ManagePaymentMethods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Btn_ManagePaymentMethods.Location = new System.Drawing.Point(1037, 806);
+            this.Btn_ManagePaymentMethods.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ManagePaymentMethods.Name = "Btn_ManagePaymentMethods";
+            this.Btn_ManagePaymentMethods.Size = new System.Drawing.Size(286, 51);
+            this.Btn_ManagePaymentMethods.TabIndex = 6;
+            this.Btn_ManagePaymentMethods.Text = "Gerir Métodos de Pagamento";
+            this.Btn_ManagePaymentMethods.UseVisualStyleBackColor = true;
             // 
             // GlobalRestaurants
             // 
@@ -173,17 +171,18 @@ namespace app
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1424, 881);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_ManagePaymentMethods);
+            this.Controls.Add(this.Btn_ManageCategories);
             this.Controls.Add(this.Btn_EditRestaurant);
             this.Controls.Add(this.Btn_ManageRestaurant);
             this.Controls.Add(this.Btn_RegisterNewRestaurant);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DataGridView_Restaurants);
+            this.Controls.Add(this.Lbl_Restaurantes);
             this.Name = "GlobalRestaurants";
             this.Text = "Gestão Global de Restaurantes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.GlobalRestaurants_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Restaurants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,12 +190,12 @@ namespace app
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label Lbl_Restaurantes;
+        private System.Windows.Forms.DataGridView DataGridView_Restaurants;
         private System.Windows.Forms.Button Btn_RegisterNewRestaurant;
         private System.Windows.Forms.Button Btn_ManageRestaurant;
         private System.Windows.Forms.Button Btn_EditRestaurant;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_ManageCategories;
+        private System.Windows.Forms.Button Btn_ManagePaymentMethods;
     }
 }

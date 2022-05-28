@@ -57,7 +57,6 @@ namespace app
             Lbl_Restaurantes.BringToFront();
             Lbl_Clientes.BringToFront();
 
-            Console.WriteLine(Btn_RestaurantGlobalManagement);
         }
     }
 }

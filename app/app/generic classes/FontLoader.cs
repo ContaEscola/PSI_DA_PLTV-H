@@ -43,9 +43,6 @@ namespace app
                 
                 FontFamily font = Array.Find(_pfc.Families, familie => String.Equals(familie.Name, fonts[counter]));
 
-                //Convert from px to points
-                //float sizeInPoints = control.Font.Size * (float)0.75;
-
                 control.Font = new Font(font, control.Font.Size);
 
                 counter++;
@@ -70,6 +67,16 @@ namespace app
 
                 counter++;
             }
+        }
+
+        /// <summary>
+        /// Pesquisa o nome da fonte na coleção de fontes predefinida
+        /// </summary>
+        /// <param name="font"></param>
+        /// <returns>Devolve a familia da fonte</returns>
+        public FontFamily GetFont(string font)
+        {
+            return Array.Find(_pfc.Families, familie => String.Equals(familie.Name, font));
         }
 
     }

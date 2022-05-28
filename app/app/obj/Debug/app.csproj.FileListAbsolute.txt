@@ -8,7 +8,6 @@ C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.GenerateReso
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CoreCompileInputs.cache
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.exe
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.pdb
-<<<<<<< HEAD
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-Bold.ttf
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-ExtraLight.ttf
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-Light.ttf
@@ -24,7 +23,4 @@ C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.GenerateRe
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CoreCompileInputs.cache
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.exe
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.pdb
-=======
-C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GlobalRestaurants.resources
-C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\RobotoSlab-Regular.ttf
->>>>>>> d65cb56 (DPH-30 /Parte do form feita)
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GlobalRestaurants.resources

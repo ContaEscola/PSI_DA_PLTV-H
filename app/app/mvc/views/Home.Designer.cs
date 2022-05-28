@@ -267,11 +267,7 @@ namespace app
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-<<<<<<< HEAD
             this.Load += new System.EventHandler(this.Home_Load);
-=======
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
->>>>>>> d65cb56 (DPH-30 /Parte do form feita)
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="generic classes\FontLoader.cs" />
+    <Compile Include="mvc\views\GlobalRestaurants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mvc\views\GlobalRestaurants.Designer.cs">
+      <DependentUpon>GlobalRestaurants.cs</DependentUpon>
+    </Compile>
     <Compile Include="mvc\views\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="mvc\views\GlobalRestaurants.resx">
+      <DependentUpon>GlobalRestaurants.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+<<<<<<< HEAD
     <None Include="assets\fonts\RobotoSlab-Bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -86,6 +96,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="assets\fonts\RobotoSlab-Regular.ttf">
+=======
+    <None Include="RobotoSlab-Regular.ttf">
+>>>>>>> d65cb56 (DPH-30 /Parte do form feita)
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

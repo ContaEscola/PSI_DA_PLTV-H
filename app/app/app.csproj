@@ -73,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\GlobalRestaurants.resx">
       <DependentUpon>GlobalRestaurants.cs</DependentUpon>
     </EmbeddedResource>

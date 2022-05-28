@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="generic classes\FontLoader.cs" />
+    <Compile Include="mvc\views\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mvc\views\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="mvc\views\GlobalRestaurants.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mvc\views\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

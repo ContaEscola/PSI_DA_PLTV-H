@@ -27,3 +27,4 @@ C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GlobalRestaurants
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Orders.resources
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Menu.resources
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Restaurant.resources
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Clients.resources

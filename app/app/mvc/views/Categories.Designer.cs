@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Categories = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Lbl_AddCategorie = new System.Windows.Forms.Label();
-            this.Lbl_NewCategorieName = new System.Windows.Forms.Label();
-            this.TxtBox_NewCategorieName = new System.Windows.Forms.TextBox();
-            this.Lbl_NewCategorieState = new System.Windows.Forms.Label();
-            this.ComboBox_NewCategorieState = new System.Windows.Forms.ComboBox();
             this.Btn_AddCategorie = new System.Windows.Forms.Button();
+            this.ComboBox_NewCategorieState = new System.Windows.Forms.ComboBox();
+            this.Lbl_NewCategorieState = new System.Windows.Forms.Label();
+            this.TxtBox_NewCategorieName = new System.Windows.Forms.TextBox();
+            this.Lbl_NewCategorieName = new System.Windows.Forms.Label();
+            this.Lbl_AddCategorie = new System.Windows.Forms.Label();
             this.Lbl_EditCategorie = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_SaveChangesOnCategorie = new System.Windows.Forms.Button();
@@ -78,35 +78,29 @@
             this.panel1.Size = new System.Drawing.Size(386, 143);
             this.panel1.TabIndex = 1;
             // 
-            // Lbl_AddCategorie
+            // Btn_AddCategorie
             // 
-            this.Lbl_AddCategorie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_AddCategorie.AutoSize = true;
-            this.Lbl_AddCategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_AddCategorie.Location = new System.Drawing.Point(148, 217);
-            this.Lbl_AddCategorie.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_AddCategorie.Name = "Lbl_AddCategorie";
-            this.Lbl_AddCategorie.Size = new System.Drawing.Size(225, 29);
-            this.Lbl_AddCategorie.TabIndex = 2;
-            this.Lbl_AddCategorie.Text = "Adicionar Categoria";
+            this.Btn_AddCategorie.AutoSize = true;
+            this.Btn_AddCategorie.BackColor = System.Drawing.Color.White;
+            this.Btn_AddCategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddCategorie.Location = new System.Drawing.Point(275, 76);
+            this.Btn_AddCategorie.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_AddCategorie.Name = "Btn_AddCategorie";
+            this.Btn_AddCategorie.Size = new System.Drawing.Size(91, 30);
+            this.Btn_AddCategorie.TabIndex = 3;
+            this.Btn_AddCategorie.Text = "Adicionar";
+            this.Btn_AddCategorie.UseVisualStyleBackColor = false;
             // 
-            // Lbl_NewCategorieName
+            // ComboBox_NewCategorieState
             // 
-            this.Lbl_NewCategorieName.AutoSize = true;
-            this.Lbl_NewCategorieName.Location = new System.Drawing.Point(20, 40);
-            this.Lbl_NewCategorieName.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_NewCategorieName.Name = "Lbl_NewCategorieName";
-            this.Lbl_NewCategorieName.Size = new System.Drawing.Size(55, 20);
-            this.Lbl_NewCategorieName.TabIndex = 0;
-            this.Lbl_NewCategorieName.Text = "Nome:";
-            // 
-            // TxtBox_NewCategorieName
-            // 
-            this.TxtBox_NewCategorieName.Location = new System.Drawing.Point(80, 37);
-            this.TxtBox_NewCategorieName.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_NewCategorieName.Name = "TxtBox_NewCategorieName";
-            this.TxtBox_NewCategorieName.Size = new System.Drawing.Size(286, 26);
-            this.TxtBox_NewCategorieName.TabIndex = 1;
+            this.ComboBox_NewCategorieState.BackColor = System.Drawing.Color.White;
+            this.ComboBox_NewCategorieState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.ComboBox_NewCategorieState.FormattingEnabled = true;
+            this.ComboBox_NewCategorieState.Location = new System.Drawing.Point(89, 78);
+            this.ComboBox_NewCategorieState.Margin = new System.Windows.Forms.Padding(0);
+            this.ComboBox_NewCategorieState.Name = "ComboBox_NewCategorieState";
+            this.ComboBox_NewCategorieState.Size = new System.Drawing.Size(121, 28);
+            this.ComboBox_NewCategorieState.TabIndex = 3;
             // 
             // Lbl_NewCategorieState
             // 
@@ -118,25 +112,37 @@
             this.Lbl_NewCategorieState.TabIndex = 2;
             this.Lbl_NewCategorieState.Text = "Estado:";
             // 
-            // ComboBox_NewCategorieState
+            // TxtBox_NewCategorieName
             // 
-            this.ComboBox_NewCategorieState.FormattingEnabled = true;
-            this.ComboBox_NewCategorieState.Location = new System.Drawing.Point(89, 78);
-            this.ComboBox_NewCategorieState.Margin = new System.Windows.Forms.Padding(0);
-            this.ComboBox_NewCategorieState.Name = "ComboBox_NewCategorieState";
-            this.ComboBox_NewCategorieState.Size = new System.Drawing.Size(121, 28);
-            this.ComboBox_NewCategorieState.TabIndex = 3;
+            this.TxtBox_NewCategorieName.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewCategorieName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewCategorieName.Location = new System.Drawing.Point(80, 37);
+            this.TxtBox_NewCategorieName.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewCategorieName.Name = "TxtBox_NewCategorieName";
+            this.TxtBox_NewCategorieName.Size = new System.Drawing.Size(286, 26);
+            this.TxtBox_NewCategorieName.TabIndex = 1;
             // 
-            // Btn_AddCategorie
+            // Lbl_NewCategorieName
             // 
-            this.Btn_AddCategorie.AutoSize = true;
-            this.Btn_AddCategorie.Location = new System.Drawing.Point(275, 76);
-            this.Btn_AddCategorie.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_AddCategorie.Name = "Btn_AddCategorie";
-            this.Btn_AddCategorie.Size = new System.Drawing.Size(91, 30);
-            this.Btn_AddCategorie.TabIndex = 3;
-            this.Btn_AddCategorie.Text = "Adicionar";
-            this.Btn_AddCategorie.UseVisualStyleBackColor = true;
+            this.Lbl_NewCategorieName.AutoSize = true;
+            this.Lbl_NewCategorieName.Location = new System.Drawing.Point(20, 40);
+            this.Lbl_NewCategorieName.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_NewCategorieName.Name = "Lbl_NewCategorieName";
+            this.Lbl_NewCategorieName.Size = new System.Drawing.Size(55, 20);
+            this.Lbl_NewCategorieName.TabIndex = 0;
+            this.Lbl_NewCategorieName.Text = "Nome:";
+            // 
+            // Lbl_AddCategorie
+            // 
+            this.Lbl_AddCategorie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_AddCategorie.AutoSize = true;
+            this.Lbl_AddCategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_AddCategorie.Location = new System.Drawing.Point(148, 217);
+            this.Lbl_AddCategorie.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_AddCategorie.Name = "Lbl_AddCategorie";
+            this.Lbl_AddCategorie.Size = new System.Drawing.Size(225, 29);
+            this.Lbl_AddCategorie.TabIndex = 2;
+            this.Lbl_AddCategorie.Text = "Adicionar Categoria";
             // 
             // Lbl_EditCategorie
             // 
@@ -168,16 +174,20 @@
             // Btn_SaveChangesOnCategorie
             // 
             this.Btn_SaveChangesOnCategorie.AutoSize = true;
+            this.Btn_SaveChangesOnCategorie.BackColor = System.Drawing.Color.White;
+            this.Btn_SaveChangesOnCategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_SaveChangesOnCategorie.Location = new System.Drawing.Point(288, 76);
             this.Btn_SaveChangesOnCategorie.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_SaveChangesOnCategorie.Name = "Btn_SaveChangesOnCategorie";
             this.Btn_SaveChangesOnCategorie.Size = new System.Drawing.Size(78, 30);
             this.Btn_SaveChangesOnCategorie.TabIndex = 3;
             this.Btn_SaveChangesOnCategorie.Text = "Guardar";
-            this.Btn_SaveChangesOnCategorie.UseVisualStyleBackColor = true;
+            this.Btn_SaveChangesOnCategorie.UseVisualStyleBackColor = false;
             // 
             // ComboBox_CategorieState
             // 
+            this.ComboBox_CategorieState.BackColor = System.Drawing.Color.White;
+            this.ComboBox_CategorieState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ComboBox_CategorieState.FormattingEnabled = true;
             this.ComboBox_CategorieState.Location = new System.Drawing.Point(89, 78);
             this.ComboBox_CategorieState.Margin = new System.Windows.Forms.Padding(0);
@@ -197,6 +207,8 @@
             // 
             // TxtBox_CategorieName
             // 
+            this.TxtBox_CategorieName.BackColor = System.Drawing.Color.White;
+            this.TxtBox_CategorieName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.TxtBox_CategorieName.Location = new System.Drawing.Point(80, 37);
             this.TxtBox_CategorieName.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_CategorieName.Name = "TxtBox_CategorieName";

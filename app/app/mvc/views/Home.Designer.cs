@@ -69,6 +69,7 @@ namespace app
             // 
             // ToolStripMenuItem_Restaurants
             // 
+            this.ToolStripMenuItem_Restaurants.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_Restaurants.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_ManageSingleRestaurant});
             this.ToolStripMenuItem_Restaurants.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -80,7 +81,7 @@ namespace app
             // 
             // ToolStripMenuItem_ManageSingleRestaurant
             // 
-            this.ToolStripMenuItem_ManageSingleRestaurant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ToolStripMenuItem_ManageSingleRestaurant.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_ManageSingleRestaurant.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.ToolStripMenuItem_ManageSingleRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageSingleRestaurant.Name = "ToolStripMenuItem_ManageSingleRestaurant";
@@ -90,6 +91,7 @@ namespace app
             // 
             // ToolStripMenuItem_Clients
             // 
+            this.ToolStripMenuItem_Clients.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_Clients.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_ManageSingleClient});
             this.ToolStripMenuItem_Clients.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -101,7 +103,7 @@ namespace app
             // 
             // ToolStripMenuItem_ManageSingleClient
             // 
-            this.ToolStripMenuItem_ManageSingleClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ToolStripMenuItem_ManageSingleClient.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_ManageSingleClient.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.ToolStripMenuItem_ManageSingleClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageSingleClient.Name = "ToolStripMenuItem_ManageSingleClient";
@@ -111,6 +113,7 @@ namespace app
             // 
             // ToolStripMenuItem_Menu
             // 
+            this.ToolStripMenuItem_Menu.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_ManageSingleMenu});
             this.ToolStripMenuItem_Menu.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -122,7 +125,7 @@ namespace app
             // 
             // ToolStripMenuItem_ManageSingleMenu
             // 
-            this.ToolStripMenuItem_ManageSingleMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ToolStripMenuItem_ManageSingleMenu.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_ManageSingleMenu.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.ToolStripMenuItem_ManageSingleMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageSingleMenu.Name = "ToolStripMenuItem_ManageSingleMenu";
@@ -132,6 +135,7 @@ namespace app
             // 
             // ToolStripMenuItem_Orders
             // 
+            this.ToolStripMenuItem_Orders.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_Orders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_ManageSingleOrder});
             this.ToolStripMenuItem_Orders.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -143,7 +147,7 @@ namespace app
             // 
             // ToolStripMenuItem_ManageSingleOrder
             // 
-            this.ToolStripMenuItem_ManageSingleOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ToolStripMenuItem_ManageSingleOrder.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_ManageSingleOrder.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.ToolStripMenuItem_ManageSingleOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageSingleOrder.Name = "ToolStripMenuItem_ManageSingleOrder";
@@ -196,6 +200,7 @@ namespace app
             // 
             // Btn_RestaurantGlobalManagement
             // 
+            this.Btn_RestaurantGlobalManagement.BackColor = System.Drawing.Color.White;
             this.Btn_RestaurantGlobalManagement.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Btn_RestaurantGlobalManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_RestaurantGlobalManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
@@ -206,7 +211,7 @@ namespace app
             this.Btn_RestaurantGlobalManagement.Size = new System.Drawing.Size(152, 51);
             this.Btn_RestaurantGlobalManagement.TabIndex = 4;
             this.Btn_RestaurantGlobalManagement.Text = "Gestão Global";
-            this.Btn_RestaurantGlobalManagement.UseVisualStyleBackColor = true;
+            this.Btn_RestaurantGlobalManagement.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -228,6 +233,7 @@ namespace app
             // 
             // Btn_ClientsGlobalManagement
             // 
+            this.Btn_ClientsGlobalManagement.BackColor = System.Drawing.Color.White;
             this.Btn_ClientsGlobalManagement.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Btn_ClientsGlobalManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ClientsGlobalManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
@@ -238,7 +244,7 @@ namespace app
             this.Btn_ClientsGlobalManagement.Size = new System.Drawing.Size(152, 51);
             this.Btn_ClientsGlobalManagement.TabIndex = 4;
             this.Btn_ClientsGlobalManagement.Text = "Gestão Global";
-            this.Btn_ClientsGlobalManagement.UseVisualStyleBackColor = true;
+            this.Btn_ClientsGlobalManagement.UseVisualStyleBackColor = false;
             // 
             // Lbl_Clientes
             // 

@@ -21,36 +21,39 @@ namespace app
             _fontLoader = new FontLoader();
         }
 
+
+        //Irá dar load das fontes em todos os controlos do form
         private void Home_Load(object sender, EventArgs e)
         {
-            ToolStripMenuItem[] toolStripItemsToLoadFont = 
-            { 
-                ToolStripMenuItem_Restaurants, ToolStripMenuItem_Clients, ToolStripMenuItem_Menu, ToolStripMenuItem_Orders,
-                ToolStripMenuItem_ManageSingleRestaurant, ToolStripMenuItem_ManageSingleClient, ToolStripMenuItem_ManageSingleMenu, ToolStripMenuItem_ManageSingleOrder,
-            };
-            string[] fontsForToolStripItems =
-            {
-                FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular,
-                FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular
-            };
 
-            _fontLoader.LoadFontToToolStrips(toolStripItemsToLoadFont, fontsForToolStripItems);
+            Dictionary<ToolStripMenuItem, string> fontsForToolStripItems = new Dictionary<ToolStripMenuItem, string>();
 
-            Control[] controlsToLoadFont =
-            {
-                Lbl_ChooseFunctionalities,
-                Lbl_Restaurantes, Lbl_Clientes,
-                Btn_RestaurantGlobalManagement,Btn_ClientsGlobalManagement
-            };
+            fontsForToolStripItems.Add( ToolStripMenuItem_Restaurants, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_Clients, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_Menu, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_Orders, FontLoader.RobotoSlabRegular);
 
-            string[] fontsForControls =
-            {
-                FontLoader.RobotoSlabBold,
-                FontLoader.RobotoSlabLight, FontLoader.RobotoSlabLight,
-                FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular
-            };
+            fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleRestaurant, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleClient, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleMenu, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleOrder, FontLoader.RobotoSlabRegular);
 
-            _fontLoader.LoadFontToControls(controlsToLoadFont, fontsForControls);
+            _fontLoader.LoadFontToToolStrips(fontsForToolStripItems);
+
+
+
+            Dictionary<Control, string> fontsForControls = new Dictionary<Control, string>();
+
+            fontsForControls.Add( Lbl_ChooseFunctionalities, FontLoader.RobotoSlabBold);
+
+            fontsForControls.Add( Lbl_Restaurantes, FontLoader.RobotoSlabLight);
+            fontsForControls.Add( Btn_RestaurantGlobalManagement, FontLoader.RobotoSlabRegular);
+
+            fontsForControls.Add( Lbl_Clientes, FontLoader.RobotoSlabLight);
+            fontsForControls.Add( Btn_ClientsGlobalManagement, FontLoader.RobotoSlabRegular);
+
+
+            _fontLoader.LoadFontToControls(fontsForControls);
 
 
 

@@ -26,24 +26,19 @@ namespace app
         //Irá dar load das fontes em todos os controlos do form
         private void GlobalRestaurants_Load(object sender, EventArgs e)
         {
-            Control[] controlsToLoadFont =
-            {
-                Lbl_Restaurantes,
-                Btn_RegisterNewRestaurant, Btn_ManageRestaurant, Btn_EditRestaurant,
-                Btn_ManageCategories,
-                Btn_ManagePaymentMethods
-            };
+            Dictionary<Control, string> fontsForControls = new Dictionary<Control, string>();
 
-            string[] fontsForControls =
-            {
-                FontLoader.RobotoSlabBold,
-                FontLoader.RobotoSlabRegular,FontLoader.RobotoSlabRegular, FontLoader.RobotoSlabRegular,
-                FontLoader.RobotoSlabRegular,
-                FontLoader.RobotoSlabRegular,
+            fontsForControls.Add(Lbl_Restaurantes, FontLoader.RobotoSlabBold);
 
-            };
+            fontsForControls.Add( Btn_RegisterNewRestaurant, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add( Btn_ManageRestaurant, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add( Btn_EditRestaurant, FontLoader.RobotoSlabRegular);
 
-            _fontLoader.LoadFontToControls(controlsToLoadFont, fontsForControls);
+            fontsForControls.Add( Btn_ManageCategories, FontLoader.RobotoSlabRegular);
+
+            fontsForControls.Add( Btn_ManagePaymentMethods, FontLoader.RobotoSlabRegular);
+
+            _fontLoader.LoadFontToControls(fontsForControls);
 
             FontFamily fontForDataGrid = _fontLoader.GetFont(FontLoader.RobotoSlabRegular);
             DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font.Size);

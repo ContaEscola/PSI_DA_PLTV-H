@@ -16,7 +16,11 @@ namespace app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
+            Application.Run(new GlobalRestaurants());
+=======
             Application.Run(new Home());
+>>>>>>> development
         }
     }
 }

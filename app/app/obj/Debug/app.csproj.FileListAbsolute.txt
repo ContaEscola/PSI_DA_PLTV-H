@@ -44,3 +44,4 @@ C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Orders.resources
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.PaymentMethods.resources
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Restaurant.resources
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.SelectRestaurant.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GenericSelection.resources

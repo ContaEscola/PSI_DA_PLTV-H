@@ -16,7 +16,7 @@ namespace app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Restaurant());
+            Application.Run(new Clients());
         }
     }
 }

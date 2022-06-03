@@ -103,6 +103,12 @@
     <Compile Include="mvc\views\Restaurant.Designer.cs">
       <DependentUpon>Restaurant.cs</DependentUpon>
     </Compile>
+    <Compile Include="mvc\views\SelectRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mvc\views\SelectRestaurant.Designer.cs">
+      <DependentUpon>SelectRestaurant.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="mvc\views\AddEditRestaurant.resx">
       <DependentUpon>AddEditRestaurant.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\Restaurant.resx">
       <DependentUpon>Restaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mvc\views\SelectRestaurant.resx">
+      <DependentUpon>SelectRestaurant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

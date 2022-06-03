@@ -31,3 +31,16 @@ C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Clients.resources
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Categories.resources
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.PaymentMethods.resources
 C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.AddEditRestaurant.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-Bold.ttf
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-ExtraLight.ttf
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-Light.ttf
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\assets\fonts\RobotoSlab-Regular.ttf
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.AddEditRestaurant.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Categories.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Clients.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GlobalRestaurants.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Menu.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Orders.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.PaymentMethods.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.Restaurant.resources
+C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.SelectRestaurant.resources

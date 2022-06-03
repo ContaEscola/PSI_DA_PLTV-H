@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="48ca850f2d93462a83e63b60c2f3e0e4" Name="Diagram1" ZoomLevel="94" >
+        <EntityTypeShape EntityType="BaseDados.Categoria" Width="1.5" PointX="13" PointY="10.25" />
+        <EntityTypeShape EntityType="BaseDados.Estado" Width="1.5" PointX="10.375" PointY="6.875" />
+        <EntityTypeShape EntityType="BaseDados.MetodoPagamento" Width="1.5" PointX="2.25" PointY="10.25" />
+        <EntityTypeShape EntityType="BaseDados.Pessoa" Width="1.5" PointX="2.25" PointY="1" />
+        <EntityTypeShape EntityType="BaseDados.Trabalhador" Width="1.5" PointX="4.125" PointY="3.5" />
+        <EntityTypeShape EntityType="BaseDados.Morada" Width="1.5" PointX="8.625" PointY="1" />
+        <EntityTypeShape EntityType="BaseDados.Restaurante" Width="1.5" PointX="12.875" PointY="2.5" />
+        <EntityTypeShape EntityType="BaseDados.ItemMenu" Width="1.5" PointX="12.875" PointY="6.125" />
+        <EntityTypeShape EntityType="BaseDados.Pagamento" Width="1.5" PointX="2.25" PointY="7.25" />
+        <EntityTypeShape EntityType="BaseDados.Pedido" Width="1.5" PointX="6.875" PointY="5.75" />
+        <AssociationConnector Association="BaseDados.CategoriaItemMenu" />
+        <AssociationConnector Association="BaseDados.PedidoTrabalhador" />
+        <AssociationConnector Association="BaseDados.ItemMenuRestaurante" />
+        <AssociationConnector Association="BaseDados.PedidoPagamento" />
+        <EntityTypeShape EntityType="BaseDados.Cliente" Width="1.5" PointX="1.25" PointY="3.5" />
+        <InheritanceConnector EntityType="BaseDados.Cliente" />
+        <InheritanceConnector EntityType="BaseDados.Trabalhador" />
+        <AssociationConnector Association="BaseDados.RestauranteMorada" />
+        <AssociationConnector Association="BaseDados.ClientePedido" />
+        <AssociationConnector Association="BaseDados.PedidoRestaurante" />
+        <AssociationConnector Association="BaseDados.TrabalhadorRestaurante" />
+        <AssociationConnector Association="BaseDados.PessoaMorada" />
+        <AssociationConnector Association="BaseDados.PagamentoMetodoPagamento" />
+        <AssociationConnector Association="BaseDados.PedidoEstado" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

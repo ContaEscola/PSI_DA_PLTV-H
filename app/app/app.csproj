@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mvc\views\Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mvc\views\Categories.designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="mvc\views\Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="mvc\views\Restaurant.Designer.cs">
       <DependentUpon>Restaurant.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="mvc\views\Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mvc\views\Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>

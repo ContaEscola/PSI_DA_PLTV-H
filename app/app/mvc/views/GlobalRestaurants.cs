@@ -46,16 +46,13 @@ namespace app
             DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font.Size);
             DataGridView_Restaurants.DefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Restaurants.DefaultCellStyle.Font.Size);
 
-            PopulateDataIntoDataGrid();
+
+
+
+            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants, DataGridView_Restaurants);
         }
 
 
-
-        public void PopulateDataIntoDataGrid()
-        {
-            BindingSource_AllRestaurants.DataSource = SingleTown.AppDB.RestauranteSet.ToList<Restaurante>();
-            DataGridView_Restaurants.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        }
 
         private void Btn_RegisterNewRestaurant_Click(object sender, EventArgs e)
         {

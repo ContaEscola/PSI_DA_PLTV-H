@@ -96,7 +96,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Metodo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Ativo" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="PessoaSet">
     <Key>
@@ -436,8 +436,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Metodo" Type="String" Nullable="false" />
-          <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Pagamento" Relationship="BaseDados.PagamentoMetodoPagamento" FromRole="MetodoPagamento" ToRole="Pagamento" />
+          <Property Name="Ativo" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Pessoa">
           <Key>

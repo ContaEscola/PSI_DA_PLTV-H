@@ -62,7 +62,36 @@ namespace app
             Lbl_EditPaymentMethod.BringToFront();
 
 
+            RefreshDataGridView();
+            PopulateData.PopulatePaymentMethodsStatesIntoComboBox(ComboBox_NewPaymentMethodState);
+        }
 
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulatePaymentMethodsIntoBindingSource(BindingSource_AllPaymentMethods, DataGridView_PaymentMethods);
+        }
+
+        private void Btn_AddPaymentMethod_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TxtBox_NewPaymentMethodName.Text)) return;
+
+            MetodoPagamento newPaymentMethod = new MetodoPagamento
+            {
+                Metodo = TxtBox_NewPaymentMethodName.Text,
+                Ativo = ComboBox_NewPaymentMethodState.SelectedItem.ToString()
+            };
+
+            try
+            {
+                CRUD.AddPaymentMethod(newPaymentMethod);
+                RefreshDataGridView();
+                TxtBox_NewPaymentMethodName.Text = String.Empty;
+                Resets.ResetSelectedIndex(ComboBox_NewPaymentMethodState, 0);
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

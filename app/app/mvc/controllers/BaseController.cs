@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,32 +10,37 @@ namespace app
 {
     internal class BaseController
     {
-
-        protected void RenderView(Form viewToRender)
+        public static void RenderView(Form viewToRender)
         {
             viewToRender.TopLevel = true;
-            viewToRender.TopMost = true;
+            viewToRender.TopMost = false;
 
             CloseForm(viewToRender.Name);
 
             viewToRender.Show();
         }
 
-        protected object RenderViewAsDialog(Form viewToRender)
+        public static Hashtable RenderViewAsDialog(Dialog viewToRender)
         {
             viewToRender.TopLevel = true;
             viewToRender.TopMost = true;
 
             CloseForm(viewToRender.Name);
 
-            if (viewToRender.ShowDialog() == DialogResult.OK)
-                return null;
+ 
+            Hashtable dataToReturn = new Hashtable();
 
-            return null;
+            if (viewToRender.ShowDialog() == DialogResult.OK)
+            {
+                dataToReturn = viewToRender.GetData();
+                viewToRender.Close();
+            }
+    
+            return dataToReturn;
         }
 
 
-        private void CloseForm(string formToClose)
+        private static void CloseForm(string formToClose)
         {
             FormCollection openedForms = Application.OpenForms;
 

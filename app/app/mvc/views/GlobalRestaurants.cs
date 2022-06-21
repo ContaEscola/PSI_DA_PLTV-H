@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -43,6 +45,41 @@ namespace app
             FontFamily fontForDataGrid = _fontLoader.GetFont(FontLoader.RobotoSlabRegular);
             DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Restaurants.ColumnHeadersDefaultCellStyle.Font.Size);
             DataGridView_Restaurants.DefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Restaurants.DefaultCellStyle.Font.Size);
+
+            PopulateDataIntoDataGrid();
+        }
+
+
+
+        public void PopulateDataIntoDataGrid()
+        {
+            BindingSource_AllRestaurants.DataSource = SingleTown.AppDB.RestauranteSet.ToList<Restaurante>();
+            DataGridView_Restaurants.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void Btn_RegisterNewRestaurant_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderViewAsDialog(new AddEditRestaurant());
+        }
+
+        private void Btn_EditRestaurant_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderViewAsDialog(new AddEditRestaurant(true));
+        }
+
+        private void Btn_ManageRestaurant_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new Restaurant());
+        }
+        
+        private void Btn_ManageCategories_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new Categories());
+        }
+
+        private void Btn_ManagePaymentMethods_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new PaymentMethods());
         }
     }
 }

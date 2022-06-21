@@ -33,14 +33,14 @@
             this.TxtBox_RestaurantName = new System.Windows.Forms.TextBox();
             this.Lbl_RestaurantAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Lbl_RestaurantStreet = new System.Windows.Forms.Label();
-            this.TxtBox_RestaurantStreet = new System.Windows.Forms.TextBox();
-            this.TxtBox_RestaurantCity = new System.Windows.Forms.TextBox();
-            this.Lbl_RestaurantCity = new System.Windows.Forms.Label();
-            this.Lbl_RestaurantPostalCode = new System.Windows.Forms.Label();
-            this.MaskedTxtBox_RestaurantPostalCode = new System.Windows.Forms.MaskedTextBox();
             this.TxtBox_RestaurantCountry = new System.Windows.Forms.TextBox();
             this.Lbl_RestaurantCountry = new System.Windows.Forms.Label();
+            this.MaskedTxtBox_RestaurantPostalCode = new System.Windows.Forms.MaskedTextBox();
+            this.Lbl_RestaurantPostalCode = new System.Windows.Forms.Label();
+            this.TxtBox_RestaurantCity = new System.Windows.Forms.TextBox();
+            this.Lbl_RestaurantCity = new System.Windows.Forms.Label();
+            this.TxtBox_RestaurantStreet = new System.Windows.Forms.TextBox();
+            this.Lbl_RestaurantStreet = new System.Windows.Forms.Label();
             this.Btn_Conclude = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,25 +110,48 @@
             this.panel1.Size = new System.Drawing.Size(386, 234);
             this.panel1.TabIndex = 4;
             // 
-            // Lbl_RestaurantStreet
+            // TxtBox_RestaurantCountry
             // 
-            this.Lbl_RestaurantStreet.AutoSize = true;
-            this.Lbl_RestaurantStreet.Location = new System.Drawing.Point(20, 38);
-            this.Lbl_RestaurantStreet.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_RestaurantStreet.Name = "Lbl_RestaurantStreet";
-            this.Lbl_RestaurantStreet.Size = new System.Drawing.Size(43, 20);
-            this.Lbl_RestaurantStreet.TabIndex = 2;
-            this.Lbl_RestaurantStreet.Text = "Rua:";
+            this.TxtBox_RestaurantCountry.BackColor = System.Drawing.Color.White;
+            this.TxtBox_RestaurantCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_RestaurantCountry.Location = new System.Drawing.Point(73, 173);
+            this.TxtBox_RestaurantCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_RestaurantCountry.Name = "TxtBox_RestaurantCountry";
+            this.TxtBox_RestaurantCountry.Size = new System.Drawing.Size(293, 26);
+            this.TxtBox_RestaurantCountry.TabIndex = 26;
             // 
-            // TxtBox_RestaurantStreet
+            // Lbl_RestaurantCountry
             // 
-            this.TxtBox_RestaurantStreet.BackColor = System.Drawing.Color.White;
-            this.TxtBox_RestaurantStreet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.TxtBox_RestaurantStreet.Location = new System.Drawing.Point(73, 35);
-            this.TxtBox_RestaurantStreet.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_RestaurantStreet.Name = "TxtBox_RestaurantStreet";
-            this.TxtBox_RestaurantStreet.Size = new System.Drawing.Size(293, 26);
-            this.TxtBox_RestaurantStreet.TabIndex = 3;
+            this.Lbl_RestaurantCountry.AutoSize = true;
+            this.Lbl_RestaurantCountry.Location = new System.Drawing.Point(20, 176);
+            this.Lbl_RestaurantCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_RestaurantCountry.Name = "Lbl_RestaurantCountry";
+            this.Lbl_RestaurantCountry.Size = new System.Drawing.Size(43, 20);
+            this.Lbl_RestaurantCountry.TabIndex = 25;
+            this.Lbl_RestaurantCountry.Text = "Pais:";
+            // 
+            // MaskedTxtBox_RestaurantPostalCode
+            // 
+            this.MaskedTxtBox_RestaurantPostalCode.BackColor = System.Drawing.Color.White;
+            this.MaskedTxtBox_RestaurantPostalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.MaskedTxtBox_RestaurantPostalCode.Location = new System.Drawing.Point(141, 127);
+            this.MaskedTxtBox_RestaurantPostalCode.Margin = new System.Windows.Forms.Padding(0);
+            this.MaskedTxtBox_RestaurantPostalCode.Mask = "0000 - 000";
+            this.MaskedTxtBox_RestaurantPostalCode.Name = "MaskedTxtBox_RestaurantPostalCode";
+            this.MaskedTxtBox_RestaurantPostalCode.PromptChar = '0';
+            this.MaskedTxtBox_RestaurantPostalCode.Size = new System.Drawing.Size(120, 26);
+            this.MaskedTxtBox_RestaurantPostalCode.TabIndex = 24;
+            this.MaskedTxtBox_RestaurantPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Lbl_RestaurantPostalCode
+            // 
+            this.Lbl_RestaurantPostalCode.AutoSize = true;
+            this.Lbl_RestaurantPostalCode.Location = new System.Drawing.Point(20, 130);
+            this.Lbl_RestaurantPostalCode.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_RestaurantPostalCode.Name = "Lbl_RestaurantPostalCode";
+            this.Lbl_RestaurantPostalCode.Size = new System.Drawing.Size(111, 20);
+            this.Lbl_RestaurantPostalCode.TabIndex = 6;
+            this.Lbl_RestaurantPostalCode.Text = "Código Postal:";
             // 
             // TxtBox_RestaurantCity
             // 
@@ -150,54 +173,32 @@
             this.Lbl_RestaurantCity.TabIndex = 4;
             this.Lbl_RestaurantCity.Text = "Cidade:";
             // 
-            // Lbl_RestaurantPostalCode
+            // TxtBox_RestaurantStreet
             // 
-            this.Lbl_RestaurantPostalCode.AutoSize = true;
-            this.Lbl_RestaurantPostalCode.Location = new System.Drawing.Point(20, 130);
-            this.Lbl_RestaurantPostalCode.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_RestaurantPostalCode.Name = "Lbl_RestaurantPostalCode";
-            this.Lbl_RestaurantPostalCode.Size = new System.Drawing.Size(111, 20);
-            this.Lbl_RestaurantPostalCode.TabIndex = 6;
-            this.Lbl_RestaurantPostalCode.Text = "Código Postal:";
+            this.TxtBox_RestaurantStreet.BackColor = System.Drawing.Color.White;
+            this.TxtBox_RestaurantStreet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_RestaurantStreet.Location = new System.Drawing.Point(73, 35);
+            this.TxtBox_RestaurantStreet.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_RestaurantStreet.Name = "TxtBox_RestaurantStreet";
+            this.TxtBox_RestaurantStreet.Size = new System.Drawing.Size(293, 26);
+            this.TxtBox_RestaurantStreet.TabIndex = 3;
             // 
-            // MaskedTxtBox_RestaurantPostalCode
+            // Lbl_RestaurantStreet
             // 
-            this.MaskedTxtBox_RestaurantPostalCode.BackColor = System.Drawing.Color.White;
-            this.MaskedTxtBox_RestaurantPostalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.MaskedTxtBox_RestaurantPostalCode.Location = new System.Drawing.Point(141, 127);
-            this.MaskedTxtBox_RestaurantPostalCode.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_RestaurantPostalCode.Mask = "0000 - 000";
-            this.MaskedTxtBox_RestaurantPostalCode.Name = "MaskedTxtBox_RestaurantPostalCode";
-            this.MaskedTxtBox_RestaurantPostalCode.PromptChar = '0';
-            this.MaskedTxtBox_RestaurantPostalCode.Size = new System.Drawing.Size(120, 26);
-            this.MaskedTxtBox_RestaurantPostalCode.TabIndex = 24;
-            this.MaskedTxtBox_RestaurantPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TxtBox_RestaurantCountry
-            // 
-            this.TxtBox_RestaurantCountry.BackColor = System.Drawing.Color.White;
-            this.TxtBox_RestaurantCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.TxtBox_RestaurantCountry.Location = new System.Drawing.Point(73, 173);
-            this.TxtBox_RestaurantCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_RestaurantCountry.Name = "TxtBox_RestaurantCountry";
-            this.TxtBox_RestaurantCountry.Size = new System.Drawing.Size(293, 26);
-            this.TxtBox_RestaurantCountry.TabIndex = 26;
-            // 
-            // Lbl_RestaurantCountry
-            // 
-            this.Lbl_RestaurantCountry.AutoSize = true;
-            this.Lbl_RestaurantCountry.Location = new System.Drawing.Point(20, 176);
-            this.Lbl_RestaurantCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_RestaurantCountry.Name = "Lbl_RestaurantCountry";
-            this.Lbl_RestaurantCountry.Size = new System.Drawing.Size(43, 20);
-            this.Lbl_RestaurantCountry.TabIndex = 25;
-            this.Lbl_RestaurantCountry.Text = "Pais:";
+            this.Lbl_RestaurantStreet.AutoSize = true;
+            this.Lbl_RestaurantStreet.Location = new System.Drawing.Point(20, 38);
+            this.Lbl_RestaurantStreet.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_RestaurantStreet.Name = "Lbl_RestaurantStreet";
+            this.Lbl_RestaurantStreet.Size = new System.Drawing.Size(43, 20);
+            this.Lbl_RestaurantStreet.TabIndex = 2;
+            this.Lbl_RestaurantStreet.Text = "Rua:";
             // 
             // Btn_Conclude
             // 
             this.Btn_Conclude.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Conclude.AutoSize = true;
             this.Btn_Conclude.BackColor = System.Drawing.Color.White;
+            this.Btn_Conclude.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Btn_Conclude.Location = new System.Drawing.Point(264, 594);
             this.Btn_Conclude.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_Conclude.Name = "Btn_Conclude";

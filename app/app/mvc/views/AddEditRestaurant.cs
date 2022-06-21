@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace app
 {
-    public partial class AddEditRestaurant : Form
+    public partial class AddEditRestaurant : Dialog
     {
         private FontLoader _fontLoader;
 
@@ -21,14 +22,14 @@ namespace app
         /// Inicializa o formulário para adicionar um restaurante
         /// </summary>
         /// <param name="toEdit">Passe true se quiser que o formulário seja para editar um restaurante</param>
-        public AddEditRestaurant(bool toEdit = false)
+        public AddEditRestaurant(bool toEdit = false):base()
         {
             InitializeComponent();
 
             _fontLoader = new FontLoader();
 
-
             _toEdit = toEdit;
+
         }
 
 
@@ -70,6 +71,8 @@ namespace app
                 Lbl_Title.Text = "Alterar Restaurante"; 
             }
         }
+
+
     }
 
 }

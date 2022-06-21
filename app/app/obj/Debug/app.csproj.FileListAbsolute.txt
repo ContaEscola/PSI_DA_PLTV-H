@@ -50,3 +50,10 @@ C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.SqlServ
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.xml
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\2211904\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CopyComplete
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.dll
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.xml
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.GenericSelection.resources
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.SelectRestaurant.resources
+C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\obj\Debug\app.csproj.CopyComplete

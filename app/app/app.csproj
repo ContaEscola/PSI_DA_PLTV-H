@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeController.cs" />
+    <Compile Include="mvc\controllers\BaseController.cs" />
     <Compile Include="BaseDados.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,6 +171,7 @@
     <Compile Include="Restaurante.cs">
       <DependentUpon>BaseDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="SingleTown.cs" />
     <Compile Include="Trabalhador.cs">
       <DependentUpon>BaseDados.tt</DependentUpon>
     </Compile>
@@ -247,10 +250,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="mvc\controllers\" />
-    <Folder Include="mvc\models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

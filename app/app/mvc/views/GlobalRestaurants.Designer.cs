@@ -35,14 +35,14 @@ namespace app
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Restaurantes = new System.Windows.Forms.Label();
             this.DataGridView_Restaurants = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BindingSource_AllRestaurants = new System.Windows.Forms.BindingSource(this.components);
             this.Btn_RegisterNewRestaurant = new System.Windows.Forms.Button();
             this.Btn_ManageRestaurant = new System.Windows.Forms.Button();
             this.Btn_EditRestaurant = new System.Windows.Forms.Button();
             this.Btn_ManageCategories = new System.Windows.Forms.Button();
             this.Btn_ManagePaymentMethods = new System.Windows.Forms.Button();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Restaurants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllRestaurants)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,21 @@ namespace app
             this.DataGridView_Restaurants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Restaurants.Size = new System.Drawing.Size(1195, 404);
             this.DataGridView_Restaurants.TabIndex = 1;
+            this.DataGridView_Restaurants.SelectionChanged += new System.EventHandler(this.DataGridView_Restaurants_SelectionChanged);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Morada
+            // 
+            this.Morada.DataPropertyName = "Morada";
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
             // 
             // Btn_RegisterNewRestaurant
             // 
@@ -192,20 +207,6 @@ namespace app
             this.Btn_ManagePaymentMethods.Text = "Gerir Métodos de Pagamento";
             this.Btn_ManagePaymentMethods.UseVisualStyleBackColor = false;
             this.Btn_ManagePaymentMethods.Click += new System.EventHandler(this.Btn_ManagePaymentMethods_Click);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Morada
-            // 
-            this.Morada.DataPropertyName = "Morada";
-            this.Morada.HeaderText = "Morada";
-            this.Morada.Name = "Morada";
-            this.Morada.ReadOnly = true;
             // 
             // GlobalRestaurants
             // 

@@ -85,10 +85,45 @@ namespace app
             return morada;
         }
 
+       
         public static void AddRestaurant(Restaurante restaurantToAdd)
         {
             SingleTown.AppDB.RestauranteSet.Add(restaurantToAdd);
             SingleTown.AppDB.SaveChanges();
         }
+
+        public static Restaurante GetRestaurant(string restaurantNameToLookUp)
+        {
+            var allRestaurants = SingleTown.AppDB.RestauranteSet;
+
+            Restaurante restaurante = (Restaurante)allRestaurants.Where(r => r.Nome == restaurantNameToLookUp).FirstOrDefault();
+
+            return restaurante;
+        }
+
+        public static void EditRestaurant(Restaurante updatedRestaurant)
+        {
+            var allRestaurants = SingleTown.AppDB.RestauranteSet;
+
+            Restaurante checkForExistentNames = (Restaurante)allRestaurants.Where(r => r.Nome == updatedRestaurant.Nome && r.Id != SingleTown.SelectedRestaurant.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe um restaurante com esse nome!");
+
+            Restaurante checkForExistentRua = (Restaurante)allRestaurants.Where(r => r.Morada.Rua == updatedRestaurant.Morada.Rua && r.Id != SingleTown.SelectedRestaurant.Id).FirstOrDefault();
+
+            if (checkForExistentRua != null)
+                throw new Exception("Já existe um restaurante com essa rua!");
+
+            SingleTown.SelectedRestaurant.Nome = updatedRestaurant.Nome;
+            SingleTown.SelectedRestaurant.Morada.Rua = updatedRestaurant.Morada.Rua;
+            SingleTown.SelectedRestaurant.Morada.Cidade = updatedRestaurant.Morada.Cidade;
+            SingleTown.SelectedRestaurant.Morada.CodPostal = updatedRestaurant.Morada.CodPostal;
+            SingleTown.SelectedRestaurant.Morada.Pais = updatedRestaurant.Morada.Pais;
+
+            SingleTown.AppDB.SaveChanges();
+
+        }
+
     }
 }

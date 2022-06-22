@@ -68,34 +68,50 @@ namespace app
             if(_toEdit)
             {
                 this.Text = "Alterar Restaurante";
-                Lbl_Title.Text = "Alterar Restaurante"; 
+                Lbl_Title.Text = "Alterar Restaurante";
+                TxtBox_RestaurantName.Text = SingleTown.SelectedRestaurant.Nome;
+                TxtBox_RestaurantStreet.Text = SingleTown.SelectedRestaurant.Morada.Rua;
+                TxtBox_RestaurantCity.Text = SingleTown.SelectedRestaurant.Morada.Cidade;
+                MaskedTxtBox_RestaurantPostalCode.Text = SingleTown.SelectedRestaurant.Morada.CodPostal;
+                TxtBox_RestaurantCountry.Text = SingleTown.SelectedRestaurant.Morada.Pais;
             }
         }
 
         private void Btn_Conclude_Click(object sender, EventArgs e)
         {
-            if(_toEdit)
+            if (String.IsNullOrEmpty(TxtBox_RestaurantName.Text) || String.IsNullOrEmpty(TxtBox_RestaurantStreet.Text)) return;
+            if (String.IsNullOrEmpty(TxtBox_RestaurantCity.Text) || String.IsNullOrEmpty(TxtBox_RestaurantCountry.Text)) return;
+            try
             {
+                string codPostal = MaskedTxtBox_RestaurantPostalCode.Text;
+                StringHelper.TrimAllWhiteSpace(ref codPostal);
 
-            } else
-            {
-                if (String.IsNullOrEmpty(TxtBox_RestaurantName.Text) || String.IsNullOrEmpty(TxtBox_RestaurantStreet.Text)) return;
-                if (String.IsNullOrEmpty(TxtBox_RestaurantCity.Text) || String.IsNullOrEmpty(TxtBox_RestaurantCountry.Text)) return;
+                if (codPostal.Length != 8) throw new Exception("Código Postal Inválido!");
 
-                try
+                Morada newMorada = new Morada
                 {
-                    string codPostal = MaskedTxtBox_RestaurantPostalCode.Text;
-                    StringHelper.TrimAllWhiteSpace(ref codPostal);
+                    Rua = TxtBox_RestaurantStreet.Text,
+                    Cidade = TxtBox_RestaurantCity.Text,
+                    CodPostal = codPostal,
+                    Pais = TxtBox_RestaurantCountry.Text
+                };
 
-                    if (codPostal.Length != 8) throw new Exception("Código Postal Inválido!");
 
-                    Morada newMorada = new Morada
+                if (_toEdit)
+                {
+
+                    Restaurante updatedRestaurant = new Restaurante
                     {
-                        Rua = TxtBox_RestaurantStreet.Text,
-                        Cidade = TxtBox_RestaurantCity.Text,
-                        CodPostal = codPostal,
-                        Pais = TxtBox_RestaurantCountry.Text
+                        Nome = TxtBox_RestaurantName.Text,
+                        Morada = newMorada
                     };
+
+                    CRUD.EditRestaurant(updatedRestaurant);
+
+                } 
+                else
+                {
+                    
 
                     Restaurante newRestaurant = new Restaurante
                     {
@@ -104,20 +120,19 @@ namespace app
 
                     VerifyData.HasRestaurant(newRestaurant);
                     VerifyData.HasMorada(newMorada);
-
                     CRUD.AddMorada(newMorada);
                     Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
 
                     newRestaurant.Morada = moradaInDB;
 
-                    CRUD.AddRestaurant(newRestaurant);
-
-                    Close();
-
-                } catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    CRUD.AddRestaurant(newRestaurant); 
                 }
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

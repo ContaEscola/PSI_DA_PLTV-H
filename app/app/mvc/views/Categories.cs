@@ -113,7 +113,7 @@ namespace app
 
             Categoria newCategorie = new Categoria
             {
-                Nome = TxtBox_NewCategorieName.Text,
+                Nome = TxtBox_NewCategorieName.Text.Trim(),
                 Ativo = ComboBox_NewCategorieState.SelectedItem.ToString()
             };
 
@@ -163,7 +163,7 @@ namespace app
             {
                 Categoria updatedCategory = new Categoria
                 {
-                    Nome = TxtBox_CategorieName.Text,
+                    Nome = TxtBox_CategorieName.Text.Trim(),
                     Ativo = ComboBox_CategorieState.SelectedItem.ToString()
                 };
 

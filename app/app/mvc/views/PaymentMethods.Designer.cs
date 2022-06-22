@@ -34,7 +34,6 @@
             this.DataGridView_PaymentMethods = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSource_AllPaymentMethods = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_EditPaymentMethod = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_SaveChangesOnPaymentMethod = new System.Windows.Forms.Button();
@@ -51,8 +50,6 @@
             this.Lbl_NewPaymentMethodName = new System.Windows.Forms.Label();
             this.Lbl_PaymentMethods = new System.Windows.Forms.Label();
             this.BindingSource_AllPaymentMethods = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PaymentMethods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
             this.panel2.SuspendLayout();

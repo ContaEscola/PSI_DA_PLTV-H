@@ -114,7 +114,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Rua" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CodPostal" Type="nchar" Nullable="false" MaxLength="9" />
+    <Property Name="CodPostal" Type="nchar" Nullable="false" MaxLength="8" />
+    <Property Name="Pais" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="RestauranteSet">
     <Key>
@@ -463,9 +464,10 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rua" Type="String" Nullable="false" />
           <Property Name="Cidade" Type="String" Nullable="false" />
-          <Property Name="CodPostal" Type="String" Nullable="false" MaxLength="9" FixedLength="true" />
+          <Property Name="CodPostal" Type="String" Nullable="false" MaxLength="8" FixedLength="true" />
           <NavigationProperty Name="Restaurante" Relationship="BaseDados.RestauranteMorada" FromRole="Morada" ToRole="Restaurante" />
           <NavigationProperty Name="Pessoa" Relationship="BaseDados.PessoaMorada" FromRole="Morada" ToRole="Pessoa" />
+          <Property Name="Pais" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Restaurante">
           <Key>
@@ -696,6 +698,7 @@
           <ScalarProperty Name="Rua" ColumnName="Rua" />
           <ScalarProperty Name="Cidade" ColumnName="Cidade" />
           <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

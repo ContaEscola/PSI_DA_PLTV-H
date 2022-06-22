@@ -20,7 +20,17 @@ namespace app
             viewToRender.Show();
         }
 
-        public static Hashtable RenderViewAsDialog(Dialog viewToRender)
+        public static void RenderViewAsDialog(Form viewToRender)
+        {
+            viewToRender.TopLevel = true;
+            viewToRender.TopMost = true;
+
+            CloseForm(viewToRender.Name);
+
+            viewToRender.ShowDialog();
+        }
+
+        public static Hashtable RenderViewAsDialogWithReturn(Dialog viewToRender)
         {
             viewToRender.TopLevel = true;
             viewToRender.TopMost = true;

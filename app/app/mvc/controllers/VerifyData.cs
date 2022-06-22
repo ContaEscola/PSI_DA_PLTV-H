@@ -39,5 +39,32 @@ namespace app
 
             return false;
         }
+
+        public static void HasMorada(Morada moradaToCheck)
+        {
+            List<Morada> allMoradas = SingleTown.AppDB.MoradaSet.ToList<Morada>();
+
+            foreach (Morada morada in allMoradas)
+            {
+                if (moradaToCheck.Rua == morada.Rua)
+                {
+                    throw new Exception("Já existe um restaurante com esta rua!");
+                }
+            }
+
+        }
+
+        public static void HasRestaurant(Restaurante restaurantToCheck)
+        {
+            List<Restaurante> allRestaurants = SingleTown.AppDB.RestauranteSet.ToList<Restaurante>();
+
+            foreach (Restaurante restaurante in allRestaurants)
+            {
+                if (restaurantToCheck.Nome == restaurante.Nome)
+                {
+                    throw new Exception("Já existe um restaurante com este nome!");
+                }
+            }
+        }
     }
 }

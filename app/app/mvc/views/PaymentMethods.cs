@@ -64,7 +64,121 @@ namespace app
 
             RefreshDataGridView();
             PopulateData.PopulatePaymentMethodsStatesIntoComboBox(ComboBox_NewPaymentMethodState);
+            DisableEditControls();
         }
+
+        private void SelectCurrentPaymentMethodState(ComboBox control, MetodoPagamento currentPaymentMethod)
+        {
+            string currentStateToSelect = currentPaymentMethod.Ativo;
+            int counter = -1;
+
+
+            foreach(string state in control.Items)
+            {
+                counter++;
+                if(state == currentStateToSelect)
+                {
+                    control.SelectedIndex = counter;
+                }
+
+            }
+        }
+
+        private void EnableEditControls()
+        {
+            TxtBox_PaymentMethodName.Enabled = true;
+            ComboBox_PaymentMethodState.Enabled = true;
+            Btn_SaveChangesOnPaymentMethod.Enabled = true;
+        }
+
+        private void DisableEditControls()
+        {
+            TxtBox_PaymentMethodName.Enabled = false;
+            ComboBox_PaymentMethodState.Enabled = false;
+            Btn_SaveChangesOnPaymentMethod.Enabled = false;
+        }
+
+        private void ResetEditControls()
+        {
+            TxtBox_PaymentMethodName.Text = String.Empty;
+            ComboBox_PaymentMethodState.Items.Clear();
+            ComboBox_PaymentMethodState.ResetText();
+            DisableEditControls();
+        }
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulatePaymentMethodsIntoBindingSource(BindingSource_AllPaymentMethods, DataGridView_PaymentMethods);
+        }
+
+        private void Btn_AddPaymentMethod_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TxtBox_NewPaymentMethodName.Text)) return;
+
+            MetodoPagamento newPaymentMethod = new MetodoPagamento
+            {
+                Metodo = TxtBox_NewPaymentMethodName.Text,
+                Ativo = ComboBox_NewPaymentMethodState.SelectedItem.ToString()
+            };
+
+            try
+            {
+                CRUD.AddPaymentMethod(newPaymentMethod);
+                RefreshDataGridView();
+                TxtBox_NewPaymentMethodName.Text = String.Empty;
+                Resets.ResetSelectedIndex(ComboBox_NewPaymentMethodState, 0);
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridView_PaymentMethods_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_PaymentMethods.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+                MetodoPagamento selectedPaymentMethod = new MetodoPagamento
+                {
+                    Metodo = DataGridView_PaymentMethods.CurrentRow.Cells[0].Value.ToString(),
+                    Ativo = DataGridView_PaymentMethods.CurrentRow.Cells[1].Value.ToString()
+                };
+
+                SingleTown.SelectedPaymentMethod = selectedPaymentMethod;
+
+                TxtBox_PaymentMethodName.Text = SingleTown.SelectedPaymentMethod.Metodo.ToString();
+                PopulateData.PopulatePaymentMethodsStatesIntoComboBox(ComboBox_PaymentMethodState);
+                SelectCurrentPaymentMethodState(ComboBox_PaymentMethodState, SingleTown.SelectedPaymentMethod);
+            }      
+            else
+            {
+                ResetEditControls();
+            }
+                
+        }
+
+        private void Btn_SaveChangesOnPaymentMethod_Click(object sender, EventArgs e)
+        {
+           if (String.IsNullOrEmpty(TxtBox_PaymentMethodName.Text)) return;
+
+           try
+           {
+                MetodoPagamento updatedPaymentMethod = new MetodoPagamento
+                {
+                    Metodo = TxtBox_PaymentMethodName.Text,
+                    Ativo = ComboBox_PaymentMethodState.SelectedItem.ToString()
+                };
+
+                CRUD.EditPaymentMethod(updatedPaymentMethod);
+                RefreshDataGridView();
+
+           } catch (Exception ex)
+           {
+                MessageBox.Show(ex.Message);
+           }
+
+
 
         private void RefreshDataGridView()
         {

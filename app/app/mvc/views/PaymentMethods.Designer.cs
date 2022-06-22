@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridView_PaymentMethods = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllPaymentMethods = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_EditPaymentMethod = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_SaveChangesOnPaymentMethod = new System.Windows.Forms.Button();
@@ -51,6 +54,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PaymentMethods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
@@ -94,6 +98,22 @@
             this.DataGridView_PaymentMethods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_PaymentMethods.Size = new System.Drawing.Size(622, 447);
             this.DataGridView_PaymentMethods.TabIndex = 18;
+            this.DataGridView_PaymentMethods.SelectionChanged += new System.EventHandler(this.DataGridView_PaymentMethods_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Metodo";
+            this.Column1.HeaderText = "Método Pagamento";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ativo";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Lbl_EditPaymentMethod
             // 
@@ -134,6 +154,7 @@
             this.Btn_SaveChangesOnPaymentMethod.TabIndex = 3;
             this.Btn_SaveChangesOnPaymentMethod.Text = "Guardar";
             this.Btn_SaveChangesOnPaymentMethod.UseVisualStyleBackColor = false;
+            this.Btn_SaveChangesOnPaymentMethod.Click += new System.EventHandler(this.Btn_SaveChangesOnPaymentMethod_Click);
             // 
             // ComboBox_PaymentMethodState
             // 
@@ -305,6 +326,7 @@
             this.Text = "Métodos de Pagamentos";
             this.Load += new System.EventHandler(this.PaymentMethods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PaymentMethods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

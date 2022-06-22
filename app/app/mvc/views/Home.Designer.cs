@@ -212,6 +212,7 @@ namespace app
             this.Btn_RestaurantGlobalManagement.TabIndex = 4;
             this.Btn_RestaurantGlobalManagement.Text = "Gestão Global";
             this.Btn_RestaurantGlobalManagement.UseVisualStyleBackColor = false;
+            this.Btn_RestaurantGlobalManagement.Click += new System.EventHandler(this.Btn_RestaurantGlobalManagement_Click);
             // 
             // tableLayoutPanel2
             // 

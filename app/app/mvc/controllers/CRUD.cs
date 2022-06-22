@@ -50,5 +50,24 @@ namespace app
             SingleTown.AppDB.CategoriaSet.Add(categoryToAdd);
             SingleTown.AppDB.SaveChanges();
         }
+
+        public static void EditCategory(Categoria updatedCategory)
+        {
+            var allCategories = SingleTown.AppDB.CategoriaSet;
+
+            Categoria categoryToUpdate = (Categoria)allCategories.Where(c => c.Nome == SingleTown.SelectedCategory.Nome).FirstOrDefault();
+
+
+            Categoria checkForExistentNames = (Categoria)allCategories.Where(c => c.Nome == updatedCategory.Nome && c.Id != categoryToUpdate.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe uma categoria com esse nome!");
+
+            categoryToUpdate.Nome = updatedCategory.Nome;
+            categoryToUpdate.Ativo = updatedCategory.Ativo;
+
+            SingleTown.AppDB.SaveChanges();
+
+        }
     }
 }

@@ -201,6 +201,7 @@ namespace app
             // Btn_RestaurantGlobalManagement
             // 
             this.Btn_RestaurantGlobalManagement.BackColor = System.Drawing.Color.White;
+            this.Btn_RestaurantGlobalManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_RestaurantGlobalManagement.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Btn_RestaurantGlobalManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_RestaurantGlobalManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
@@ -235,6 +236,7 @@ namespace app
             // Btn_ClientsGlobalManagement
             // 
             this.Btn_ClientsGlobalManagement.BackColor = System.Drawing.Color.White;
+            this.Btn_ClientsGlobalManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ClientsGlobalManagement.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Btn_ClientsGlobalManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ClientsGlobalManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));

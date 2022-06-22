@@ -12,12 +12,18 @@ namespace app
 {
     public partial class Home : Form
     {
+        private SingleTown _singleTownManager;
+        private HomeController _myController;
         private FontLoader _fontLoader;
+
+        internal SingleTown SingleTownManager { get { return _singleTownManager; } }
 
         public Home()
         {
             InitializeComponent();
 
+            _singleTownManager = new SingleTown();
+            _myController = new HomeController(this);
             _fontLoader = new FontLoader();
         }
 

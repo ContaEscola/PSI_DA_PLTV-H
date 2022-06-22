@@ -55,7 +55,6 @@ namespace app
 
         }
 
-
         public static void PopulateCategoriesStatesIntoComboBox(ComboBox comboBox)
         {
             comboBox.Items.Clear();
@@ -64,6 +63,25 @@ namespace app
             comboBox.Items.Add("Inativo");
 
             comboBox.SelectedIndex = 0;
+        }
+
+
+        public static void PopulateEmployeesIntoBindingSource(Restaurante restaurantAssociated,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            List<Trabalhador> allEmployees = (from people in SingleTown.AppDB.PessoaSet
+                               join employee in SingleTown.AppDB.TrabalhadorSet on people.Id equals employee.Id
+                               where employee.IdRestaurante == restaurantAssociated.Id
+                               select employee).ToList<Trabalhador>();
+
+
+            sourceToPopulate.DataSource = allEmployees;
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
         }
     }
 }

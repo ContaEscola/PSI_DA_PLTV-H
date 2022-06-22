@@ -13,13 +13,14 @@ namespace app
     public partial class Restaurant : Form
     {
         private FontLoader _fontLoader;
+        private Restaurante _restaurant;
 
-
-        public Restaurant()
+        public Restaurant(Restaurante restaurant)
         {
             InitializeComponent();
 
             _fontLoader = new FontLoader();
+            _restaurant = restaurant;
         }
 
 
@@ -102,13 +103,28 @@ namespace app
             fontsForControls.Add(Btn_ManageOrders, FontLoader.RobotoSlabRegular);
 
             FontFamily fontForDataGrid = _fontLoader.GetFont(FontLoader.RobotoSlabRegular);
-            DataGridView_Workers.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Workers.ColumnHeadersDefaultCellStyle.Font.Size);
-            DataGridView_Workers.DefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Workers.DefaultCellStyle.Font.Size);
+            DataGridView_Employees.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Employees.ColumnHeadersDefaultCellStyle.Font.Size);
+            DataGridView_Employees.DefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_Employees.DefaultCellStyle.Font.Size);
 
             _fontLoader.LoadFontToControls(fontsForControls);
 
             Lbl_AddWorker.BringToFront();
             Lbl_EditWorker.BringToFront();
+
+            this.Text = $"Restaurante: {_restaurant.Nome}";
+            Lbl_RestauranteName.Text = _restaurant.Nome;
+            Lbl_RestaurantCodPostal.Text = _restaurant.Morada.CodPostal;
+            Lbl_RestaurantCity.Text = _restaurant.Morada.Cidade;
+            Lbl_RestaurantCountry.Text = _restaurant.Morada.Pais;
+            Lbl_RestaurantStreet.Text = _restaurant.Morada.Rua;
+
+            RefreshDataGridView();
+        }
+
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulateEmployeesIntoBindingSource(_restaurant,BindingSource_AllEmployees, DataGridView_Employees);
         }
     }
 }

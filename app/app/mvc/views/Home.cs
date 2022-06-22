@@ -21,6 +21,8 @@ namespace app
         {
             InitializeComponent();
 
+            _singleTownManager = new SingleTown();
+            _myController = new HomeController(this);
             _fontLoader = new FontLoader();
         }
 

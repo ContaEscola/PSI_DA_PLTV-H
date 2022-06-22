@@ -50,10 +50,14 @@
             this.TxtBox_NewPaymentMethodName = new System.Windows.Forms.TextBox();
             this.Lbl_NewPaymentMethodName = new System.Windows.Forms.Label();
             this.Lbl_PaymentMethods = new System.Windows.Forms.Label();
+            this.BindingSource_AllPaymentMethods = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PaymentMethods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridView_PaymentMethods
@@ -287,6 +291,21 @@
             this.Lbl_PaymentMethods.TabIndex = 13;
             this.Lbl_PaymentMethods.Text = "Métodos de Pagamentos";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Metodo";
+            this.Column1.HeaderText = "Método Pagamento";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ativo";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // PaymentMethods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -312,6 +331,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/22/2022 00:21:43
+-- Date Created: 06/22/2022 15:04:33
 -- Generated from EDMX file: C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\BaseDados.edmx
 -- --------------------------------------------------
 
@@ -109,7 +109,7 @@ GO
 CREATE TABLE [dbo].[CategoriaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
-    [Ativo] bit  NOT NULL
+    [Ativo] nvarchar(max)  NULL
 );
 GO
 
@@ -161,8 +161,8 @@ CREATE TABLE [dbo].[ItemMenuSet] (
     [Fotografia] nvarchar(max)  NOT NULL,
     [Ingredientes] nvarchar(max)  NOT NULL,
     [Preco] decimal(18,2)  NOT NULL,
-    [Ativo] bit  NOT NULL,
-    [IdCategoria] int  NOT NULL
+    [IdCategoria] int  NOT NULL,
+    [Ativo] nvarchar(max)  NULL
 );
 GO
 

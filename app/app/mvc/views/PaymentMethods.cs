@@ -177,9 +177,6 @@ namespace app
            {
                 MessageBox.Show(ex.Message);
            }
-
-
-
         }
     }
 }

@@ -42,5 +42,28 @@ namespace app
 
             comboBox.SelectedIndex = 0;
         }
+
+        public static void PopulateCategoriesIntoBindingSource(BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            sourceToPopulate.DataSource = SingleTown.AppDB.CategoriaSet.ToList<Categoria>();
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
+        }
+
+
+        public static void PopulateCategoriesStatesIntoComboBox(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+
+            comboBox.Items.Add("Ativo");
+            comboBox.Items.Add("Inativo");
+
+            comboBox.SelectedIndex = 0;
+        }
     }
 }

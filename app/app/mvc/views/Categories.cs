@@ -58,6 +58,63 @@ namespace app
 
             Lbl_AddCategorie.BringToFront();
             Lbl_EditCategorie.BringToFront();
+
+            RefreshDataGridView();
+            PopulateData.PopulateCategoriesStatesIntoComboBox(ComboBox_NewCategorieState);
+            DisableEditControls();
+        }
+
+        
+
+        private void EnableEditControls()
+        {
+            TxtBox_CategorieName.Enabled = true;
+            ComboBox_CategorieState.Enabled = true;
+            Btn_SaveChangesOnCategorie.Enabled = true;
+        }
+
+        private void DisableEditControls()
+        {
+            TxtBox_CategorieName.Enabled = false;
+            ComboBox_CategorieState.Enabled = false;
+            Btn_SaveChangesOnCategorie.Enabled = false;
+        }
+
+        private void ResetEditControls()
+        {
+            TxtBox_CategorieName.Text = String.Empty;
+            ComboBox_CategorieState.Items.Clear();
+            ComboBox_CategorieState.ResetText();
+            DisableEditControls();
+        }
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulateCategoriesIntoBindingSource(BindingSource_AllCategories, DataGridView_Categories);
+        }
+
+        private void Btn_AddCategorie_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TxtBox_NewCategorieName.Text)) return;
+
+            Categoria newCategorie = new Categoria
+            {
+                Nome = TxtBox_NewCategorieName.Text,
+                Ativo = ComboBox_NewCategorieState.SelectedItem.ToString()
+            };
+
+            try
+            {
+                CRUD.AddCategory(newCategorie);
+                RefreshDataGridView();
+                TxtBox_NewCategorieName.Text = String.Empty;
+                Resets.ResetSelectedIndex(ComboBox_NewCategorieState, 0);
+
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

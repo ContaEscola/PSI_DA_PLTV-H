@@ -23,5 +23,21 @@ namespace app
 
             return false;
         }
+
+        public static bool HasCategory(Categoria categoryToCheck)
+        {
+            List<Categoria> allCategories = SingleTown.AppDB.CategoriaSet.ToList<Categoria>();
+
+            foreach (Categoria category in allCategories)
+            {
+                if (categoryToCheck.Nome == category.Nome)
+                {
+                    return true;
+
+                }
+            }
+
+            return false;
+        }
     }
 }

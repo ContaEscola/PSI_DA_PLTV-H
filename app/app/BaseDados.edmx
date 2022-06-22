@@ -81,7 +81,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Ativo" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="EstadoSet">
     <Key>
@@ -133,8 +133,8 @@
     <Property Name="Fotografia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Ingredientes" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Preco" Type="decimal" Nullable="false" Scale="2" />
-    <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="IdCategoria" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="PagamentoSet">
     <Key>
@@ -419,8 +419,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ItemMenu" Relationship="BaseDados.CategoriaItemMenu" FromRole="Categoria" ToRole="ItemMenu" />
+          <Property Name="Ativo" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -487,10 +487,10 @@
           <Property Name="Fotografia" Type="String" Nullable="false" />
           <Property Name="Ingredientes" Type="String" Nullable="false" />
           <Property Name="Preco" Type="Decimal" Nullable="false" Scale="2" />
-          <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <Property Name="IdCategoria" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="BaseDados.CategoriaItemMenu" FromRole="ItemMenu" ToRole="Categoria" />
           <NavigationProperty Name="Restaurante" Relationship="BaseDados.ItemMenuRestaurante" FromRole="ItemMenu" ToRole="Restaurante" />
+          <Property Name="Ativo" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -715,8 +715,8 @@
           <ScalarProperty Name="Fotografia" ColumnName="Fotografia" />
           <ScalarProperty Name="Ingredientes" ColumnName="Ingredientes" />
           <ScalarProperty Name="Preco" ColumnName="Preco" />
-          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
           <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

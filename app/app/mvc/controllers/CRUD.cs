@@ -38,5 +38,17 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+
+        public static void AddCategory(Categoria categoryToAdd)
+        {
+            bool hasCategory = VerifyData.HasCategory(categoryToAdd);
+
+            if (hasCategory)
+                throw new Exception("Já existe uma categoria com este nome!");
+
+            SingleTown.AppDB.CategoriaSet.Add(categoryToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
     }
 }

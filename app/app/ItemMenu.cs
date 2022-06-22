@@ -25,8 +25,8 @@ namespace app
         public string Fotografia { get; set; }
         public string Ingredientes { get; set; }
         public decimal Preco { get; set; }
-        public bool Ativo { get; set; }
         public int IdCategoria { get; set; }
+        public string Ativo { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

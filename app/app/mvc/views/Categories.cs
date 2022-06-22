@@ -64,6 +64,7 @@ namespace app
             DisableEditControls();
         }
 
+<<<<<<< HEAD
 
         private void SelectCurrentCategoryState(ComboBox control, Categoria currentCategory)
         {
@@ -81,6 +82,10 @@ namespace app
 
             }
         }
+=======
+        
+
+>>>>>>> development
         private void EnableEditControls()
         {
             TxtBox_CategorieName.Enabled = true;
@@ -130,6 +135,7 @@ namespace app
             {
                 MessageBox.Show(ex.Message);
             }
+<<<<<<< HEAD
         }
 
         private void DataGridView_Categories_SelectionChanged(object sender, EventArgs e)
@@ -176,6 +182,8 @@ namespace app
             {
                 MessageBox.Show(ex.Message);
             }
+=======
+>>>>>>> development
         }
     }
 }

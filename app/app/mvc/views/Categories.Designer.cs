@@ -299,6 +299,20 @@
             this.Column2.ReadOnly = true;
             this.Column2.Width = 85;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ativo";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // Categories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2022 19:04:15
+-- Date Created: 06/22/2022 00:21:43
 -- Generated from EDMX file: C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\BaseDados.edmx
 -- --------------------------------------------------
 
@@ -124,7 +124,7 @@ GO
 CREATE TABLE [dbo].[MetodoPagamentoSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Metodo] nvarchar(max)  NOT NULL,
-    [Ativo] bit  NOT NULL
+    [Ativo] nvarchar(max)  NULL
 );
 GO
 

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridView_PaymentMethods = new System.Windows.Forms.DataGridView();
             this.Lbl_EditPaymentMethod = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,37 +47,51 @@
             this.TxtBox_NewPaymentMethodName = new System.Windows.Forms.TextBox();
             this.Lbl_NewPaymentMethodName = new System.Windows.Forms.Label();
             this.Lbl_PaymentMethods = new System.Windows.Forms.Label();
+            this.BindingSource_AllPaymentMethods = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_PaymentMethods)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridView_PaymentMethods
             // 
+            this.DataGridView_PaymentMethods.AllowUserToAddRows = false;
+            this.DataGridView_PaymentMethods.AllowUserToDeleteRows = false;
             this.DataGridView_PaymentMethods.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_PaymentMethods.AutoGenerateColumns = false;
             this.DataGridView_PaymentMethods.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_PaymentMethods.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_PaymentMethods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_PaymentMethods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_PaymentMethods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_PaymentMethods.DefaultCellStyle = dataGridViewCellStyle10;
+            this.DataGridView_PaymentMethods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.DataGridView_PaymentMethods.DataSource = this.BindingSource_AllPaymentMethods;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_PaymentMethods.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView_PaymentMethods.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_PaymentMethods.Location = new System.Drawing.Point(626, 108);
             this.DataGridView_PaymentMethods.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_PaymentMethods.MultiSelect = false;
             this.DataGridView_PaymentMethods.Name = "DataGridView_PaymentMethods";
+            this.DataGridView_PaymentMethods.ReadOnly = true;
+            this.DataGridView_PaymentMethods.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_PaymentMethods.Size = new System.Drawing.Size(622, 447);
             this.DataGridView_PaymentMethods.TabIndex = 18;
             // 
@@ -200,6 +215,7 @@
             this.Btn_AddPaymentMethod.TabIndex = 3;
             this.Btn_AddPaymentMethod.Text = "Adicionar";
             this.Btn_AddPaymentMethod.UseVisualStyleBackColor = false;
+            this.Btn_AddPaymentMethod.Click += new System.EventHandler(this.Btn_AddPaymentMethod_Click);
             // 
             // ComboBox_NewPaymentMethodState
             // 
@@ -254,6 +270,21 @@
             this.Lbl_PaymentMethods.TabIndex = 13;
             this.Lbl_PaymentMethods.Text = "Métodos de Pagamentos";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Metodo";
+            this.Column1.HeaderText = "Método Pagamento";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ativo";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // PaymentMethods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -278,6 +309,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllPaymentMethods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +333,8 @@
         private System.Windows.Forms.TextBox TxtBox_NewPaymentMethodName;
         private System.Windows.Forms.Label Lbl_NewPaymentMethodName;
         private System.Windows.Forms.Label Lbl_PaymentMethods;
+        private System.Windows.Forms.BindingSource BindingSource_AllPaymentMethods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

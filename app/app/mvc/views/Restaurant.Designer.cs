@@ -302,11 +302,11 @@
             // 
             // Lbl_NewWorkerPostalCode
             // 
-            this.Lbl_NewWorkerPostalCode.Location = new System.Drawing.Point(310, 149);
+            this.Lbl_NewWorkerPostalCode.Location = new System.Drawing.Point(298, 149);
             this.Lbl_NewWorkerPostalCode.Name = "Lbl_NewWorkerPostalCode";
             this.Lbl_NewWorkerPostalCode.Size = new System.Drawing.Size(100, 23);
             this.Lbl_NewWorkerPostalCode.TabIndex = 29;
-            this.Lbl_NewWorkerPostalCode.Text = "Cód. Postal:";
+            this.Lbl_NewWorkerPostalCode.Text = "Cód. Postal";
             // 
             // TxtBox_NewWorkerCity
             // 

@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_RemoveClient = new System.Windows.Forms.Button();
             this.DataGridView_Clients = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllClients = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_AddClient = new System.Windows.Forms.Button();
             this.MaskedTxtBox_NewClientPostalCode = new System.Windows.Forms.MaskedTextBox();
@@ -68,6 +75,7 @@
             this.Lbl_ClientName = new System.Windows.Forms.Label();
             this.Lbl_EditClient = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Clients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +85,7 @@
             this.Btn_RemoveClient.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_RemoveClient.AutoSize = true;
             this.Btn_RemoveClient.BackColor = System.Drawing.Color.White;
+            this.Btn_RemoveClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_RemoveClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_RemoveClient.Location = new System.Drawing.Point(701, 774);
             this.Btn_RemoveClient.Margin = new System.Windows.Forms.Padding(0);
@@ -85,10 +94,14 @@
             this.Btn_RemoveClient.TabIndex = 31;
             this.Btn_RemoveClient.Text = "Remover Cliente";
             this.Btn_RemoveClient.UseVisualStyleBackColor = false;
+            this.Btn_RemoveClient.Click += new System.EventHandler(this.Btn_RemoveClient_Click);
             // 
             // DataGridView_Clients
             // 
+            this.DataGridView_Clients.AllowUserToAddRows = false;
+            this.DataGridView_Clients.AllowUserToDeleteRows = false;
             this.DataGridView_Clients.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_Clients.AutoGenerateColumns = false;
             this.DataGridView_Clients.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_Clients.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -100,6 +113,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_Clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_Clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Clients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column5,
+            this.Column4,
+            this.Column2,
+            this.Column3});
+            this.DataGridView_Clients.DataSource = this.BindingSource_AllClients;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,9 +131,49 @@
             this.DataGridView_Clients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_Clients.Location = new System.Drawing.Point(701, 217);
             this.DataGridView_Clients.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_Clients.MultiSelect = false;
             this.DataGridView_Clients.Name = "DataGridView_Clients";
+            this.DataGridView_Clients.ReadOnly = true;
+            this.DataGridView_Clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Clients.Size = new System.Drawing.Size(622, 475);
             this.DataGridView_Clients.TabIndex = 30;
+            this.DataGridView_Clients.SelectionChanged += new System.EventHandler(this.DataGridView_Clients_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NumContribuinte";
+            this.Column5.HeaderText = "Num. Contribuinte";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Telemovel";
+            this.Column4.HeaderText = "Telemovel";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Morada";
+            this.Column2.HeaderText = "Morada";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PaisExtracted";
+            this.Column3.HeaderText = "Pais";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // panel1
             // 
@@ -144,6 +204,7 @@
             // 
             this.Btn_AddClient.AutoSize = true;
             this.Btn_AddClient.BackColor = System.Drawing.Color.White;
+            this.Btn_AddClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddClient.Location = new System.Drawing.Point(24, 201);
             this.Btn_AddClient.Margin = new System.Windows.Forms.Padding(0);
@@ -162,7 +223,6 @@
             this.MaskedTxtBox_NewClientPostalCode.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_NewClientPostalCode.Mask = "0000 - 000";
             this.MaskedTxtBox_NewClientPostalCode.Name = "MaskedTxtBox_NewClientPostalCode";
-            this.MaskedTxtBox_NewClientPostalCode.PromptChar = '0';
             this.MaskedTxtBox_NewClientPostalCode.Size = new System.Drawing.Size(117, 26);
             this.MaskedTxtBox_NewClientPostalCode.TabIndex = 23;
             this.MaskedTxtBox_NewClientPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -253,7 +313,6 @@
             this.MaskedTxtBox_NewClientNIF.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_NewClientNIF.Mask = "000000000";
             this.MaskedTxtBox_NewClientNIF.Name = "MaskedTxtBox_NewClientNIF";
-            this.MaskedTxtBox_NewClientNIF.PromptChar = '0';
             this.MaskedTxtBox_NewClientNIF.Size = new System.Drawing.Size(119, 26);
             this.MaskedTxtBox_NewClientNIF.TabIndex = 11;
             this.MaskedTxtBox_NewClientNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -278,7 +337,6 @@
             this.MaskedTxtBox_NewClientPhone.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_NewClientPhone.Mask = "000 - 000 - 000";
             this.MaskedTxtBox_NewClientPhone.Name = "MaskedTxtBox_NewClientPhone";
-            this.MaskedTxtBox_NewClientPhone.PromptChar = '0';
             this.MaskedTxtBox_NewClientPhone.Size = new System.Drawing.Size(117, 26);
             this.MaskedTxtBox_NewClientPhone.TabIndex = 13;
             this.MaskedTxtBox_NewClientPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -370,6 +428,7 @@
             // 
             this.Btn_SaveChangesOnClient.AutoSize = true;
             this.Btn_SaveChangesOnClient.BackColor = System.Drawing.Color.White;
+            this.Btn_SaveChangesOnClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_SaveChangesOnClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_SaveChangesOnClient.Location = new System.Drawing.Point(24, 201);
             this.Btn_SaveChangesOnClient.Margin = new System.Windows.Forms.Padding(0);
@@ -378,6 +437,7 @@
             this.Btn_SaveChangesOnClient.TabIndex = 11;
             this.Btn_SaveChangesOnClient.Text = "Guardar";
             this.Btn_SaveChangesOnClient.UseVisualStyleBackColor = false;
+            this.Btn_SaveChangesOnClient.Click += new System.EventHandler(this.Btn_SaveChangesOnClient_Click);
             // 
             // MaskedTxtBox_ClientPostalCode
             // 
@@ -387,7 +447,6 @@
             this.MaskedTxtBox_ClientPostalCode.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_ClientPostalCode.Mask = "0000 - 000";
             this.MaskedTxtBox_ClientPostalCode.Name = "MaskedTxtBox_ClientPostalCode";
-            this.MaskedTxtBox_ClientPostalCode.PromptChar = '0';
             this.MaskedTxtBox_ClientPostalCode.Size = new System.Drawing.Size(117, 26);
             this.MaskedTxtBox_ClientPostalCode.TabIndex = 23;
             this.MaskedTxtBox_ClientPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -478,7 +537,6 @@
             this.MaskedTxtBox_ClientNIF.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_ClientNIF.Mask = "000000000";
             this.MaskedTxtBox_ClientNIF.Name = "MaskedTxtBox_ClientNIF";
-            this.MaskedTxtBox_ClientNIF.PromptChar = '0';
             this.MaskedTxtBox_ClientNIF.Size = new System.Drawing.Size(119, 26);
             this.MaskedTxtBox_ClientNIF.TabIndex = 11;
             this.MaskedTxtBox_ClientNIF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -503,7 +561,6 @@
             this.MaskedTxtBox_ClientPhone.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_ClientPhone.Mask = "000 - 000 - 000";
             this.MaskedTxtBox_ClientPhone.Name = "MaskedTxtBox_ClientPhone";
-            this.MaskedTxtBox_ClientPhone.PromptChar = '0';
             this.MaskedTxtBox_ClientPhone.Size = new System.Drawing.Size(117, 26);
             this.MaskedTxtBox_ClientPhone.TabIndex = 13;
             this.MaskedTxtBox_ClientPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -571,10 +628,11 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Clients";
-            this.Text = "Clients";
+            this.Text = "Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Clients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Clients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -622,5 +680,11 @@
         private System.Windows.Forms.TextBox TxtBox_ClientName;
         private System.Windows.Forms.Label Lbl_ClientName;
         private System.Windows.Forms.Label Lbl_EditClient;
+        private System.Windows.Forms.BindingSource BindingSource_AllClients;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

@@ -70,5 +70,10 @@ namespace app
             BaseController.RenderView(globalRestaurants);
         }
 
+        private void Btn_ClientsGlobalManagement_Click(object sender, EventArgs e)
+        {
+            Clients clientsView = new Clients();
+            BaseController.RenderView(clientsView);
+        }
     }
 }

@@ -29,9 +29,6 @@ namespace app
         public virtual DbSet<Estado> EstadoSet { get; set; }
         public virtual DbSet<MetodoPagamento> MetodoPagamentoSet { get; set; }
         public virtual DbSet<Pessoa> PessoaSet { get; set; }
-
-        //https://blog.devart.com/how-to-work-with-inheritance-in-entity-framework-core.html
-        public virtual DbSet<Trabalhador> TrabalhadorSet { get; set; }
         public virtual DbSet<Morada> MoradaSet { get; set; }
         public virtual DbSet<Restaurante> RestauranteSet { get; set; }
         public virtual DbSet<ItemMenu> ItemMenuSet { get; set; }

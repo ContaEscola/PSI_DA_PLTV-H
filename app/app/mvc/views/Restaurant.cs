@@ -323,5 +323,11 @@ namespace app
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_RemoveWorker_Click(object sender, EventArgs e)
+        {
+            CRUD.RemoveEmployee();
+            RefreshDataGridView();
+        }
     }
 }

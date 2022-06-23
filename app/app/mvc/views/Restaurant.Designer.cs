@@ -42,6 +42,7 @@
             this.Lbl_Street = new System.Windows.Forms.Label();
             this.Lbl_AddWorker = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtBox_NewWorkerSalary = new System.Windows.Forms.TextBox();
             this.TxtBox_NewWorkerCountry = new System.Windows.Forms.TextBox();
             this.Lbl_NewWorkerCountry = new System.Windows.Forms.Label();
             this.Btn_AddWorker = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.TxtBox_NewWorkerName = new System.Windows.Forms.TextBox();
             this.Lbl_NewWorkerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TxtBox_WorkerSalary = new System.Windows.Forms.TextBox();
             this.TxtBox_WorkerCountry = new System.Windows.Forms.TextBox();
             this.Lbl_WorkerCountry = new System.Windows.Forms.Label();
             this.Btn_SaveChangesOnWorker = new System.Windows.Forms.Button();
@@ -86,8 +88,6 @@
             this.Btn_RemoveWorker = new System.Windows.Forms.Button();
             this.Btn_ManageMenu = new System.Windows.Forms.Button();
             this.Btn_ManageOrders = new System.Windows.Forms.Button();
-            this.TxtBox_NewWorkerSalary = new System.Windows.Forms.TextBox();
-            this.TxtBox_WorkerSalary = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Employees)).BeginInit();
@@ -241,6 +241,16 @@
             this.panel1.Size = new System.Drawing.Size(546, 252);
             this.panel1.TabIndex = 10;
             // 
+            // TxtBox_NewWorkerSalary
+            // 
+            this.TxtBox_NewWorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_NewWorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerSalary.Name = "TxtBox_NewWorkerSalary";
+            this.TxtBox_NewWorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_NewWorkerSalary.TabIndex = 28;
+            // 
             // TxtBox_NewWorkerCountry
             // 
             this.TxtBox_NewWorkerCountry.BackColor = System.Drawing.Color.White;
@@ -290,15 +300,12 @@
             this.MaskedTxtBox_NewWorkerPostalCode.TabIndex = 7;
             this.MaskedTxtBox_NewWorkerPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TxtBox_NewWorkerStreet
+            // Lbl_NewWorkerPostalCode
             // 
-            this.TxtBox_NewWorkerStreet.BackColor = System.Drawing.Color.White;
-            this.TxtBox_NewWorkerStreet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.TxtBox_NewWorkerStreet.Location = new System.Drawing.Point(65, 108);
-            this.TxtBox_NewWorkerStreet.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_NewWorkerStreet.Name = "TxtBox_NewWorkerStreet";
-            this.TxtBox_NewWorkerStreet.Size = new System.Drawing.Size(461, 26);
-            this.TxtBox_NewWorkerStreet.TabIndex = 5;
+            this.Lbl_NewWorkerPostalCode.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_NewWorkerPostalCode.Name = "Lbl_NewWorkerPostalCode";
+            this.Lbl_NewWorkerPostalCode.Size = new System.Drawing.Size(100, 23);
+            this.Lbl_NewWorkerPostalCode.TabIndex = 29;
             // 
             // TxtBox_NewWorkerCity
             // 
@@ -450,6 +457,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(546, 252);
             this.panel2.TabIndex = 12;
+            // 
+            // TxtBox_WorkerSalary
+            // 
+            this.TxtBox_WorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_WorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_WorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_WorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_WorkerSalary.Name = "TxtBox_WorkerSalary";
+            this.TxtBox_WorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_WorkerSalary.TabIndex = 29;
             // 
             // TxtBox_WorkerCountry
             // 
@@ -740,6 +757,7 @@
             this.Btn_RemoveWorker.TabIndex = 20;
             this.Btn_RemoveWorker.Text = "Remover Trabalhador";
             this.Btn_RemoveWorker.UseVisualStyleBackColor = false;
+            this.Btn_RemoveWorker.Click += new System.EventHandler(this.Btn_RemoveWorker_Click);
             // 
             // Btn_ManageMenu
             // 

@@ -167,5 +167,12 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+        public static void RemoveEmployee()
+        {
+            SingleTown.SelectedEmployee.Ativo = "Inativo";
+            SingleTown.AppDB.SaveChanges();
+
+        }
     }
 }

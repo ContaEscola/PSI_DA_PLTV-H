@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,7 @@ namespace app
             fontsForControls.Add(MaskedTxtBox_NewWorkerPhone, FontLoader.RobotoSlabRegular);
 
             fontsForControls.Add(Lbl_NewWorkerSalary, FontLoader.RobotoSlabRegular);
-            fontsForControls.Add(MaskedTxtBox_NewWorkerSalary, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add(TxtBox_NewWorkerSalary, FontLoader.RobotoSlabRegular);
 
             fontsForControls.Add(Lbl_NewWorkerPosition, FontLoader.RobotoSlabRegular);
             fontsForControls.Add(TxtBox_NewWorkerPosition, FontLoader.RobotoSlabRegular);
@@ -81,7 +82,7 @@ namespace app
             fontsForControls.Add(MaskedTxtBox_WorkerPhone, FontLoader.RobotoSlabRegular);
 
             fontsForControls.Add(Lbl_WorkerSalary, FontLoader.RobotoSlabRegular);
-            fontsForControls.Add(MaskedTxtBox_WorkerSalary, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add(TxtBox_WorkerSalary, FontLoader.RobotoSlabRegular);
 
             fontsForControls.Add(Lbl_WorkerPosition, FontLoader.RobotoSlabRegular);
             fontsForControls.Add(TxtBox_WorkerPosition, FontLoader.RobotoSlabRegular);
@@ -130,7 +131,7 @@ namespace app
         {
             TxtBox_WorkerName.Enabled = true;
             MaskedTxtBox_WorkerPhone.Enabled = true;
-            MaskedTxtBox_WorkerSalary.Enabled = true;
+            TxtBox_WorkerSalary.Enabled = true;
             TxtBox_WorkerPosition.Enabled = true;
             TxtBox_WorkerStreet.Enabled = true;
             TxtBox_WorkerCity.Enabled = true;
@@ -145,7 +146,7 @@ namespace app
         {
             TxtBox_WorkerName.Enabled = false;
             MaskedTxtBox_WorkerPhone.Enabled = false;
-            MaskedTxtBox_WorkerSalary.Enabled = false;
+            TxtBox_WorkerSalary.Enabled = false;
             TxtBox_WorkerPosition.Enabled = false;
             TxtBox_WorkerStreet.Enabled = false;
             TxtBox_WorkerCity.Enabled = false;
@@ -160,18 +161,30 @@ namespace app
         {
             TxtBox_NewWorkerName.ResetText();
             MaskedTxtBox_NewWorkerPhone.ResetText();
-            MaskedTxtBox_NewWorkerSalary.ResetText();
+            TxtBox_NewWorkerSalary.ResetText();
             TxtBox_NewWorkerPosition.ResetText();
             TxtBox_NewWorkerStreet.ResetText();
             TxtBox_NewWorkerCity.ResetText();
             MaskedTxtBox_NewWorkerPostalCode.ResetText();
             TxtBox_NewWorkerCountry.ResetText();
         }
+
+        private void PopulateEditControls()
+        {
+            TxtBox_WorkerName.Text = SingleTown.SelectedEmployee.Nome;
+            MaskedTxtBox_WorkerPhone.Text = SingleTown.SelectedEmployee.Telemovel;
+            TxtBox_WorkerSalary.Text = SingleTown.SelectedEmployee.SalarioFormated;
+            TxtBox_WorkerPosition.Text = SingleTown.SelectedEmployee.Posicao;
+            TxtBox_WorkerStreet.Text = SingleTown.SelectedEmployee.Morada.Rua;
+            TxtBox_WorkerCity.Text = SingleTown.SelectedEmployee.Morada.Cidade;
+            MaskedTxtBox_WorkerPostalCode.Text = SingleTown.SelectedEmployee.Morada.CodPostal;
+            TxtBox_WorkerCountry.Text = SingleTown.SelectedEmployee.Morada.Pais;
+        }
         private void ResetEditControls()
         {
             TxtBox_WorkerName.ResetText();
             MaskedTxtBox_WorkerPhone.ResetText();
-            MaskedTxtBox_WorkerSalary.ResetText();
+            TxtBox_WorkerSalary.ResetText();
             TxtBox_WorkerPosition.ResetText();
             TxtBox_WorkerStreet.ResetText();
             TxtBox_WorkerCity.ResetText();
@@ -187,14 +200,18 @@ namespace app
 
         private void Btn_AddWorker_Click(object sender, EventArgs e)
         {
-           if (StringHelper.IsEmptyOrNull(TxtBox_NewWorkerName,TxtBox_NewWorkerPosition, TxtBox_NewWorkerStreet, TxtBox_NewWorkerCity, TxtBox_NewWorkerCountry,MaskedTxtBox_NewWorkerPhone, MaskedTxtBox_NewWorkerPostalCode, MaskedTxtBox_NewWorkerSalary)) 
+           if (StringHelper.IsEmptyOrNull(TxtBox_NewWorkerName,TxtBox_NewWorkerPosition, TxtBox_NewWorkerStreet, TxtBox_NewWorkerCity, TxtBox_NewWorkerCountry,MaskedTxtBox_NewWorkerPhone, MaskedTxtBox_NewWorkerPostalCode, TxtBox_NewWorkerSalary)) 
                 return;
 
            try
            {
                 string codPostal = MaskedTxtBox_NewWorkerPostalCode.Text;
                 string telemovel = MaskedTxtBox_NewWorkerPhone.Text;
-                string salario = MaskedTxtBox_NewWorkerSalary.Text;
+
+                string salario = TxtBox_NewWorkerSalary.Text;
+                NumberFormatInfo format = new NumberFormatInfo { NumberDecimalSeparator = "." };
+                decimal salarioConverted = Decimal.Parse(salario,format);
+
                 StringHelper.RemoveEuroFromString(ref salario);
                 StringHelper.TrimAllWhiteSpace(ref telemovel);
                 StringHelper.TrimAllWhiteSpace(ref codPostal);
@@ -211,45 +228,37 @@ namespace app
                     Pais = TxtBox_NewWorkerCountry.Text
                 };
 
-                Pessoa newPerson = new Pessoa
-                {
-                    Nome = TxtBox_NewWorkerName.Text,
-                    Telemovel = telemovel,
-                    Ativo = "Ativo"
-                };
-
                 Trabalhador newEmployee = new Trabalhador
                 {
                     Nome = TxtBox_NewWorkerName.Text,
                     Telemovel = telemovel,
-                    Salario = Convert.ToDecimal(salario),
+                    Salario = salarioConverted,
                     Posicao = TxtBox_NewWorkerPosition.Text,
                     IdRestaurante = _restaurant.Id,
                     Ativo = "Ativo"
                 };
 
                 VerifyData.HasMoradaForPerson(newMorada);
-                VerifyData.HasPerson(newPerson);
+                VerifyData.HasEmployee(newEmployee);
 
                 CRUD.AddMorada(newMorada);
                 Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
 
-                newPerson.IdMorada = moradaInDB.Id;
-
-                CRUD.AddPerson(newPerson);
-                Pessoa personInDB = CRUD.GetPerson(newPerson.Nome);
-
-                newEmployee.Id = personInDB.Id;
                 newEmployee.IdMorada = moradaInDB.Id;
 
                 CRUD.AddEmployee(newEmployee);
                 RefreshDataGridView();
                 ResetAddControls();
            }
+           catch (FormatException)
+           {
+                MessageBox.Show("O salário inserido é inválido!");
+           }
            catch (Exception ex)
            {
                 MessageBox.Show(ex.Message);
            }
+           
         }
 
         private void DataGridView_Employees_SelectionChanged(object sender, EventArgs e)
@@ -264,9 +273,55 @@ namespace app
 
                 SingleTown.SelectedEmployee = selectedEmployee;
 
+                PopulateEditControls();
+
             } else
             {
                 ResetEditControls();
+            }
+        }
+
+        private void Btn_SaveChangesOnWorker_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_WorkerName, TxtBox_WorkerPosition, TxtBox_WorkerStreet, TxtBox_WorkerCity, TxtBox_WorkerCountry, MaskedTxtBox_WorkerPhone, MaskedTxtBox_WorkerPostalCode, TxtBox_WorkerSalary))
+                return;
+            try
+            {
+                string codPostal = MaskedTxtBox_WorkerPostalCode.Text;
+                string telemovel = MaskedTxtBox_WorkerPhone.Text;
+                string salario = TxtBox_WorkerSalary.Text;
+                decimal salarioConverted = Decimal.Parse(salario);
+                StringHelper.RemoveEuroFromString(ref salario);
+                StringHelper.TrimAllWhiteSpace(ref telemovel);
+                StringHelper.TrimAllWhiteSpace(ref codPostal);
+
+
+                if (codPostal.Length != 8) throw new Exception("O trabalhador tem um código postal inválido!");
+                if (telemovel.Length != 11) throw new Exception("O trabalhador tem um número de telemóvel inválido!");
+
+                Morada updatedMorada = new Morada
+                {
+                    Rua = TxtBox_WorkerStreet.Text,
+                    Cidade = TxtBox_WorkerCity.Text,
+                    CodPostal = codPostal,
+                    Pais = TxtBox_WorkerCountry.Text
+                };
+
+                Trabalhador updatedEmployee = new Trabalhador
+                {
+                    Nome = TxtBox_WorkerName.Text,
+                    Telemovel = telemovel,
+                    Salario = salarioConverted,
+                    Posicao = TxtBox_WorkerPosition.Text,
+                    Morada = updatedMorada
+                };
+
+                CRUD.EditEmployee(updatedEmployee);
+                RefreshDataGridView();
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

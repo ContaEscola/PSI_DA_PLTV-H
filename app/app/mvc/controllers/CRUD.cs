@@ -154,5 +154,38 @@ namespace app
 
             return employee;
         }
+
+
+        public static void EditEmployee(Trabalhador updatedEmployee)
+        {
+            var allEmployees = SingleTown.AppDB.TrabalhadorSet;
+
+            Trabalhador checkForExistentNames = (Trabalhador)allEmployees.Where(e => e.Nome == updatedEmployee.Nome && e.Id != SingleTown.SelectedEmployee.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe um trabalhador com esse nome!");
+
+            List<Restaurante> checkForExistentRua = (from morada in SingleTown.AppDB.MoradaSet
+                                               join restaurante in SingleTown.AppDB.RestauranteSet on morada.Id equals restaurante.Morada.Id
+                                               where morada.Rua == updatedEmployee.Morada.Rua && restaurante.Id != SingleTown.SelectedEmployee.IdRestaurante
+                                               select restaurante).ToList<Restaurante>();
+
+            if (checkForExistentRua.Count > 0)
+                throw new Exception($"Esta rua já está a ser utilizada!{Environment.NewLine}Experimente completá-la com mais informações!");
+
+            SingleTown.SelectedEmployee.Nome = updatedEmployee.Nome;
+            SingleTown.SelectedEmployee.Telemovel = updatedEmployee.Telemovel;
+            SingleTown.SelectedEmployee.Salario = updatedEmployee.Salario;
+            SingleTown.SelectedEmployee.Posicao = updatedEmployee.Posicao;
+
+            SingleTown.SelectedEmployee.Morada.Rua = updatedEmployee.Morada.Rua;
+            SingleTown.SelectedEmployee.Morada.Cidade = updatedEmployee.Morada.Cidade;
+            SingleTown.SelectedEmployee.Morada.CodPostal = updatedEmployee.Morada.CodPostal;
+            SingleTown.SelectedEmployee.Morada.Pais = updatedEmployee.Morada.Pais;
+
+
+            SingleTown.AppDB.SaveChanges();
+
+        }
     }
 }

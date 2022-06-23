@@ -64,8 +64,22 @@ namespace app
             DisableEditControls();
         }
 
-        
+        private void SelectCurrentCategoryState(ComboBox control, Categoria currentCategory)
+        {
+            string currentStateToSelect = currentCategory.Ativo;
+            int counter = -1;
 
+
+            foreach (string state in control.Items)
+            {
+                counter++;
+                if (state == currentStateToSelect)
+                {
+                    control.SelectedIndex = counter;
+                }
+
+            }
+        }
         private void EnableEditControls()
         {
             TxtBox_CategorieName.Enabled = true;
@@ -115,6 +129,53 @@ namespace app
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void DataGridView_Categories_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_Categories.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+                Categoria selectedCategory = new Categoria
+                {
+                    Nome = DataGridView_Categories.CurrentRow.Cells[0].Value.ToString(),
+                    Ativo = DataGridView_Categories.CurrentRow.Cells[1].Value.ToString()
+                };
+
+                SingleTown.SelectedCategory = selectedCategory;
+
+                TxtBox_CategorieName.Text = SingleTown.SelectedCategory.Nome;
+                PopulateData.PopulateCategoriesStatesIntoComboBox(ComboBox_CategorieState);
+                SelectCurrentCategoryState(ComboBox_CategorieState, SingleTown.SelectedCategory);
+            }
+            else
+            {
+                ResetEditControls();
+            }
+                
+        }
+
+        private void Btn_SaveChangesOnCategorie_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TxtBox_CategorieName.Text)) return;
+
+            try
+            {
+                Categoria updatedCategory = new Categoria
+                {
+                    Nome = TxtBox_CategorieName.Text,
+                    Ativo = ComboBox_CategorieState.SelectedItem.ToString()
+                };
+
+                CRUD.EditCategory(updatedCategory);
+                RefreshDataGridView();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

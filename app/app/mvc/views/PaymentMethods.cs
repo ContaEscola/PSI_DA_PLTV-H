@@ -147,7 +147,7 @@ namespace app
 
                 SingleTown.SelectedPaymentMethod = selectedPaymentMethod;
 
-                TxtBox_PaymentMethodName.Text = SingleTown.SelectedPaymentMethod.Metodo.ToString();
+                TxtBox_PaymentMethodName.Text = SingleTown.SelectedPaymentMethod.Metodo;
                 PopulateData.PopulatePaymentMethodsStatesIntoComboBox(ComboBox_PaymentMethodState);
                 SelectCurrentPaymentMethodState(ComboBox_PaymentMethodState, SingleTown.SelectedPaymentMethod);
             }      

@@ -56,7 +56,7 @@ namespace app
         }
 
 
-        public static void PopulateAllCategories(ComboBox combobox)
+        public static void PopulateAllCategoriesIntoComboBox(ComboBox combobox)
         {
 
             List<Categoria> allCategories = (from categorie in SingleTown.AppDB.CategoriaSet 

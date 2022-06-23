@@ -101,32 +101,16 @@ namespace app
             this.Text = $"Menu: {_restaurant.Nome}";
             Lbl_RestaurantName.Text = _restaurant.Nome;
 
-            PopulateData.PopulateAllCategories(ComboBox_NewItemCategory);
+            RefreshDataGridView();
+            PopulateData.PopulateAllCategoriesIntoComboBox(ComboBox_NewItemCategory);
 
         }
 
-        private void Btn_AddItem_Click(object sender, EventArgs e)
+   
+
+        private void RefreshDataGridView()
         {
-            if (StringHelper.IsEmptyOrNull(TxtBox_NewItemName, RichTxtBox_NewItemIngredients, MaskedTxtBox_NewItemPrice, ComboBox_NewItemState))
-                return;
-
-           /* try
-            {
-                string nome = TxtBox_NewItemName.Text;
-                string ingredientes = RichTxtBox_NewItemIngredients.Text;
-                string preco = MaskedTxtBox_NewItemPrice.Text;
-                StringHelper.RemoveEuroFromString(ref preco);
-
-
-
-            }*/
-
-
-        }
-
-        private void RefreshListview()
-        {
-            PopulateData.PopulateAllCategories(ComboBox_NewItemCategory);
+            PopulateData.PopulateMenuItems(BindingSource_MenuItems, DataGridView_MenuItems);
         }
 
     }

@@ -29,6 +29,7 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Menu = new System.Windows.Forms.Label();
@@ -69,11 +70,14 @@ namespace app
             this.Btn_ManageCategories = new System.Windows.Forms.Button();
             this.Btn_ChangeRestaurant = new System.Windows.Forms.Button();
             this.DataGridView_MenuItems = new System.Windows.Forms.DataGridView();
+            this.BindingSource_MenuItems = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_MenuItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_MenuItems)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Menu
@@ -160,7 +164,6 @@ namespace app
             this.Btn_AddItem.TabIndex = 5;
             this.Btn_AddItem.Text = "Adicionar";
             this.Btn_AddItem.UseVisualStyleBackColor = false;
-            this.Btn_AddItem.Click += new System.EventHandler(this.Btn_AddItem_Click);
             // 
             // Btn_AddExistentItem
             // 
@@ -530,6 +533,7 @@ namespace app
             this.DataGridView_MenuItems.AllowUserToAddRows = false;
             this.DataGridView_MenuItems.AllowUserToDeleteRows = false;
             this.DataGridView_MenuItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_MenuItems.AutoGenerateColumns = false;
             this.DataGridView_MenuItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_MenuItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -543,7 +547,9 @@ namespace app
             this.DataGridView_MenuItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_MenuItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Column3,
             this.Column2});
+            this.DataGridView_MenuItems.DataSource = this.BindingSource_MenuItems;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -564,16 +570,24 @@ namespace app
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Metodo";
-            this.Column1.HeaderText = "Método Pagamento";
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column3.DataPropertyName = "Ingredientes";
+            this.Column3.HeaderText = "Ingredientes";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 123;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "Ativo";
-            this.Column2.HeaderText = "Estado";
+            this.Column2.DataPropertyName = "PrecoFormated";
+            this.Column2.HeaderText = "Preço";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -607,6 +621,7 @@ namespace app
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_MenuItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_MenuItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,7 +667,9 @@ namespace app
         private System.Windows.Forms.Button Btn_ManageCategories;
         private System.Windows.Forms.Button Btn_ChangeRestaurant;
         private System.Windows.Forms.DataGridView DataGridView_MenuItems;
+        private System.Windows.Forms.BindingSource BindingSource_MenuItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

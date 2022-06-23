@@ -74,10 +74,17 @@
             this.TxtBox_ClientName = new System.Windows.Forms.TextBox();
             this.Lbl_ClientName = new System.Windows.Forms.Label();
             this.Lbl_EditClient = new System.Windows.Forms.Label();
+            this.BindingSource_AllClients = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Clients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_RemoveClient
@@ -610,6 +617,42 @@
             this.Lbl_EditClient.TabIndex = 34;
             this.Lbl_EditClient.Text = "Editar Cliente";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NumContribuinte";
+            this.Column5.HeaderText = "Num. Contribuinte";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Telemovel";
+            this.Column4.HeaderText = "Telemovel";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Morada";
+            this.Column2.HeaderText = "Morada";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PaisExtracted";
+            this.Column3.HeaderText = "Pais";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -636,6 +679,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

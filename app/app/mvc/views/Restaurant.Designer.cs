@@ -774,6 +774,7 @@
             this.Btn_ManageMenu.TabIndex = 21;
             this.Btn_ManageMenu.Text = "Gerir Menu";
             this.Btn_ManageMenu.UseVisualStyleBackColor = false;
+            this.Btn_ManageMenu.Click += new System.EventHandler(this.Btn_ManageMenu_Click);
             // 
             // Btn_ManageOrders
             // 

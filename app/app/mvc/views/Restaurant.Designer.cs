@@ -789,6 +789,26 @@
             this.Btn_ManageOrders.Text = "Gerir Pedidos";
             this.Btn_ManageOrders.UseVisualStyleBackColor = false;
             // 
+            // TxtBox_NewWorkerSalary
+            // 
+            this.TxtBox_NewWorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_NewWorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerSalary.Name = "TxtBox_NewWorkerSalary";
+            this.TxtBox_NewWorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_NewWorkerSalary.TabIndex = 28;
+            // 
+            // TxtBox_WorkerSalary
+            // 
+            this.TxtBox_WorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_WorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_WorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_WorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_WorkerSalary.Name = "TxtBox_WorkerSalary";
+            this.TxtBox_WorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_WorkerSalary.TabIndex = 29;
+            // 
             // Restaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

@@ -109,6 +109,20 @@ namespace app
             this.DataGridView_Restaurants.TabIndex = 1;
             this.DataGridView_Restaurants.SelectionChanged += new System.EventHandler(this.DataGridView_Restaurants_SelectionChanged);
             // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Morada
+            // 
+            this.Morada.DataPropertyName = "Morada";
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            // 
             // Btn_RegisterNewRestaurant
             // 
             this.Btn_RegisterNewRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;

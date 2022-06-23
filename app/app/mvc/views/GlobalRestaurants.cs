@@ -55,11 +55,13 @@ namespace app
         private void EnableEditControls()
         {
             Btn_EditRestaurant.Enabled = true;
+            Btn_ManageRestaurant.Enabled = true;
         }
 
         private void DisableEditControls()
         {
             Btn_EditRestaurant.Enabled = false;
+            Btn_ManageRestaurant.Enabled = false;
         }
 
         private void RefreshDataGridView()
@@ -81,7 +83,7 @@ namespace app
 
         private void Btn_ManageRestaurant_Click(object sender, EventArgs e)
         {
-            BaseController.RenderView(new Restaurant());
+            BaseController.RenderView(new Restaurant(SingleTown.SelectedRestaurant));
         }
         
         private void Btn_ManageCategories_Click(object sender, EventArgs e)

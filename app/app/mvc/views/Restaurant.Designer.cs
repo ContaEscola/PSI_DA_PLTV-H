@@ -88,6 +88,7 @@
             this.Btn_RemoveWorker = new System.Windows.Forms.Button();
             this.Btn_ManageMenu = new System.Windows.Forms.Button();
             this.Btn_ManageOrders = new System.Windows.Forms.Button();
+            this.BindingSource_AllEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Employees)).BeginInit();
@@ -290,17 +291,15 @@
             this.MaskedTxtBox_NewWorkerPostalCode.TabIndex = 7;
             this.MaskedTxtBox_NewWorkerPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Lbl_NewWorkerPostalCode
+            // TxtBox_NewWorkerStreet
             // 
-            this.Lbl_NewWorkerPostalCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_NewWorkerPostalCode.AutoSize = true;
-            this.Lbl_NewWorkerPostalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_NewWorkerPostalCode.Location = new System.Drawing.Point(304, 149);
-            this.Lbl_NewWorkerPostalCode.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_NewWorkerPostalCode.Name = "Lbl_NewWorkerPostalCode";
-            this.Lbl_NewWorkerPostalCode.Size = new System.Drawing.Size(94, 20);
-            this.Lbl_NewWorkerPostalCode.TabIndex = 22;
-            this.Lbl_NewWorkerPostalCode.Text = "Cód. Postal:";
+            this.TxtBox_NewWorkerStreet.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerStreet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerStreet.Location = new System.Drawing.Point(65, 108);
+            this.TxtBox_NewWorkerStreet.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerStreet.Name = "TxtBox_NewWorkerStreet";
+            this.TxtBox_NewWorkerStreet.Size = new System.Drawing.Size(461, 26);
+            this.TxtBox_NewWorkerStreet.TabIndex = 19;
             // 
             // TxtBox_NewWorkerCity
             // 

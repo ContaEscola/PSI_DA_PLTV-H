@@ -119,7 +119,7 @@ namespace app
                     };
 
                     VerifyData.HasRestaurant(newRestaurant);
-                    VerifyData.HasMorada(newMorada);
+                    VerifyData.HasMoradaForRestaurant(newMorada);
                     CRUD.AddMorada(newMorada);
                     Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
 

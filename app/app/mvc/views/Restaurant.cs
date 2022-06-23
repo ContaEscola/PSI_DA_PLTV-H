@@ -123,7 +123,6 @@ namespace app
             Lbl_RestaurantStreet.Text = _restaurant.Morada.Rua;
 
             RefreshDataGridView();
-
             DisableEditControls();
         }
 
@@ -157,6 +156,17 @@ namespace app
             Btn_RemoveWorker.Enabled = false;
         }
 
+        private void ResetAddControls()
+        {
+            TxtBox_NewWorkerName.ResetText();
+            MaskedTxtBox_NewWorkerPhone.ResetText();
+            MaskedTxtBox_NewWorkerSalary.ResetText();
+            TxtBox_NewWorkerPosition.ResetText();
+            TxtBox_NewWorkerStreet.ResetText();
+            TxtBox_NewWorkerCity.ResetText();
+            MaskedTxtBox_NewWorkerPostalCode.ResetText();
+            TxtBox_NewWorkerCountry.ResetText();
+        }
         private void ResetEditControls()
         {
             TxtBox_WorkerName.ResetText();
@@ -173,6 +183,91 @@ namespace app
         private void RefreshDataGridView()
         {
             PopulateData.PopulateEmployeesIntoBindingSource(_restaurant,BindingSource_AllEmployees, DataGridView_Employees);
+        }
+
+        private void Btn_AddWorker_Click(object sender, EventArgs e)
+        {
+           if (StringHelper.IsEmptyOrNull(TxtBox_NewWorkerName,TxtBox_NewWorkerPosition, TxtBox_NewWorkerStreet, TxtBox_NewWorkerCity, TxtBox_NewWorkerCountry,MaskedTxtBox_NewWorkerPhone, MaskedTxtBox_NewWorkerPostalCode, MaskedTxtBox_NewWorkerSalary)) 
+                return;
+
+           try
+           {
+                string codPostal = MaskedTxtBox_NewWorkerPostalCode.Text;
+                string telemovel = MaskedTxtBox_NewWorkerPhone.Text;
+                string salario = MaskedTxtBox_NewWorkerSalary.Text;
+                StringHelper.RemoveEuroFromString(ref salario);
+                StringHelper.TrimAllWhiteSpace(ref telemovel);
+                StringHelper.TrimAllWhiteSpace(ref codPostal);
+                
+
+                if (codPostal.Length != 8) throw new Exception("O novo trabalhador tem um código postal inválido!");
+                if (telemovel.Length != 11) throw new Exception("O novo trabalhador tem um número de telemóvel inválido!");
+
+                Morada newMorada = new Morada
+                {
+                    Rua = TxtBox_NewWorkerStreet.Text,
+                    Cidade = TxtBox_NewWorkerCity.Text,
+                    CodPostal = codPostal,
+                    Pais = TxtBox_NewWorkerCountry.Text
+                };
+
+                Pessoa newPerson = new Pessoa
+                {
+                    Nome = TxtBox_NewWorkerName.Text,
+                    Telemovel = telemovel,
+                    Ativo = "Ativo"
+                };
+
+                Trabalhador newEmployee = new Trabalhador
+                {
+                    Nome = TxtBox_NewWorkerName.Text,
+                    Telemovel = telemovel,
+                    Salario = Convert.ToDecimal(salario),
+                    Posicao = TxtBox_NewWorkerPosition.Text,
+                    IdRestaurante = _restaurant.Id,
+                    Ativo = "Ativo"
+                };
+
+                VerifyData.HasMoradaForPerson(newMorada);
+                VerifyData.HasPerson(newPerson);
+
+                CRUD.AddMorada(newMorada);
+                Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
+
+                newPerson.IdMorada = moradaInDB.Id;
+
+                CRUD.AddPerson(newPerson);
+                Pessoa personInDB = CRUD.GetPerson(newPerson.Nome);
+
+                newEmployee.Id = personInDB.Id;
+                newEmployee.IdMorada = moradaInDB.Id;
+
+                CRUD.AddEmployee(newEmployee);
+                RefreshDataGridView();
+                ResetAddControls();
+           }
+           catch (Exception ex)
+           {
+                MessageBox.Show(ex.Message);
+           }
+        }
+
+        private void DataGridView_Employees_SelectionChanged(object sender, EventArgs e)
+        {
+            if(DataGridView_Employees.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+
+                string employeeName = DataGridView_Employees.CurrentRow.Cells[0].Value.ToString();
+
+                Trabalhador selectedEmployee = CRUD.GetEmployee(employeeName);
+
+                SingleTown.SelectedEmployee = selectedEmployee;
+
+            } else
+            {
+                ResetEditControls();
+            }
         }
     }
 }

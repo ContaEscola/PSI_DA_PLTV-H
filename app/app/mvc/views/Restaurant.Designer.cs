@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_RestauranteName = new System.Windows.Forms.Label();
             this.Lbl_CodPostal = new System.Windows.Forms.Label();
             this.Lbl_RestaurantCodPostal = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@
             this.Lbl_Street = new System.Windows.Forms.Label();
             this.Lbl_AddWorker = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtBox_NewWorkerCountry = new System.Windows.Forms.TextBox();
+            this.Lbl_NewWorkerCountry = new System.Windows.Forms.Label();
             this.Btn_AddWorker = new System.Windows.Forms.Button();
             this.MaskedTxtBox_NewWorkerPostalCode = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_NewWorkerPostalCode = new System.Windows.Forms.Label();
@@ -58,6 +60,7 @@
             this.TxtBox_NewWorkerName = new System.Windows.Forms.TextBox();
             this.Lbl_NewWorkerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TxtBox_WorkerCountry = new System.Windows.Forms.TextBox();
             this.Lbl_WorkerCountry = new System.Windows.Forms.Label();
             this.Btn_SaveChangesOnWorker = new System.Windows.Forms.Button();
             this.MaskedTxtBox_WorkerPostalCode = new System.Windows.Forms.MaskedTextBox();
@@ -76,18 +79,15 @@
             this.Lbl_WorkerName = new System.Windows.Forms.Label();
             this.Lbl_EditWorker = new System.Windows.Forms.Label();
             this.DataGridView_Employees = new System.Windows.Forms.DataGridView();
-            this.Btn_RemoveWorker = new System.Windows.Forms.Button();
-            this.Btn_ManageMenu = new System.Windows.Forms.Button();
-            this.Btn_ManageOrders = new System.Windows.Forms.Button();
-            this.BindingSource_AllEmployees = new System.Windows.Forms.BindingSource(this.components);
-            this.TxtBox_WorkerCountry = new System.Windows.Forms.TextBox();
-            this.TxtBox_NewWorkerCountry = new System.Windows.Forms.TextBox();
-            this.Lbl_NewWorkerCountry = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.Btn_RemoveWorker = new System.Windows.Forms.Button();
+            this.Btn_ManageMenu = new System.Windows.Forms.Button();
+            this.Btn_ManageOrders = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Employees)).BeginInit();
@@ -241,18 +241,42 @@
             this.panel1.Size = new System.Drawing.Size(546, 252);
             this.panel1.TabIndex = 10;
             // 
+            // TxtBox_NewWorkerCountry
+            // 
+            this.TxtBox_NewWorkerCountry.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerCountry.Location = new System.Drawing.Point(65, 189);
+            this.TxtBox_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerCountry.Name = "TxtBox_NewWorkerCountry";
+            this.TxtBox_NewWorkerCountry.Size = new System.Drawing.Size(141, 26);
+            this.TxtBox_NewWorkerCountry.TabIndex = 8;
+            // 
+            // Lbl_NewWorkerCountry
+            // 
+            this.Lbl_NewWorkerCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_NewWorkerCountry.AutoSize = true;
+            this.Lbl_NewWorkerCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_NewWorkerCountry.Location = new System.Drawing.Point(17, 192);
+            this.Lbl_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_NewWorkerCountry.Name = "Lbl_NewWorkerCountry";
+            this.Lbl_NewWorkerCountry.Size = new System.Drawing.Size(43, 20);
+            this.Lbl_NewWorkerCountry.TabIndex = 27;
+            this.Lbl_NewWorkerCountry.Text = "Pais:";
+            // 
             // Btn_AddWorker
             // 
             this.Btn_AddWorker.AutoSize = true;
             this.Btn_AddWorker.BackColor = System.Drawing.Color.White;
+            this.Btn_AddWorker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddWorker.Location = new System.Drawing.Point(435, 187);
             this.Btn_AddWorker.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_AddWorker.Name = "Btn_AddWorker";
             this.Btn_AddWorker.Size = new System.Drawing.Size(91, 30);
-            this.Btn_AddWorker.TabIndex = 11;
+            this.Btn_AddWorker.TabIndex = 9;
             this.Btn_AddWorker.Text = "Adicionar";
             this.Btn_AddWorker.UseVisualStyleBackColor = false;
+            this.Btn_AddWorker.Click += new System.EventHandler(this.Btn_AddWorker_Click);
             // 
             // MaskedTxtBox_NewWorkerPostalCode
             // 
@@ -262,9 +286,8 @@
             this.MaskedTxtBox_NewWorkerPostalCode.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_NewWorkerPostalCode.Mask = "0000 - 000";
             this.MaskedTxtBox_NewWorkerPostalCode.Name = "MaskedTxtBox_NewWorkerPostalCode";
-            this.MaskedTxtBox_NewWorkerPostalCode.PromptChar = '0';
             this.MaskedTxtBox_NewWorkerPostalCode.Size = new System.Drawing.Size(120, 26);
-            this.MaskedTxtBox_NewWorkerPostalCode.TabIndex = 23;
+            this.MaskedTxtBox_NewWorkerPostalCode.TabIndex = 7;
             this.MaskedTxtBox_NewWorkerPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lbl_NewWorkerPostalCode
@@ -287,7 +310,7 @@
             this.TxtBox_NewWorkerCity.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_NewWorkerCity.Name = "TxtBox_NewWorkerCity";
             this.TxtBox_NewWorkerCity.Size = new System.Drawing.Size(121, 26);
-            this.TxtBox_NewWorkerCity.TabIndex = 21;
+            this.TxtBox_NewWorkerCity.TabIndex = 6;
             // 
             // Lbl_NewWorkerCity
             // 
@@ -309,7 +332,7 @@
             this.TxtBox_NewWorkerStreet.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_NewWorkerStreet.Name = "TxtBox_NewWorkerStreet";
             this.TxtBox_NewWorkerStreet.Size = new System.Drawing.Size(461, 26);
-            this.TxtBox_NewWorkerStreet.TabIndex = 19;
+            this.TxtBox_NewWorkerStreet.TabIndex = 5;
             // 
             // Lbl_NewWorkerStreet
             // 
@@ -331,7 +354,7 @@
             this.TxtBox_NewWorkerPosition.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_NewWorkerPosition.Name = "TxtBox_NewWorkerPosition";
             this.TxtBox_NewWorkerPosition.Size = new System.Drawing.Size(120, 26);
-            this.TxtBox_NewWorkerPosition.TabIndex = 17;
+            this.TxtBox_NewWorkerPosition.TabIndex = 4;
             // 
             // Lbl_NewWorkerPosition
             // 
@@ -351,11 +374,11 @@
             this.MaskedTxtBox_NewWorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.MaskedTxtBox_NewWorkerSalary.Location = new System.Drawing.Point(84, 70);
             this.MaskedTxtBox_NewWorkerSalary.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_NewWorkerSalary.Mask = "9999 €";
+            this.MaskedTxtBox_NewWorkerSalary.Mask = "999999 €";
             this.MaskedTxtBox_NewWorkerSalary.Name = "MaskedTxtBox_NewWorkerSalary";
-            this.MaskedTxtBox_NewWorkerSalary.PromptChar = '0';
+            this.MaskedTxtBox_NewWorkerSalary.PromptChar = ' ';
             this.MaskedTxtBox_NewWorkerSalary.Size = new System.Drawing.Size(119, 26);
-            this.MaskedTxtBox_NewWorkerSalary.TabIndex = 11;
+            this.MaskedTxtBox_NewWorkerSalary.TabIndex = 3;
             this.MaskedTxtBox_NewWorkerSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Lbl_NewWorkerSalary
@@ -378,9 +401,8 @@
             this.MaskedTxtBox_NewWorkerPhone.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_NewWorkerPhone.Mask = "000 - 000 - 000";
             this.MaskedTxtBox_NewWorkerPhone.Name = "MaskedTxtBox_NewWorkerPhone";
-            this.MaskedTxtBox_NewWorkerPhone.PromptChar = '0';
             this.MaskedTxtBox_NewWorkerPhone.Size = new System.Drawing.Size(120, 26);
-            this.MaskedTxtBox_NewWorkerPhone.TabIndex = 13;
+            this.MaskedTxtBox_NewWorkerPhone.TabIndex = 2;
             this.MaskedTxtBox_NewWorkerPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lbl_NewWorkerPhone
@@ -403,7 +425,7 @@
             this.TxtBox_NewWorkerName.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_NewWorkerName.Name = "TxtBox_NewWorkerName";
             this.TxtBox_NewWorkerName.Size = new System.Drawing.Size(183, 26);
-            this.TxtBox_NewWorkerName.TabIndex = 11;
+            this.TxtBox_NewWorkerName.TabIndex = 1;
             // 
             // Lbl_NewWorkerName
             // 
@@ -444,6 +466,16 @@
             this.panel2.Size = new System.Drawing.Size(546, 252);
             this.panel2.TabIndex = 12;
             // 
+            // TxtBox_WorkerCountry
+            // 
+            this.TxtBox_WorkerCountry.BackColor = System.Drawing.Color.White;
+            this.TxtBox_WorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_WorkerCountry.Location = new System.Drawing.Point(65, 189);
+            this.TxtBox_WorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_WorkerCountry.Name = "TxtBox_WorkerCountry";
+            this.TxtBox_WorkerCountry.Size = new System.Drawing.Size(141, 26);
+            this.TxtBox_WorkerCountry.TabIndex = 18;
+            // 
             // Lbl_WorkerCountry
             // 
             this.Lbl_WorkerCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -460,12 +492,13 @@
             // 
             this.Btn_SaveChangesOnWorker.AutoSize = true;
             this.Btn_SaveChangesOnWorker.BackColor = System.Drawing.Color.White;
+            this.Btn_SaveChangesOnWorker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_SaveChangesOnWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_SaveChangesOnWorker.Location = new System.Drawing.Point(448, 187);
             this.Btn_SaveChangesOnWorker.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_SaveChangesOnWorker.Name = "Btn_SaveChangesOnWorker";
             this.Btn_SaveChangesOnWorker.Size = new System.Drawing.Size(78, 30);
-            this.Btn_SaveChangesOnWorker.TabIndex = 11;
+            this.Btn_SaveChangesOnWorker.TabIndex = 19;
             this.Btn_SaveChangesOnWorker.Text = "Guardar";
             this.Btn_SaveChangesOnWorker.UseVisualStyleBackColor = false;
             // 
@@ -477,9 +510,8 @@
             this.MaskedTxtBox_WorkerPostalCode.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_WorkerPostalCode.Mask = "0000 - 000";
             this.MaskedTxtBox_WorkerPostalCode.Name = "MaskedTxtBox_WorkerPostalCode";
-            this.MaskedTxtBox_WorkerPostalCode.PromptChar = '0';
             this.MaskedTxtBox_WorkerPostalCode.Size = new System.Drawing.Size(120, 26);
-            this.MaskedTxtBox_WorkerPostalCode.TabIndex = 23;
+            this.MaskedTxtBox_WorkerPostalCode.TabIndex = 17;
             this.MaskedTxtBox_WorkerPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lbl_WorkerPostalCode
@@ -502,7 +534,7 @@
             this.TxtBox_WorkerCity.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_WorkerCity.Name = "TxtBox_WorkerCity";
             this.TxtBox_WorkerCity.Size = new System.Drawing.Size(121, 26);
-            this.TxtBox_WorkerCity.TabIndex = 21;
+            this.TxtBox_WorkerCity.TabIndex = 16;
             // 
             // Lbl_WorkerCity
             // 
@@ -524,7 +556,7 @@
             this.TxtBox_WorkerStreet.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_WorkerStreet.Name = "TxtBox_WorkerStreet";
             this.TxtBox_WorkerStreet.Size = new System.Drawing.Size(461, 26);
-            this.TxtBox_WorkerStreet.TabIndex = 19;
+            this.TxtBox_WorkerStreet.TabIndex = 15;
             // 
             // Lbl_WorkerStreet
             // 
@@ -546,7 +578,7 @@
             this.TxtBox_WorkerPosition.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_WorkerPosition.Name = "TxtBox_WorkerPosition";
             this.TxtBox_WorkerPosition.Size = new System.Drawing.Size(120, 26);
-            this.TxtBox_WorkerPosition.TabIndex = 17;
+            this.TxtBox_WorkerPosition.TabIndex = 14;
             // 
             // Lbl_WorkerPosition
             // 
@@ -566,11 +598,11 @@
             this.MaskedTxtBox_WorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.MaskedTxtBox_WorkerSalary.Location = new System.Drawing.Point(84, 70);
             this.MaskedTxtBox_WorkerSalary.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_WorkerSalary.Mask = "9999 €";
+            this.MaskedTxtBox_WorkerSalary.Mask = "999999 €";
             this.MaskedTxtBox_WorkerSalary.Name = "MaskedTxtBox_WorkerSalary";
-            this.MaskedTxtBox_WorkerSalary.PromptChar = '0';
+            this.MaskedTxtBox_WorkerSalary.PromptChar = ' ';
             this.MaskedTxtBox_WorkerSalary.Size = new System.Drawing.Size(119, 26);
-            this.MaskedTxtBox_WorkerSalary.TabIndex = 11;
+            this.MaskedTxtBox_WorkerSalary.TabIndex = 13;
             this.MaskedTxtBox_WorkerSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Lbl_WorkerSalary
@@ -593,9 +625,8 @@
             this.MaskedTxtBox_WorkerPhone.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_WorkerPhone.Mask = "000 - 000 - 000";
             this.MaskedTxtBox_WorkerPhone.Name = "MaskedTxtBox_WorkerPhone";
-            this.MaskedTxtBox_WorkerPhone.PromptChar = '0';
             this.MaskedTxtBox_WorkerPhone.Size = new System.Drawing.Size(120, 26);
-            this.MaskedTxtBox_WorkerPhone.TabIndex = 13;
+            this.MaskedTxtBox_WorkerPhone.TabIndex = 12;
             this.MaskedTxtBox_WorkerPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Lbl_WorkerPhone
@@ -652,14 +683,14 @@
             this.DataGridView_Employees.AutoGenerateColumns = false;
             this.DataGridView_Employees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_Employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.DataGridView_Employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_Employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -668,14 +699,14 @@
             this.Column2,
             this.Column5});
             this.DataGridView_Employees.DataSource = this.BindingSource_AllEmployees;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_Employees.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Employees.DefaultCellStyle = dataGridViewCellStyle14;
             this.DataGridView_Employees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_Employees.Location = new System.Drawing.Point(782, 264);
             this.DataGridView_Employees.Margin = new System.Windows.Forms.Padding(0);
@@ -684,81 +715,8 @@
             this.DataGridView_Employees.ReadOnly = true;
             this.DataGridView_Employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Employees.Size = new System.Drawing.Size(611, 425);
-            this.DataGridView_Employees.TabIndex = 13;
-            // 
-            // Btn_RemoveWorker
-            // 
-            this.Btn_RemoveWorker.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_RemoveWorker.AutoSize = true;
-            this.Btn_RemoveWorker.BackColor = System.Drawing.Color.White;
-            this.Btn_RemoveWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_RemoveWorker.Location = new System.Drawing.Point(782, 709);
-            this.Btn_RemoveWorker.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_RemoveWorker.Name = "Btn_RemoveWorker";
-            this.Btn_RemoveWorker.Size = new System.Drawing.Size(219, 51);
-            this.Btn_RemoveWorker.TabIndex = 14;
-            this.Btn_RemoveWorker.Text = "Remover Trabalhador";
-            this.Btn_RemoveWorker.UseVisualStyleBackColor = false;
-            // 
-            // Btn_ManageMenu
-            // 
-            this.Btn_ManageMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_ManageMenu.AutoSize = true;
-            this.Btn_ManageMenu.BackColor = System.Drawing.Color.White;
-            this.Btn_ManageMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_ManageMenu.Location = new System.Drawing.Point(1260, 708);
-            this.Btn_ManageMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_ManageMenu.Name = "Btn_ManageMenu";
-            this.Btn_ManageMenu.Size = new System.Drawing.Size(133, 51);
-            this.Btn_ManageMenu.TabIndex = 15;
-            this.Btn_ManageMenu.Text = "Gerir Menu";
-            this.Btn_ManageMenu.UseVisualStyleBackColor = false;
-            // 
-            // Btn_ManageOrders
-            // 
-            this.Btn_ManageOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_ManageOrders.AutoSize = true;
-            this.Btn_ManageOrders.BackColor = System.Drawing.Color.White;
-            this.Btn_ManageOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_ManageOrders.Location = new System.Drawing.Point(1242, 775);
-            this.Btn_ManageOrders.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_ManageOrders.Name = "Btn_ManageOrders";
-            this.Btn_ManageOrders.Size = new System.Drawing.Size(151, 51);
-            this.Btn_ManageOrders.TabIndex = 16;
-            this.Btn_ManageOrders.Text = "Gerir Pedidos";
-            this.Btn_ManageOrders.UseVisualStyleBackColor = false;
-            // 
-            // TxtBox_WorkerCountry
-            // 
-            this.TxtBox_WorkerCountry.BackColor = System.Drawing.Color.White;
-            this.TxtBox_WorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.TxtBox_WorkerCountry.Location = new System.Drawing.Point(65, 189);
-            this.TxtBox_WorkerCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_WorkerCountry.Name = "TxtBox_WorkerCountry";
-            this.TxtBox_WorkerCountry.Size = new System.Drawing.Size(141, 26);
-            this.TxtBox_WorkerCountry.TabIndex = 26;
-            // 
-            // TxtBox_NewWorkerCountry
-            // 
-            this.TxtBox_NewWorkerCountry.BackColor = System.Drawing.Color.White;
-            this.TxtBox_NewWorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.TxtBox_NewWorkerCountry.Location = new System.Drawing.Point(65, 189);
-            this.TxtBox_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtBox_NewWorkerCountry.Name = "TxtBox_NewWorkerCountry";
-            this.TxtBox_NewWorkerCountry.Size = new System.Drawing.Size(141, 26);
-            this.TxtBox_NewWorkerCountry.TabIndex = 28;
-            // 
-            // Lbl_NewWorkerCountry
-            // 
-            this.Lbl_NewWorkerCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_NewWorkerCountry.AutoSize = true;
-            this.Lbl_NewWorkerCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_NewWorkerCountry.Location = new System.Drawing.Point(17, 192);
-            this.Lbl_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_NewWorkerCountry.Name = "Lbl_NewWorkerCountry";
-            this.Lbl_NewWorkerCountry.Size = new System.Drawing.Size(43, 20);
-            this.Lbl_NewWorkerCountry.TabIndex = 27;
-            this.Lbl_NewWorkerCountry.Text = "Pais:";
+            this.DataGridView_Employees.TabIndex = 10;
+            this.DataGridView_Employees.SelectionChanged += new System.EventHandler(this.DataGridView_Employees_SelectionChanged);
             // 
             // Column1
             // 
@@ -794,6 +752,51 @@
             this.Column5.HeaderText = "Pais";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // Btn_RemoveWorker
+            // 
+            this.Btn_RemoveWorker.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_RemoveWorker.AutoSize = true;
+            this.Btn_RemoveWorker.BackColor = System.Drawing.Color.White;
+            this.Btn_RemoveWorker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_RemoveWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_RemoveWorker.Location = new System.Drawing.Point(782, 709);
+            this.Btn_RemoveWorker.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_RemoveWorker.Name = "Btn_RemoveWorker";
+            this.Btn_RemoveWorker.Size = new System.Drawing.Size(219, 51);
+            this.Btn_RemoveWorker.TabIndex = 20;
+            this.Btn_RemoveWorker.Text = "Remover Trabalhador";
+            this.Btn_RemoveWorker.UseVisualStyleBackColor = false;
+            // 
+            // Btn_ManageMenu
+            // 
+            this.Btn_ManageMenu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_ManageMenu.AutoSize = true;
+            this.Btn_ManageMenu.BackColor = System.Drawing.Color.White;
+            this.Btn_ManageMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ManageMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ManageMenu.Location = new System.Drawing.Point(1260, 708);
+            this.Btn_ManageMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ManageMenu.Name = "Btn_ManageMenu";
+            this.Btn_ManageMenu.Size = new System.Drawing.Size(133, 51);
+            this.Btn_ManageMenu.TabIndex = 21;
+            this.Btn_ManageMenu.Text = "Gerir Menu";
+            this.Btn_ManageMenu.UseVisualStyleBackColor = false;
+            // 
+            // Btn_ManageOrders
+            // 
+            this.Btn_ManageOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_ManageOrders.AutoSize = true;
+            this.Btn_ManageOrders.BackColor = System.Drawing.Color.White;
+            this.Btn_ManageOrders.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_ManageOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ManageOrders.Location = new System.Drawing.Point(1242, 775);
+            this.Btn_ManageOrders.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_ManageOrders.Name = "Btn_ManageOrders";
+            this.Btn_ManageOrders.Size = new System.Drawing.Size(151, 51);
+            this.Btn_ManageOrders.TabIndex = 22;
+            this.Btn_ManageOrders.Text = "Gerir Pedidos";
+            this.Btn_ManageOrders.UseVisualStyleBackColor = false;
             // 
             // Restaurant
             // 

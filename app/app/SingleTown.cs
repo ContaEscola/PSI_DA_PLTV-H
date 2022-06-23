@@ -13,10 +13,13 @@ namespace app
         private static MetodoPagamento selectedPaymentMethod;
         private static Categoria selectedCategory;
         private static Restaurante selectedRestaurant;
+        private static Trabalhador selectedEmployee;
         public static BaseDadosContainer AppDB { get { return appDB; } }
         public static MetodoPagamento SelectedPaymentMethod { get { return selectedPaymentMethod; } set { selectedPaymentMethod = value; } }
         public static Categoria SelectedCategory { get { return selectedCategory; } set { selectedCategory = value; } }
         public static Restaurante SelectedRestaurant { get { return selectedRestaurant; } set { selectedRestaurant = value; } }
+        
+        public static Trabalhador SelectedEmployee { get { return selectedEmployee; } set { selectedEmployee = value; } }
         public SingleTown()
         {
             appDB = new BaseDadosContainer();

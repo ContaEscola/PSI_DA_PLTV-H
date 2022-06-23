@@ -104,7 +104,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Telemovel" Type="nchar" Nullable="false" MaxLength="12" />
+    <Property Name="Telemovel" Type="nchar" Nullable="false" MaxLength="11" />
     <Property Name="IdMorada" Type="int" Nullable="false" />
     <Property Name="Ativo" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -447,7 +447,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Telemovel" Type="String" Nullable="false" MaxLength="12" FixedLength="true" />
+          <Property Name="Telemovel" Type="String" Nullable="false" MaxLength="11" FixedLength="true" />
           <NavigationProperty Name="Morada" Relationship="BaseDados.PessoaMorada" FromRole="Pessoa" ToRole="Morada" />
           <Property Name="IdMorada" Type="Int32" Nullable="false" />
           <Property Name="Ativo" Type="String" Nullable="false" />

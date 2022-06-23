@@ -125,5 +125,34 @@ namespace app
 
         }
 
+        public static void AddPerson(Pessoa personToAdd)
+        {
+            SingleTown.AppDB.PessoaSet.Add(personToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static Pessoa GetPerson(string personName)
+        {
+            var allPeople = SingleTown.AppDB.PessoaSet;
+
+            Pessoa person = (Pessoa)allPeople.Where(p => p.Nome == personName).FirstOrDefault();
+
+            return person;
+        }
+
+        public static void AddEmployee(Trabalhador employeeToAdd)
+        {
+            SingleTown.AppDB.TrabalhadorSet.Add(employeeToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static Trabalhador GetEmployee(string employeeName)
+        {
+            var allEmployees = SingleTown.AppDB.TrabalhadorSet;
+
+            Trabalhador employee = (Trabalhador)allEmployees.Where(e => e.Nome == employeeName).FirstOrDefault();
+
+            return employee;
+        }
     }
 }

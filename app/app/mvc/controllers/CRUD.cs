@@ -125,20 +125,6 @@ namespace app
 
         }
 
-        public static void AddPerson(Pessoa personToAdd)
-        {
-            SingleTown.AppDB.PessoaSet.Add(personToAdd);
-            SingleTown.AppDB.SaveChanges();
-        }
-
-        public static Pessoa GetPerson(string personName)
-        {
-            var allPeople = SingleTown.AppDB.PessoaSet;
-
-            Pessoa person = (Pessoa)allPeople.Where(p => p.Nome == personName).FirstOrDefault();
-
-            return person;
-        }
 
         public static void AddEmployee(Trabalhador employeeToAdd)
         {
@@ -153,6 +139,33 @@ namespace app
             Trabalhador employee = (Trabalhador)allEmployees.Where(e => e.Nome == employeeName).FirstOrDefault();
 
             return employee;
+        }
+
+
+        public static void EditEmployee(Trabalhador updatedEmployee)
+        {
+            var allEmployees = SingleTown.AppDB.TrabalhadorSet;
+
+            Trabalhador checkForExistentNames = (Trabalhador)allEmployees.Where(e => e.Nome == updatedEmployee.Nome && e.Id != SingleTown.SelectedEmployee.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe um trabalhador com esse nome!");
+
+            VerifyData.HasMoradaForPerson(updatedEmployee.Morada);
+
+            SingleTown.SelectedEmployee.Nome = updatedEmployee.Nome;
+            SingleTown.SelectedEmployee.Telemovel = updatedEmployee.Telemovel;
+            SingleTown.SelectedEmployee.Salario = updatedEmployee.Salario;
+            SingleTown.SelectedEmployee.Posicao = updatedEmployee.Posicao;
+
+            SingleTown.SelectedEmployee.Morada.Rua = updatedEmployee.Morada.Rua;
+            SingleTown.SelectedEmployee.Morada.Cidade = updatedEmployee.Morada.Cidade;
+            SingleTown.SelectedEmployee.Morada.CodPostal = updatedEmployee.Morada.CodPostal;
+            SingleTown.SelectedEmployee.Morada.Pais = updatedEmployee.Morada.Pais;
+
+
+            SingleTown.AppDB.SaveChanges();
+
         }
     }
 }

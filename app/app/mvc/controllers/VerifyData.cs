@@ -79,13 +79,13 @@ namespace app
             }
         }
 
-        public static void HasPerson(Pessoa personToCheck)
+        public static void HasEmployee(Trabalhador employeeToCheck)
         {
-            List<Pessoa> allPeople = (from people in SingleTown.AppDB.PessoaSet
-                                      where people.Nome == personToCheck.Nome
-                                      select people).ToList<Pessoa>();
+            List<Trabalhador> allEmployees = (from employee in SingleTown.AppDB.TrabalhadorSet
+                                      where employee.Nome == employeeToCheck.Nome
+                                      select employee).ToList<Trabalhador>();
 
-            if (allPeople.Count > 0)
+            if (allEmployees.Count > 0)
                 throw new Exception("Este nome já está a ser utilizado!");
 
         }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_RestauranteName = new System.Windows.Forms.Label();
             this.Lbl_CodPostal = new System.Windows.Forms.Label();
             this.Lbl_RestaurantCodPostal = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.Lbl_NewWorkerStreet = new System.Windows.Forms.Label();
             this.TxtBox_NewWorkerPosition = new System.Windows.Forms.TextBox();
             this.Lbl_NewWorkerPosition = new System.Windows.Forms.Label();
-            this.MaskedTxtBox_NewWorkerSalary = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_NewWorkerSalary = new System.Windows.Forms.Label();
             this.MaskedTxtBox_NewWorkerPhone = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_NewWorkerPhone = new System.Windows.Forms.Label();
@@ -71,7 +70,6 @@
             this.Lbl_WorkerStreet = new System.Windows.Forms.Label();
             this.TxtBox_WorkerPosition = new System.Windows.Forms.TextBox();
             this.Lbl_WorkerPosition = new System.Windows.Forms.Label();
-            this.MaskedTxtBox_WorkerSalary = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_WorkerSalary = new System.Windows.Forms.Label();
             this.MaskedTxtBox_WorkerPhone = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_WorkerPhone = new System.Windows.Forms.Label();
@@ -88,7 +86,8 @@
             this.Btn_RemoveWorker = new System.Windows.Forms.Button();
             this.Btn_ManageMenu = new System.Windows.Forms.Button();
             this.Btn_ManageOrders = new System.Windows.Forms.Button();
-            this.BindingSource_AllEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.TxtBox_NewWorkerSalary = new System.Windows.Forms.TextBox();
+            this.TxtBox_WorkerSalary = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Employees)).BeginInit();
@@ -219,6 +218,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.TxtBox_NewWorkerSalary);
             this.panel1.Controls.Add(this.TxtBox_NewWorkerCountry);
             this.panel1.Controls.Add(this.Lbl_NewWorkerCountry);
             this.panel1.Controls.Add(this.Btn_AddWorker);
@@ -230,7 +230,6 @@
             this.panel1.Controls.Add(this.Lbl_NewWorkerStreet);
             this.panel1.Controls.Add(this.TxtBox_NewWorkerPosition);
             this.panel1.Controls.Add(this.Lbl_NewWorkerPosition);
-            this.panel1.Controls.Add(this.MaskedTxtBox_NewWorkerSalary);
             this.panel1.Controls.Add(this.Lbl_NewWorkerSalary);
             this.panel1.Controls.Add(this.MaskedTxtBox_NewWorkerPhone);
             this.panel1.Controls.Add(this.Lbl_NewWorkerPhone);
@@ -299,7 +298,7 @@
             this.TxtBox_NewWorkerStreet.Margin = new System.Windows.Forms.Padding(0);
             this.TxtBox_NewWorkerStreet.Name = "TxtBox_NewWorkerStreet";
             this.TxtBox_NewWorkerStreet.Size = new System.Drawing.Size(461, 26);
-            this.TxtBox_NewWorkerStreet.TabIndex = 19;
+            this.TxtBox_NewWorkerStreet.TabIndex = 5;
             // 
             // TxtBox_NewWorkerCity
             // 
@@ -367,19 +366,6 @@
             this.Lbl_NewWorkerPosition.TabIndex = 15;
             this.Lbl_NewWorkerPosition.Text = "Posição:";
             // 
-            // MaskedTxtBox_NewWorkerSalary
-            // 
-            this.MaskedTxtBox_NewWorkerSalary.BackColor = System.Drawing.Color.White;
-            this.MaskedTxtBox_NewWorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.MaskedTxtBox_NewWorkerSalary.Location = new System.Drawing.Point(84, 70);
-            this.MaskedTxtBox_NewWorkerSalary.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_NewWorkerSalary.Mask = "999999 €";
-            this.MaskedTxtBox_NewWorkerSalary.Name = "MaskedTxtBox_NewWorkerSalary";
-            this.MaskedTxtBox_NewWorkerSalary.PromptChar = ' ';
-            this.MaskedTxtBox_NewWorkerSalary.Size = new System.Drawing.Size(119, 26);
-            this.MaskedTxtBox_NewWorkerSalary.TabIndex = 3;
-            this.MaskedTxtBox_NewWorkerSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // Lbl_NewWorkerSalary
             // 
             this.Lbl_NewWorkerSalary.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -442,6 +428,7 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel2.Controls.Add(this.TxtBox_WorkerSalary);
             this.panel2.Controls.Add(this.TxtBox_WorkerCountry);
             this.panel2.Controls.Add(this.Lbl_WorkerCountry);
             this.panel2.Controls.Add(this.Btn_SaveChangesOnWorker);
@@ -453,7 +440,6 @@
             this.panel2.Controls.Add(this.Lbl_WorkerStreet);
             this.panel2.Controls.Add(this.TxtBox_WorkerPosition);
             this.panel2.Controls.Add(this.Lbl_WorkerPosition);
-            this.panel2.Controls.Add(this.MaskedTxtBox_WorkerSalary);
             this.panel2.Controls.Add(this.Lbl_WorkerSalary);
             this.panel2.Controls.Add(this.MaskedTxtBox_WorkerPhone);
             this.panel2.Controls.Add(this.Lbl_WorkerPhone);
@@ -500,6 +486,7 @@
             this.Btn_SaveChangesOnWorker.TabIndex = 19;
             this.Btn_SaveChangesOnWorker.Text = "Guardar";
             this.Btn_SaveChangesOnWorker.UseVisualStyleBackColor = false;
+            this.Btn_SaveChangesOnWorker.Click += new System.EventHandler(this.Btn_SaveChangesOnWorker_Click);
             // 
             // MaskedTxtBox_WorkerPostalCode
             // 
@@ -591,19 +578,6 @@
             this.Lbl_WorkerPosition.TabIndex = 15;
             this.Lbl_WorkerPosition.Text = "Posição:";
             // 
-            // MaskedTxtBox_WorkerSalary
-            // 
-            this.MaskedTxtBox_WorkerSalary.BackColor = System.Drawing.Color.White;
-            this.MaskedTxtBox_WorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.MaskedTxtBox_WorkerSalary.Location = new System.Drawing.Point(84, 70);
-            this.MaskedTxtBox_WorkerSalary.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_WorkerSalary.Mask = "999999 €";
-            this.MaskedTxtBox_WorkerSalary.Name = "MaskedTxtBox_WorkerSalary";
-            this.MaskedTxtBox_WorkerSalary.PromptChar = ' ';
-            this.MaskedTxtBox_WorkerSalary.Size = new System.Drawing.Size(119, 26);
-            this.MaskedTxtBox_WorkerSalary.TabIndex = 13;
-            this.MaskedTxtBox_WorkerSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // Lbl_WorkerSalary
             // 
             this.Lbl_WorkerSalary.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -682,14 +656,14 @@
             this.DataGridView_Employees.AutoGenerateColumns = false;
             this.DataGridView_Employees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_Employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_Employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_Employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -698,14 +672,14 @@
             this.Column2,
             this.Column5});
             this.DataGridView_Employees.DataSource = this.BindingSource_AllEmployees;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_Employees.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Employees.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView_Employees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_Employees.Location = new System.Drawing.Point(782, 264);
             this.DataGridView_Employees.Margin = new System.Windows.Forms.Padding(0);
@@ -797,6 +771,26 @@
             this.Btn_ManageOrders.Text = "Gerir Pedidos";
             this.Btn_ManageOrders.UseVisualStyleBackColor = false;
             // 
+            // TxtBox_NewWorkerSalary
+            // 
+            this.TxtBox_NewWorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_NewWorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerSalary.Name = "TxtBox_NewWorkerSalary";
+            this.TxtBox_NewWorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_NewWorkerSalary.TabIndex = 28;
+            // 
+            // TxtBox_WorkerSalary
+            // 
+            this.TxtBox_WorkerSalary.BackColor = System.Drawing.Color.White;
+            this.TxtBox_WorkerSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_WorkerSalary.Location = new System.Drawing.Point(85, 70);
+            this.TxtBox_WorkerSalary.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_WorkerSalary.Name = "TxtBox_WorkerSalary";
+            this.TxtBox_WorkerSalary.Size = new System.Drawing.Size(118, 26);
+            this.TxtBox_WorkerSalary.TabIndex = 29;
+            // 
             // Restaurant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -856,7 +850,6 @@
         private System.Windows.Forms.MaskedTextBox MaskedTxtBox_NewWorkerPhone;
         private System.Windows.Forms.Label Lbl_NewWorkerPhone;
         private System.Windows.Forms.Label Lbl_NewWorkerSalary;
-        private System.Windows.Forms.MaskedTextBox MaskedTxtBox_NewWorkerSalary;
         private System.Windows.Forms.TextBox TxtBox_NewWorkerCity;
         private System.Windows.Forms.Label Lbl_NewWorkerCity;
         private System.Windows.Forms.TextBox TxtBox_NewWorkerStreet;
@@ -877,7 +870,6 @@
         private System.Windows.Forms.Label Lbl_WorkerStreet;
         private System.Windows.Forms.TextBox TxtBox_WorkerPosition;
         private System.Windows.Forms.Label Lbl_WorkerPosition;
-        private System.Windows.Forms.MaskedTextBox MaskedTxtBox_WorkerSalary;
         private System.Windows.Forms.Label Lbl_WorkerSalary;
         private System.Windows.Forms.MaskedTextBox MaskedTxtBox_WorkerPhone;
         private System.Windows.Forms.Label Lbl_WorkerPhone;
@@ -897,5 +889,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox TxtBox_NewWorkerSalary;
+        private System.Windows.Forms.TextBox TxtBox_WorkerSalary;
     }
 }

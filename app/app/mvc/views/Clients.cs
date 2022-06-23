@@ -91,5 +91,10 @@ namespace app
             Lbl_AddClient.BringToFront();
             Lbl_EditClient.BringToFront();
         }
+
+        private void Btn_AddClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,9 +48,9 @@
             this.TxtBox_CategorieName = new System.Windows.Forms.TextBox();
             this.Lbl_CategorieName = new System.Windows.Forms.Label();
             this.DataGridView_Categories = new System.Windows.Forms.DataGridView();
-            this.BindingSource_AllCategories = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllCategories = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Categories)).BeginInit();
@@ -109,6 +109,7 @@
             this.ComboBox_NewCategorieState.Name = "ComboBox_NewCategorieState";
             this.ComboBox_NewCategorieState.Size = new System.Drawing.Size(121, 28);
             this.ComboBox_NewCategorieState.TabIndex = 3;
+            this.ComboBox_NewCategorieState.SelectedIndexChanged += new System.EventHandler(this.ComboBox_NewCategorieState_SelectedIndexChanged);
             // 
             // Lbl_NewCategorieState
             // 
@@ -298,20 +299,6 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 85;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Nome";
-            this.Column1.HeaderText = "Nome";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Ativo";
-            this.Column2.HeaderText = "Estado";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Categories
             // 

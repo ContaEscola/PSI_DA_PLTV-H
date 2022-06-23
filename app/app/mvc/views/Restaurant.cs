@@ -329,5 +329,17 @@ namespace app
             CRUD.RemoveEmployee();
             RefreshDataGridView();
         }
+
+        private void Btn_ManageMenu_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new Menu(SingleTown.SelectedRestaurant));
+
+
+        }
+
+        private void Lbl_RestauranteName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

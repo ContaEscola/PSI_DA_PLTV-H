@@ -14,12 +14,20 @@ namespace app
     {
 
         private FontLoader _fontLoader;
+        private Restaurante _restaurant;
 
-        public Menu()
+        public Menu(Restaurante restaurant)
         {
             InitializeComponent();
 
+            _restaurant = restaurant;
             _fontLoader = new FontLoader();
+
+
+
+
+
+
         }
 
         //Irá dar load das fontes em todos os controlos do form
@@ -91,6 +99,10 @@ namespace app
 
             Lbl_AddItem.BringToFront();
             Lbl_EditItem.BringToFront();
+
+
+            this.Text = $"Restaurante: {_restaurant.Nome}";
+            Lbl_RestaurantName.Text = _restaurant.Nome;
         }
     }
 }

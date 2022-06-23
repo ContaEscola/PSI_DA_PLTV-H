@@ -107,6 +107,7 @@ namespace app
             this.DataGridView_Restaurants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Restaurants.Size = new System.Drawing.Size(1195, 404);
             this.DataGridView_Restaurants.TabIndex = 1;
+            this.DataGridView_Restaurants.SelectionChanged += new System.EventHandler(this.DataGridView_Restaurants_SelectionChanged);
             // 
             // Btn_RegisterNewRestaurant
             // 

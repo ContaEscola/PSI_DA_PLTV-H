@@ -93,5 +93,25 @@ namespace app
         {
             BaseController.RenderView(new PaymentMethods());
         }
+
+        private void DataGridView_Restaurants_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_Restaurants.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+
+                string restaurantName = DataGridView_Restaurants.CurrentRow.Cells[0].Value.ToString();
+
+                Restaurante selectedRestaurant = CRUD.GetRestaurant(restaurantName);
+
+                SingleTown.SelectedRestaurant = selectedRestaurant;
+
+                EnableEditControls();
+            }
+            else
+            {
+                DisableEditControls();
+            }
+        }
     }
 }

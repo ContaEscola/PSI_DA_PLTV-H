@@ -9,7 +9,7 @@ namespace app
     public partial class Trabalhador : Pessoa
     {
         // https://www.code-sample.net/CSharp/Format-Number
-        public string SalarioFormated { get { return $"{String.Format("{0:#,0.00}", Salario)}€"; } }
+        public string SalarioFormated { get { return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"),"{0:#,0.00}", Salario)}€"; } }
 
         public string PaisExtracted { get { return Morada.Pais; } }
     }

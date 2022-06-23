@@ -173,7 +173,7 @@ namespace app
         {
             TxtBox_WorkerName.Text = SingleTown.SelectedEmployee.Nome;
             MaskedTxtBox_WorkerPhone.Text = SingleTown.SelectedEmployee.Telemovel;
-            TxtBox_WorkerSalary.Text = SingleTown.SelectedEmployee.SalarioFormated;
+            TxtBox_WorkerSalary.Text = String.Format(CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", SingleTown.SelectedEmployee.Salario);
             TxtBox_WorkerPosition.Text = SingleTown.SelectedEmployee.Posicao;
             TxtBox_WorkerStreet.Text = SingleTown.SelectedEmployee.Morada.Rua;
             TxtBox_WorkerCity.Text = SingleTown.SelectedEmployee.Morada.Cidade;
@@ -209,8 +209,7 @@ namespace app
                 string telemovel = MaskedTxtBox_NewWorkerPhone.Text;
 
                 string salario = TxtBox_NewWorkerSalary.Text;
-                NumberFormatInfo format = new NumberFormatInfo { NumberDecimalSeparator = "." };
-                decimal salarioConverted = Decimal.Parse(salario,format);
+                decimal salarioConverted = Decimal.Parse(salario,CultureInfo.GetCultureInfo("pt-PT"));
 
                 StringHelper.RemoveEuroFromString(ref salario);
                 StringHelper.TrimAllWhiteSpace(ref telemovel);

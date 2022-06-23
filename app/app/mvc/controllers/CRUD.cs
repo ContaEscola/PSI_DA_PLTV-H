@@ -151,13 +151,7 @@ namespace app
             if (checkForExistentNames != null)
                 throw new Exception("Já existe um trabalhador com esse nome!");
 
-            List<Restaurante> checkForExistentRua = (from morada in SingleTown.AppDB.MoradaSet
-                                               join restaurante in SingleTown.AppDB.RestauranteSet on morada.Id equals restaurante.Morada.Id
-                                               where morada.Rua == updatedEmployee.Morada.Rua && restaurante.Id != SingleTown.SelectedEmployee.IdRestaurante
-                                               select restaurante).ToList<Restaurante>();
-
-            if (checkForExistentRua.Count > 0)
-                throw new Exception($"Esta rua já está a ser utilizada!{Environment.NewLine}Experimente completá-la com mais informações!");
+            VerifyData.HasMoradaForPerson(updatedEmployee.Morada);
 
             SingleTown.SelectedEmployee.Nome = updatedEmployee.Nome;
             SingleTown.SelectedEmployee.Telemovel = updatedEmployee.Telemovel;

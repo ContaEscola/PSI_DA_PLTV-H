@@ -40,7 +40,7 @@ namespace app
             return false;
         }
 
-        public static void HasMorada(Morada moradaToCheck)
+        public static void HasMoradaForRestaurant(Morada moradaToCheck)
         {
             List<Morada> allMoradas = SingleTown.AppDB.MoradaSet.ToList<Morada>();
 
@@ -48,9 +48,21 @@ namespace app
             {
                 if (moradaToCheck.Rua == morada.Rua)
                 {
-                    throw new Exception("Já existe um restaurante com esta rua!");
+                        throw new Exception($"Esta rua já está a ser utilizada!{Environment.NewLine}Experimente completá-la com mais informações!");
                 }
             }
+
+        }
+
+        public static void HasMoradaForPerson(Morada moradaToCheck)
+        {
+            List<Restaurante> allRestaurants = (from morada in SingleTown.AppDB.MoradaSet
+                                                join restaurante in SingleTown.AppDB.RestauranteSet on morada.Id equals restaurante.Morada.Id
+                                                where morada.Rua == moradaToCheck.Rua
+                                                select restaurante).ToList<Restaurante>();
+
+            if (allRestaurants.Count > 0)
+                throw new Exception($"Esta rua já está a ser utilizada!{Environment.NewLine}Experimente completá-la com mais informações!");
 
         }
 
@@ -65,6 +77,17 @@ namespace app
                     throw new Exception("Já existe um restaurante com este nome!");
                 }
             }
+        }
+
+        public static void HasPerson(Pessoa personToCheck)
+        {
+            List<Pessoa> allPeople = (from people in SingleTown.AppDB.PessoaSet
+                                      where people.Nome == personToCheck.Nome
+                                      select people).ToList<Pessoa>();
+
+            if (allPeople.Count > 0)
+                throw new Exception("Este nome já está a ser utilizado!");
+
         }
     }
 }

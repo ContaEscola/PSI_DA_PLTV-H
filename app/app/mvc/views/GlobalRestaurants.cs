@@ -108,7 +108,6 @@ namespace app
 
                 SingleTown.SelectedRestaurant = selectedRestaurant;
 
-                EnableEditControls();
             }
             else
             {

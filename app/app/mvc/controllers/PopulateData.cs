@@ -70,7 +70,7 @@ namespace app
         {
             List<Trabalhador> allEmployees = (from people in SingleTown.AppDB.PessoaSet
                                join employee in SingleTown.AppDB.TrabalhadorSet on people.Id equals employee.Id
-                               where employee.IdRestaurante == restaurantAssociated.Id
+                               where employee.IdRestaurante == restaurantAssociated.Id && employee.Ativo == "Ativo"
                                select employee).ToList<Trabalhador>();
 
 

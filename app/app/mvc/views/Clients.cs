@@ -138,6 +138,16 @@ namespace app
             MaskedTxtBox_NewClientPostalCode.ResetText();
         }
 
+        private void PopulateEditControls()
+        {
+            TxtBox_ClientName.Text = SingleTown.SelectedClient.Nome;
+            MaskedTxtBox_ClientPhone.Text = SingleTown.SelectedClient.Telemovel;
+            MaskedTxtBox_ClientNIF.Text = SingleTown.SelectedClient.NumContribuinte;
+            TxtBox_ClientCountry.Text = SingleTown.SelectedClient.Morada.Pais;
+            TxtBox_ClientStreet.Text = SingleTown.SelectedClient.Morada.Rua;
+            TxtBox_ClientCity.Text = SingleTown.SelectedClient.Morada.Cidade;
+            MaskedTxtBox_ClientPostalCode.Text = SingleTown.SelectedClient.Morada.CodPostal;
+        }
 
         private void ResetEditControls()
         {
@@ -193,6 +203,7 @@ namespace app
 
                 };
 
+                VerifyData.HasNIF(nif);
                 VerifyData.HasMoradaForPerson(newMorada);
                 VerifyData.HasCliente(newClient);
 
@@ -207,6 +218,72 @@ namespace app
 
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridView_Clients_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_Clients.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+
+                string clientName = DataGridView_Clients.CurrentRow.Cells[0].Value.ToString();
+
+                Cliente selectedClient = CRUD.GetClient(clientName);
+
+                SingleTown.SelectedClient = selectedClient;
+
+                PopulateEditControls();
+
+            }
+            else
+            {
+                ResetEditControls();
+            }
+        }
+
+        private void Btn_SaveChangesOnClient_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_ClientName, MaskedTxtBox_ClientPhone, MaskedTxtBox_ClientNIF, TxtBox_ClientCountry, TxtBox_ClientStreet, TxtBox_ClientCity, MaskedTxtBox_ClientPostalCode))
+                return;
+
+            try
+            {
+                string codPostal = MaskedTxtBox_ClientPostalCode.Text;
+                string telemovel = MaskedTxtBox_ClientPhone.Text;
+                string nif = MaskedTxtBox_ClientNIF.Text;
+
+                StringHelper.TrimAllWhiteSpace(ref telemovel);
+                StringHelper.TrimAllWhiteSpace(ref codPostal);
+                StringHelper.TrimAllWhiteSpace(ref nif);
+
+                if (codPostal.Length != 8) throw new Exception("O cliente tem um código postal inválido!");
+                if (telemovel.Length != 11) throw new Exception("O cliente tem um número de telemóvel inválido!");
+                if (nif.Length != 9) throw new Exception("O cliente tem um nif inválido!");
+
+                Morada updatedMorada = new Morada
+                {
+                    Rua = TxtBox_ClientStreet.Text,
+                    Cidade = TxtBox_ClientCity.Text,
+                    CodPostal = codPostal,
+                    Pais = TxtBox_ClientCountry.Text
+                };
+
+                Cliente updatedClient = new Cliente
+                {
+                    Nome = TxtBox_ClientName.Text,
+                    Telemovel = telemovel,
+                    NumContribuinte = nif,
+                    Morada = updatedMorada
+                };
+
+                CRUD.EditClient(updatedClient);
+                RefreshDataGridView();
+                 
+            } 
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

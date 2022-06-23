@@ -100,5 +100,16 @@ namespace app
                 throw new Exception("Este nome já está a ser utilizado!");
 
         }
+
+        public static void HasNIF(string nif)
+        {
+            List<Cliente> allClients = (from client in SingleTown.AppDB.ClienteSet
+                                        where client.NumContribuinte == nif
+                                        select client).ToList<Cliente>();
+
+            if (allClients.Count > 0)
+                throw new Exception("Este nif já está a ser utilizado!");
+
+        }
     }
 }

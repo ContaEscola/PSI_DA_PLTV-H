@@ -181,5 +181,43 @@ namespace app
             SingleTown.AppDB.ClienteSet.Add(clientToAdd);
             SingleTown.AppDB.SaveChanges();
         }
+
+        public static Cliente GetClient(string clientName)
+        {
+            var allClients = SingleTown.AppDB.ClienteSet;
+
+            Cliente client = (Cliente)allClients.Where(c => c.Nome == clientName).FirstOrDefault();
+
+            return client;
+        }
+        public static void EditClient(Cliente updatedClient)
+        {
+            var allClients = SingleTown.AppDB.ClienteSet;
+
+            Cliente checkForExistentNames = (Cliente)allClients.Where(c => c.Nome == updatedClient.Nome && c.Id != SingleTown.SelectedClient.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe um cliente com esse nome!");
+
+            VerifyData.HasMoradaForPerson(updatedClient.Morada);
+            
+            Cliente checkForNif = (Cliente)allClients.Where(c => c.NumContribuinte == updatedClient.NumContribuinte && c.Id != SingleTown.SelectedClient.Id).FirstOrDefault();
+
+            if (checkForNif != null)
+                throw new Exception("Já existe um cliente com esse nif!");
+
+            SingleTown.SelectedClient.Nome = updatedClient.Nome;
+            SingleTown.SelectedClient.Telemovel = updatedClient.Telemovel;
+            SingleTown.SelectedClient.NumContribuinte = updatedClient.NumContribuinte;
+
+
+            SingleTown.SelectedClient.Morada.Rua = updatedClient.Morada.Rua;
+            SingleTown.SelectedClient.Morada.Cidade = updatedClient.Morada.Cidade;
+            SingleTown.SelectedClient.Morada.CodPostal = updatedClient.Morada.CodPostal;
+            SingleTown.SelectedClient.Morada.Pais = updatedClient.Morada.Pais;
+
+            SingleTown.AppDB.SaveChanges();
+
+        }
     }
 }

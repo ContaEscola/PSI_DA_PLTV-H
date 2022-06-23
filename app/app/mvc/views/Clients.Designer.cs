@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_RemoveClient = new System.Windows.Forms.Button();
             this.DataGridView_Clients = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllClients = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_AddClient = new System.Windows.Forms.Button();
             this.MaskedTxtBox_NewClientPostalCode = new System.Windows.Forms.MaskedTextBox();
@@ -75,6 +81,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Clients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).BeginInit();
@@ -136,6 +143,43 @@
             this.DataGridView_Clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Clients.Size = new System.Drawing.Size(622, 475);
             this.DataGridView_Clients.TabIndex = 30;
+            this.DataGridView_Clients.SelectionChanged += new System.EventHandler(this.DataGridView_Clients_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NumContribuinte";
+            this.Column5.HeaderText = "Num. Contribuinte";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Telemovel";
+            this.Column4.HeaderText = "Telemovel";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Morada";
+            this.Column2.HeaderText = "Morada";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "PaisExtracted";
+            this.Column3.HeaderText = "Pais";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // panel1
             // 
@@ -399,6 +443,7 @@
             this.Btn_SaveChangesOnClient.TabIndex = 11;
             this.Btn_SaveChangesOnClient.Text = "Guardar";
             this.Btn_SaveChangesOnClient.UseVisualStyleBackColor = false;
+            this.Btn_SaveChangesOnClient.Click += new System.EventHandler(this.Btn_SaveChangesOnClient_Click);
             // 
             // MaskedTxtBox_ClientPostalCode
             // 
@@ -629,6 +674,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Clients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Clients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllClients)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

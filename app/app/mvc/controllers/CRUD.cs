@@ -69,5 +69,26 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+        public static void AddMorada(Morada moradaToAdd)
+        {
+            SingleTown.AppDB.MoradaSet.Add(moradaToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static Morada GetMorada(string rua)
+        {
+            var allMoradas = SingleTown.AppDB.MoradaSet;
+
+            Morada morada = (Morada)allMoradas.Where(m => m.Rua == rua).FirstOrDefault();
+
+            return morada;
+        }
+
+        public static void AddRestaurant(Restaurante restaurantToAdd)
+        {
+            SingleTown.AppDB.RestauranteSet.Add(restaurantToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
     }
 }

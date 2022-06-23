@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/22/2022 15:04:33
+-- Date Created: 06/22/2022 20:46:12
 -- Generated from EDMX file: C:\Users\TheSmiley\Desktop\PSI_DA_PLTV-H\app\app\BaseDados.edmx
 -- --------------------------------------------------
 
@@ -142,7 +142,8 @@ CREATE TABLE [dbo].[MoradaSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Rua] nvarchar(max)  NOT NULL,
     [Cidade] nvarchar(max)  NOT NULL,
-    [CodPostal] nchar(9)  NOT NULL
+    [CodPostal] nchar(8)  NOT NULL,
+    [Pais] nvarchar(max)  NOT NULL
 );
 GO
 

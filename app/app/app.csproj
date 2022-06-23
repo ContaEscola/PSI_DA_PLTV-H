@@ -178,6 +178,7 @@
       <DependentUpon>BaseDados.tt</DependentUpon>
     </Compile>
     <Compile Include="SingleTown.cs" />
+    <Compile Include="generic classes\StringHelper.cs" />
     <Compile Include="Trabalhador.cs">
       <DependentUpon>BaseDados.tt</DependentUpon>
     </Compile>

@@ -48,20 +48,35 @@ namespace app
 
 
 
-
-            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants, DataGridView_Restaurants);
+            RefreshDataGridView();
+            DisableEditControls();
         }
 
+        private void EnableEditControls()
+        {
+            Btn_EditRestaurant.Enabled = true;
+        }
 
+        private void DisableEditControls()
+        {
+            Btn_EditRestaurant.Enabled = false;
+        }
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants, DataGridView_Restaurants);
+        }
 
         private void Btn_RegisterNewRestaurant_Click(object sender, EventArgs e)
         {
             BaseController.RenderViewAsDialog(new AddEditRestaurant());
+            RefreshDataGridView();
         }
 
         private void Btn_EditRestaurant_Click(object sender, EventArgs e)
         {
             BaseController.RenderViewAsDialog(new AddEditRestaurant(true));
+            RefreshDataGridView();
         }
 
         private void Btn_ManageRestaurant_Click(object sender, EventArgs e)

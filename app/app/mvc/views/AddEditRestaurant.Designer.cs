@@ -138,7 +138,6 @@
             this.MaskedTxtBox_RestaurantPostalCode.Margin = new System.Windows.Forms.Padding(0);
             this.MaskedTxtBox_RestaurantPostalCode.Mask = "0000 - 000";
             this.MaskedTxtBox_RestaurantPostalCode.Name = "MaskedTxtBox_RestaurantPostalCode";
-            this.MaskedTxtBox_RestaurantPostalCode.PromptChar = '0';
             this.MaskedTxtBox_RestaurantPostalCode.Size = new System.Drawing.Size(120, 26);
             this.MaskedTxtBox_RestaurantPostalCode.TabIndex = 24;
             this.MaskedTxtBox_RestaurantPostalCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -198,7 +197,7 @@
             this.Btn_Conclude.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Conclude.AutoSize = true;
             this.Btn_Conclude.BackColor = System.Drawing.Color.White;
-            this.Btn_Conclude.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Btn_Conclude.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Conclude.Location = new System.Drawing.Point(264, 594);
             this.Btn_Conclude.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_Conclude.Name = "Btn_Conclude";
@@ -206,6 +205,7 @@
             this.Btn_Conclude.TabIndex = 5;
             this.Btn_Conclude.Text = "Concluir";
             this.Btn_Conclude.UseVisualStyleBackColor = false;
+            this.Btn_Conclude.Click += new System.EventHandler(this.Btn_Conclude_Click);
             // 
             // AddEditRestaurant
             // 

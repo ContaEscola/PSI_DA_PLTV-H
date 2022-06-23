@@ -117,7 +117,7 @@ namespace app
 
             MetodoPagamento newPaymentMethod = new MetodoPagamento
             {
-                Metodo = TxtBox_NewPaymentMethodName.Text,
+                Metodo = TxtBox_NewPaymentMethodName.Text.Trim(),
                 Ativo = ComboBox_NewPaymentMethodState.SelectedItem.ToString()
             };
 
@@ -166,7 +166,7 @@ namespace app
            {
                 MetodoPagamento updatedPaymentMethod = new MetodoPagamento
                 {
-                    Metodo = TxtBox_PaymentMethodName.Text,
+                    Metodo = TxtBox_PaymentMethodName.Text.Trim(),
                     Ativo = ComboBox_PaymentMethodState.SelectedItem.ToString()
                 };
 

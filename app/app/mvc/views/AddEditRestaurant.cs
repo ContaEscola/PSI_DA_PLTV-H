@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace app
 {
-    public partial class AddEditRestaurant : Dialog
+    public partial class AddEditRestaurant : Form
     {
         private FontLoader _fontLoader;
 
@@ -22,7 +22,7 @@ namespace app
         /// Inicializa o formulário para adicionar um restaurante
         /// </summary>
         /// <param name="toEdit">Passe true se quiser que o formulário seja para editar um restaurante</param>
-        public AddEditRestaurant(bool toEdit = false):base()
+        public AddEditRestaurant(bool toEdit = false)
         {
             InitializeComponent();
 
@@ -72,7 +72,54 @@ namespace app
             }
         }
 
+        private void Btn_Conclude_Click(object sender, EventArgs e)
+        {
+            if(_toEdit)
+            {
 
+            } else
+            {
+                if (String.IsNullOrEmpty(TxtBox_RestaurantName.Text) || String.IsNullOrEmpty(TxtBox_RestaurantStreet.Text)) return;
+                if (String.IsNullOrEmpty(TxtBox_RestaurantCity.Text) || String.IsNullOrEmpty(TxtBox_RestaurantCountry.Text)) return;
+
+                try
+                {
+                    string codPostal = MaskedTxtBox_RestaurantPostalCode.Text;
+                    StringHelper.TrimAllWhiteSpace(ref codPostal);
+
+                    if (codPostal.Length != 8) throw new Exception("Código Postal Inválido!");
+
+                    Morada newMorada = new Morada
+                    {
+                        Rua = TxtBox_RestaurantStreet.Text,
+                        Cidade = TxtBox_RestaurantCity.Text,
+                        CodPostal = codPostal,
+                        Pais = TxtBox_RestaurantCountry.Text
+                    };
+
+                    Restaurante newRestaurant = new Restaurante
+                    {
+                        Nome = TxtBox_RestaurantName.Text
+                    };
+
+                    VerifyData.HasRestaurant(newRestaurant);
+                    VerifyData.HasMorada(newMorada);
+
+                    CRUD.AddMorada(newMorada);
+                    Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
+
+                    newRestaurant.Morada = moradaInDB;
+
+                    CRUD.AddRestaurant(newRestaurant);
+
+                    Close();
+
+                } catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 
 }

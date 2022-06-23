@@ -18,6 +18,7 @@ namespace app
         public string Nome { get; set; }
         public string Telemovel { get; set; }
         public int IdMorada { get; set; }
+        public string Ativo { get; set; }
     
         public virtual Morada Morada { get; set; }
     }

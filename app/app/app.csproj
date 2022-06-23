@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Partials\DBPartial.cs" />
     <Compile Include="mvc\controllers\CRUD.cs" />
     <Compile Include="generic classes\Dialog.cs">
       <SubType>Form</SubType>
@@ -183,6 +184,7 @@
       <DependentUpon>BaseDados.tt</DependentUpon>
     </Compile>
     <Compile Include="mvc\controllers\VerifyData.cs" />
+    <Compile Include="Partials\TrabalhadorPartial.cs" />
     <EmbeddedResource Include="mvc\views\AddEditRestaurant.resx">
       <DependentUpon>AddEditRestaurant.cs</DependentUpon>
     </EmbeddedResource>

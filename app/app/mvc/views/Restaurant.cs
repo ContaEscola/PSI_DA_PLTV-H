@@ -66,6 +66,9 @@ namespace app
             fontsForControls.Add(Lbl_NewWorkerPostalCode, FontLoader.RobotoSlabRegular);
             fontsForControls.Add(MaskedTxtBox_NewWorkerPostalCode, FontLoader.RobotoSlabRegular);
 
+            fontsForControls.Add(Lbl_NewWorkerCountry, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add(TxtBox_NewWorkerCountry, FontLoader.RobotoSlabRegular);
+
             fontsForControls.Add(Btn_AddWorker, FontLoader.RobotoSlabRegular);
 
 
@@ -92,8 +95,9 @@ namespace app
             fontsForControls.Add(Lbl_WorkerPostalCode, FontLoader.RobotoSlabRegular);
             fontsForControls.Add(MaskedTxtBox_WorkerPostalCode, FontLoader.RobotoSlabRegular);
 
-            fontsForControls.Add(Lbl_WorkerState, FontLoader.RobotoSlabRegular);
-            fontsForControls.Add(ComboBox_WorkerState, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add(Lbl_WorkerCountry, FontLoader.RobotoSlabRegular);
+            fontsForControls.Add(TxtBox_WorkerCountry, FontLoader.RobotoSlabRegular);
+
 
             fontsForControls.Add(Btn_SaveChangesOnWorker, FontLoader.RobotoSlabRegular);
 
@@ -119,8 +123,52 @@ namespace app
             Lbl_RestaurantStreet.Text = _restaurant.Morada.Rua;
 
             RefreshDataGridView();
+
+            DisableEditControls();
         }
 
+        private void EnableEditControls()
+        {
+            TxtBox_WorkerName.Enabled = true;
+            MaskedTxtBox_WorkerPhone.Enabled = true;
+            MaskedTxtBox_WorkerSalary.Enabled = true;
+            TxtBox_WorkerPosition.Enabled = true;
+            TxtBox_WorkerStreet.Enabled = true;
+            TxtBox_WorkerCity.Enabled = true;
+            MaskedTxtBox_WorkerPostalCode.Enabled = true;
+            TxtBox_WorkerCountry.Enabled = true;
+            Btn_SaveChangesOnWorker.Enabled = true;
+
+            Btn_RemoveWorker.Enabled = true;
+        }
+
+        private void DisableEditControls()
+        {
+            TxtBox_WorkerName.Enabled = false;
+            MaskedTxtBox_WorkerPhone.Enabled = false;
+            MaskedTxtBox_WorkerSalary.Enabled = false;
+            TxtBox_WorkerPosition.Enabled = false;
+            TxtBox_WorkerStreet.Enabled = false;
+            TxtBox_WorkerCity.Enabled = false;
+            MaskedTxtBox_WorkerPostalCode.Enabled = false;
+            TxtBox_WorkerCountry.Enabled = false;
+            Btn_SaveChangesOnWorker.Enabled = false;
+
+            Btn_RemoveWorker.Enabled = false;
+        }
+
+        private void ResetEditControls()
+        {
+            TxtBox_WorkerName.ResetText();
+            MaskedTxtBox_WorkerPhone.ResetText();
+            MaskedTxtBox_WorkerSalary.ResetText();
+            TxtBox_WorkerPosition.ResetText();
+            TxtBox_WorkerStreet.ResetText();
+            TxtBox_WorkerCity.ResetText();
+            MaskedTxtBox_WorkerPostalCode.ResetText();
+            TxtBox_WorkerCountry.ResetText();
+            DisableEditControls();
+        }
 
         private void RefreshDataGridView()
         {

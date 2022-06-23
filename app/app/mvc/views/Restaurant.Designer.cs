@@ -58,8 +58,7 @@
             this.TxtBox_NewWorkerName = new System.Windows.Forms.TextBox();
             this.Lbl_NewWorkerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ComboBox_WorkerState = new System.Windows.Forms.ComboBox();
-            this.Lbl_WorkerState = new System.Windows.Forms.Label();
+            this.Lbl_WorkerCountry = new System.Windows.Forms.Label();
             this.Btn_SaveChangesOnWorker = new System.Windows.Forms.Button();
             this.MaskedTxtBox_WorkerPostalCode = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_WorkerPostalCode = new System.Windows.Forms.Label();
@@ -81,6 +80,14 @@
             this.Btn_ManageMenu = new System.Windows.Forms.Button();
             this.Btn_ManageOrders = new System.Windows.Forms.Button();
             this.BindingSource_AllEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.TxtBox_WorkerCountry = new System.Windows.Forms.TextBox();
+            this.TxtBox_NewWorkerCountry = new System.Windows.Forms.TextBox();
+            this.Lbl_NewWorkerCountry = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Employees)).BeginInit();
@@ -211,6 +218,8 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.TxtBox_NewWorkerCountry);
+            this.panel1.Controls.Add(this.Lbl_NewWorkerCountry);
             this.panel1.Controls.Add(this.Btn_AddWorker);
             this.panel1.Controls.Add(this.MaskedTxtBox_NewWorkerPostalCode);
             this.panel1.Controls.Add(this.Lbl_NewWorkerPostalCode);
@@ -412,8 +421,8 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.panel2.Controls.Add(this.ComboBox_WorkerState);
-            this.panel2.Controls.Add(this.Lbl_WorkerState);
+            this.panel2.Controls.Add(this.TxtBox_WorkerCountry);
+            this.panel2.Controls.Add(this.Lbl_WorkerCountry);
             this.panel2.Controls.Add(this.Btn_SaveChangesOnWorker);
             this.panel2.Controls.Add(this.MaskedTxtBox_WorkerPostalCode);
             this.panel2.Controls.Add(this.Lbl_WorkerPostalCode);
@@ -435,28 +444,17 @@
             this.panel2.Size = new System.Drawing.Size(546, 252);
             this.panel2.TabIndex = 12;
             // 
-            // ComboBox_WorkerState
+            // Lbl_WorkerCountry
             // 
-            this.ComboBox_WorkerState.BackColor = System.Drawing.Color.White;
-            this.ComboBox_WorkerState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.ComboBox_WorkerState.FormattingEnabled = true;
-            this.ComboBox_WorkerState.Location = new System.Drawing.Point(86, 189);
-            this.ComboBox_WorkerState.Margin = new System.Windows.Forms.Padding(0);
-            this.ComboBox_WorkerState.Name = "ComboBox_WorkerState";
-            this.ComboBox_WorkerState.Size = new System.Drawing.Size(120, 28);
-            this.ComboBox_WorkerState.TabIndex = 25;
-            // 
-            // Lbl_WorkerState
-            // 
-            this.Lbl_WorkerState.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_WorkerState.AutoSize = true;
-            this.Lbl_WorkerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_WorkerState.Location = new System.Drawing.Point(17, 192);
-            this.Lbl_WorkerState.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_WorkerState.Name = "Lbl_WorkerState";
-            this.Lbl_WorkerState.Size = new System.Drawing.Size(64, 20);
-            this.Lbl_WorkerState.TabIndex = 24;
-            this.Lbl_WorkerState.Text = "Estado:";
+            this.Lbl_WorkerCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_WorkerCountry.AutoSize = true;
+            this.Lbl_WorkerCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_WorkerCountry.Location = new System.Drawing.Point(17, 192);
+            this.Lbl_WorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_WorkerCountry.Name = "Lbl_WorkerCountry";
+            this.Lbl_WorkerCountry.Size = new System.Drawing.Size(43, 20);
+            this.Lbl_WorkerCountry.TabIndex = 24;
+            this.Lbl_WorkerCountry.Text = "Pais:";
             // 
             // Btn_SaveChangesOnWorker
             // 
@@ -648,7 +646,10 @@
             // 
             // DataGridView_Employees
             // 
+            this.DataGridView_Employees.AllowUserToAddRows = false;
+            this.DataGridView_Employees.AllowUserToDeleteRows = false;
             this.DataGridView_Employees.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_Employees.AutoGenerateColumns = false;
             this.DataGridView_Employees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_Employees.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -660,6 +661,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_Employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Employees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column4,
+            this.Column3,
+            this.Column2,
+            this.Column5});
+            this.DataGridView_Employees.DataSource = this.BindingSource_AllEmployees;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -673,6 +681,7 @@
             this.DataGridView_Employees.Margin = new System.Windows.Forms.Padding(0);
             this.DataGridView_Employees.MultiSelect = false;
             this.DataGridView_Employees.Name = "DataGridView_Employees";
+            this.DataGridView_Employees.ReadOnly = true;
             this.DataGridView_Employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Employees.Size = new System.Drawing.Size(611, 425);
             this.DataGridView_Employees.TabIndex = 13;
@@ -718,6 +727,73 @@
             this.Btn_ManageOrders.TabIndex = 16;
             this.Btn_ManageOrders.Text = "Gerir Pedidos";
             this.Btn_ManageOrders.UseVisualStyleBackColor = false;
+            // 
+            // TxtBox_WorkerCountry
+            // 
+            this.TxtBox_WorkerCountry.BackColor = System.Drawing.Color.White;
+            this.TxtBox_WorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_WorkerCountry.Location = new System.Drawing.Point(65, 189);
+            this.TxtBox_WorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_WorkerCountry.Name = "TxtBox_WorkerCountry";
+            this.TxtBox_WorkerCountry.Size = new System.Drawing.Size(141, 26);
+            this.TxtBox_WorkerCountry.TabIndex = 26;
+            // 
+            // TxtBox_NewWorkerCountry
+            // 
+            this.TxtBox_NewWorkerCountry.BackColor = System.Drawing.Color.White;
+            this.TxtBox_NewWorkerCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.TxtBox_NewWorkerCountry.Location = new System.Drawing.Point(65, 189);
+            this.TxtBox_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtBox_NewWorkerCountry.Name = "TxtBox_NewWorkerCountry";
+            this.TxtBox_NewWorkerCountry.Size = new System.Drawing.Size(141, 26);
+            this.TxtBox_NewWorkerCountry.TabIndex = 28;
+            // 
+            // Lbl_NewWorkerCountry
+            // 
+            this.Lbl_NewWorkerCountry.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_NewWorkerCountry.AutoSize = true;
+            this.Lbl_NewWorkerCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_NewWorkerCountry.Location = new System.Drawing.Point(17, 192);
+            this.Lbl_NewWorkerCountry.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_NewWorkerCountry.Name = "Lbl_NewWorkerCountry";
+            this.Lbl_NewWorkerCountry.Size = new System.Drawing.Size(43, 20);
+            this.Lbl_NewWorkerCountry.TabIndex = 27;
+            this.Lbl_NewWorkerCountry.Text = "Pais:";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SalarioFormated";
+            this.Column4.HeaderText = "Salário";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Posicao";
+            this.Column3.HeaderText = "Posição";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Morada";
+            this.Column2.HeaderText = "Morada";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PaisExtracted";
+            this.Column5.HeaderText = "Pais";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Restaurant
             // 
@@ -789,8 +865,7 @@
         private System.Windows.Forms.MaskedTextBox MaskedTxtBox_NewWorkerPostalCode;
         private System.Windows.Forms.Label Lbl_NewWorkerPostalCode;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox ComboBox_WorkerState;
-        private System.Windows.Forms.Label Lbl_WorkerState;
+        private System.Windows.Forms.Label Lbl_WorkerCountry;
         private System.Windows.Forms.Button Btn_SaveChangesOnWorker;
         private System.Windows.Forms.MaskedTextBox MaskedTxtBox_WorkerPostalCode;
         private System.Windows.Forms.Label Lbl_WorkerPostalCode;
@@ -812,5 +887,13 @@
         private System.Windows.Forms.Button Btn_ManageMenu;
         private System.Windows.Forms.Button Btn_ManageOrders;
         private System.Windows.Forms.BindingSource BindingSource_AllEmployees;
+        private System.Windows.Forms.TextBox TxtBox_NewWorkerCountry;
+        private System.Windows.Forms.Label Lbl_NewWorkerCountry;
+        private System.Windows.Forms.TextBox TxtBox_WorkerCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

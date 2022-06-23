@@ -88,6 +88,7 @@ namespace app
             this.ToolStripMenuItem_ManageSingleRestaurant.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ToolStripMenuItem_ManageSingleRestaurant.Size = new System.Drawing.Size(210, 24);
             this.ToolStripMenuItem_ManageSingleRestaurant.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageSingleRestaurant.Click += new System.EventHandler(this.ToolStripMenuItem_ManageSingleRestaurant_Click);
             // 
             // ToolStripMenuItem_Clients
             // 
@@ -110,6 +111,7 @@ namespace app
             this.ToolStripMenuItem_ManageSingleClient.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ToolStripMenuItem_ManageSingleClient.Size = new System.Drawing.Size(210, 24);
             this.ToolStripMenuItem_ManageSingleClient.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageSingleClient.Click += new System.EventHandler(this.ToolStripMenuItem_ManageSingleClient_Click);
             // 
             // ToolStripMenuItem_Menu
             // 

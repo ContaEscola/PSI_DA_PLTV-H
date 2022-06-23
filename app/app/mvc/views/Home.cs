@@ -75,5 +75,17 @@ namespace app
             Clients clientsView = new Clients();
             BaseController.RenderView(clientsView);
         }
+
+        private void ToolStripMenuItem_ManageSingleRestaurant_Click(object sender, EventArgs e)
+        {
+            SelectRestaurant restauranteview = new SelectRestaurant();
+            BaseController.RenderView(restauranteview);
+        }
+
+        private void ToolStripMenuItem_ManageSingleClient_Click(object sender, EventArgs e)
+        {
+            GenericSelection genericview = new GenericSelection();
+            BaseController.RenderView(genericview);
+        }
     }
 }

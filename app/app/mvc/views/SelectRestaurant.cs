@@ -43,6 +43,58 @@ namespace app
 
             _fontLoader.LoadFontToControls(fontsForControls);
 
+
+            RefreshDataGridView();
+
+
+        }
+
+
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants);
+        }
+
+        private void Btn_CreateRestaurant_Click(object sender, EventArgs e)
+        {
+            AddEditRestaurant novorestaurante = new AddEditRestaurant();
+            BaseController.RenderViewAsDialog(novorestaurante);
+            RefreshDataGridView();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataGridView_AvailableRestaurants_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Btn_Confirm_Click(object sender, EventArgs e)
+        {
+            Restaurant selectedCategory = new Restaurant
+            {
+                Nome = DataGridView_AvailableRestaurants.CurrentRow.Cells[0].Value.ToString(),
+
+
+            };
+
+
+
+            Restaurant novorestaurante = new AddEditRestaurant();
+            BaseController.RenderViewAsDialog(novorestaurante);
+
+
+            
+
+
+
+
+
+
         }
     }
 }

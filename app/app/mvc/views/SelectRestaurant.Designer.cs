@@ -29,8 +29,9 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Title = new System.Windows.Forms.Label();
             this.Lbl_Name = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
@@ -38,7 +39,11 @@ namespace app
             this.DataGridView_AvailableRestaurants = new System.Windows.Forms.DataGridView();
             this.Btn_CreateRestaurant = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
+            this.BindingSource_AllRestaurants = new System.Windows.Forms.BindingSource(this.components);
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableRestaurants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllRestaurants)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Title
@@ -90,32 +95,40 @@ namespace app
             // 
             // DataGridView_AvailableRestaurants
             // 
-            this.DataGridView_AvailableRestaurants.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_AvailableRestaurants.AllowUserToAddRows = false;
+            this.DataGridView_AvailableRestaurants.AllowUserToDeleteRows = false;
+            this.DataGridView_AvailableRestaurants.AutoGenerateColumns = false;
             this.DataGridView_AvailableRestaurants.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_AvailableRestaurants.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_AvailableRestaurants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_AvailableRestaurants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_AvailableRestaurants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_AvailableRestaurants.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_AvailableRestaurants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Morada});
+            this.DataGridView_AvailableRestaurants.DataSource = this.BindingSource_AllRestaurants;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_AvailableRestaurants.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView_AvailableRestaurants.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_AvailableRestaurants.Location = new System.Drawing.Point(102, 301);
             this.DataGridView_AvailableRestaurants.Margin = new System.Windows.Forms.Padding(0);
             this.DataGridView_AvailableRestaurants.Name = "DataGridView_AvailableRestaurants";
+            this.DataGridView_AvailableRestaurants.ReadOnly = true;
             this.DataGridView_AvailableRestaurants.Size = new System.Drawing.Size(433, 203);
             this.DataGridView_AvailableRestaurants.TabIndex = 19;
+            this.DataGridView_AvailableRestaurants.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_AvailableRestaurants_CellContentClick);
             // 
             // Btn_CreateRestaurant
             // 
@@ -130,6 +143,7 @@ namespace app
             this.Btn_CreateRestaurant.TabIndex = 20;
             this.Btn_CreateRestaurant.Text = "Criar Novo";
             this.Btn_CreateRestaurant.UseVisualStyleBackColor = false;
+            this.Btn_CreateRestaurant.Click += new System.EventHandler(this.Btn_CreateRestaurant_Click);
             // 
             // Btn_Confirm
             // 
@@ -144,6 +158,27 @@ namespace app
             this.Btn_Confirm.TabIndex = 21;
             this.Btn_Confirm.Text = "Confirmar";
             this.Btn_Confirm.UseVisualStyleBackColor = false;
+            this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
+            // 
+            // BindingSource_AllRestaurants
+            // 
+            this.BindingSource_AllRestaurants.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 190;
+            // 
+            // Morada
+            // 
+            this.Morada.DataPropertyName = "Morada";
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            this.Morada.Width = 190;
             // 
             // SelectRestaurant
             // 
@@ -166,6 +201,7 @@ namespace app
             this.Text = "Selecione o Restaurante";
             this.Load += new System.EventHandler(this.SelectRestaurant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableRestaurants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllRestaurants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +216,8 @@ namespace app
         private System.Windows.Forms.DataGridView DataGridView_AvailableRestaurants;
         private System.Windows.Forms.Button Btn_CreateRestaurant;
         private System.Windows.Forms.Button Btn_Confirm;
+        private System.Windows.Forms.BindingSource BindingSource_AllRestaurants;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
     }
 }

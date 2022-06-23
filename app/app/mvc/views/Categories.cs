@@ -182,5 +182,10 @@ namespace app
         {
 
         }
+
+        private void DataGridView_Categories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

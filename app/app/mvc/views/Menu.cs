@@ -15,6 +15,7 @@ namespace app
 
         private FontLoader _fontLoader;
         private Restaurante _restaurant;
+        private List<ItemMenu> lista;
 
         public Menu(Restaurante restaurant)
         {
@@ -25,8 +26,18 @@ namespace app
 
 
 
+            lista = new List<ItemMenu>();
+
+            lista.Add(new ItemMenu()
+            {
+                Nome = RichTxtBox_SelectedItemIngredients.Text,
+                Ingredientes = RichTxtBox_NewItemIngredients.Text,
+            });
 
 
+
+            // Ba listView não é possível carregar por DataSource
+            refreshlistcomida();
 
         }
 
@@ -103,6 +114,55 @@ namespace app
 
             this.Text = $"Restaurante: {_restaurant.Nome}";
             Lbl_RestaurantName.Text = _restaurant.Nome;
+
+            refreshlistcomida();
+            PopulateData.PopulateAllCategories(ComboBox_NewItemCategory);
+
         }
+
+        private void Btn_AddItem_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_NewItemName, RichTxtBox_NewItemIngredients, MaskedTxtBox_NewItemPrice, ComboBox_NewItemState))
+                return;
+
+           /* try
+            {
+                string nome = TxtBox_NewItemName.Text;
+                string ingredientes = RichTxtBox_NewItemIngredients.Text;
+                string preco = MaskedTxtBox_NewItemPrice.Text;
+                StringHelper.RemoveEuroFromString(ref preco);
+
+
+
+            }*/
+
+
+        }
+        private void refreshlistcomida()
+        {
+            ListView_MenuItems.Items.Clear();
+            int i = 0;
+            foreach (ItemMenu itemMenu in lista)
+            {
+                var linha = new string[]
+                {
+                    itemMenu.Nome,
+                    string.Format("{0} TEST", itemMenu.Nome),
+                    string.Format("{0} CV", itemMenu.Ingredientes),
+                };
+
+                ListViewItem lvi = new ListViewItem(linha, i++);
+                lvi.Tag = itemMenu;
+                ListView_MenuItems.Items.Add(lvi);
+            }
+        }
+
+
+
+        private void RefreshListview()
+        {
+            PopulateData.PopulateAllCategories(ComboBox_NewItemCategory);
+        }
+
     }
 }

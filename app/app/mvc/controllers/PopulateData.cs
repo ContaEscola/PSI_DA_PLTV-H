@@ -55,6 +55,26 @@ namespace app
 
         }
 
+
+        public static void PopulateAllCategories(ComboBox combobox)
+        {
+
+            List<Categoria> allCategories = (from categorie in SingleTown.AppDB.CategoriaSet 
+                                             where categorie.Ativo == "Ativo"
+                                             select categorie).ToList<Categoria>();
+
+            combobox.Items.Clear();
+            foreach (Categoria categorie in allCategories)
+            {
+                combobox.Items.Add(categorie.Nome);
+            }
+
+
+            combobox.SelectedIndex = -1;
+        }
+
+
+
         public static void PopulateCategoriesStatesIntoComboBox(ComboBox comboBox)
         {
             comboBox.Items.Clear();
@@ -68,7 +88,7 @@ namespace app
 
         public static void PopulateEmployeesIntoBindingSource(Restaurante restaurantAssociated,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
         {
-            List<Trabalhador> allEmployees = (from people in SingleTown.AppDB.PessoaSet
+            List<Trabalhador>  allEmployees = (from people in SingleTown.AppDB.PessoaSet
                                join employee in SingleTown.AppDB.TrabalhadorSet on people.Id equals employee.Id
                                where employee.IdRestaurante == restaurantAssociated.Id && employee.Ativo == "Ativo"
                                select employee).ToList<Trabalhador>();

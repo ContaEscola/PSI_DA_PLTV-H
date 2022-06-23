@@ -332,23 +332,8 @@ namespace app
 
         private void Btn_ManageMenu_Click(object sender, EventArgs e)
         {
-            BaseController.RenderView(new Menu(SingleTown.SelectedRestaurant));
+            BaseController.RenderView(new Menu(_restaurant));
 
-
-        }
-
-        private void Lbl_RestauranteName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView_Employees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

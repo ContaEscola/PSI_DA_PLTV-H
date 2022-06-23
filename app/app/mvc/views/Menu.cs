@@ -15,7 +15,7 @@ namespace app
 
         private FontLoader _fontLoader;
         private Restaurante _restaurant;
-        private List<ItemMenu> lista;
+
 
         public Menu(Restaurante restaurant)
         {
@@ -23,21 +23,6 @@ namespace app
 
             _restaurant = restaurant;
             _fontLoader = new FontLoader();
-
-
-
-            lista = new List<ItemMenu>();
-
-            lista.Add(new ItemMenu()
-            {
-                Nome = RichTxtBox_SelectedItemIngredients.Text,
-                Ingredientes = RichTxtBox_NewItemIngredients.Text,
-            });
-
-
-
-            // Ba listView não é possível carregar por DataSource
-            refreshlistcomida();
 
         }
 
@@ -103,19 +88,19 @@ namespace app
 
             fontsForControls.Add(Btn_ManageCategories, FontLoader.RobotoSlabRegular);
 
-            _fontLoader.LoadFontToControls(fontsForControls);
+            FontFamily fontForDataGrid = _fontLoader.GetFont(FontLoader.RobotoSlabRegular);
+            DataGridView_MenuItems.ColumnHeadersDefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_MenuItems.ColumnHeadersDefaultCellStyle.Font.Size);
+            DataGridView_MenuItems.DefaultCellStyle.Font = new Font(fontForDataGrid, DataGridView_MenuItems.DefaultCellStyle.Font.Size);
 
-            FontFamily fontForListView = _fontLoader.GetFont(FontLoader.RobotoSlabRegular);
-            ListView_MenuItems.Font = new Font(fontForListView, ListView_MenuItems.Font.Size);
+            _fontLoader.LoadFontToControls(fontsForControls);
 
             Lbl_AddItem.BringToFront();
             Lbl_EditItem.BringToFront();
 
 
-            this.Text = $"Restaurante: {_restaurant.Nome}";
+            this.Text = $"Menu: {_restaurant.Nome}";
             Lbl_RestaurantName.Text = _restaurant.Nome;
 
-            refreshlistcomida();
             PopulateData.PopulateAllCategories(ComboBox_NewItemCategory);
 
         }
@@ -138,26 +123,6 @@ namespace app
 
 
         }
-        private void refreshlistcomida()
-        {
-            ListView_MenuItems.Items.Clear();
-            int i = 0;
-            foreach (ItemMenu itemMenu in lista)
-            {
-                var linha = new string[]
-                {
-                    itemMenu.Nome,
-                    string.Format("{0} TEST", itemMenu.Nome),
-                    string.Format("{0} CV", itemMenu.Ingredientes),
-                };
-
-                ListViewItem lvi = new ListViewItem(linha, i++);
-                lvi.Tag = itemMenu;
-                ListView_MenuItems.Items.Add(lvi);
-            }
-        }
-
-
 
         private void RefreshListview()
         {

@@ -29,8 +29,8 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Menu = new System.Windows.Forms.Label();
             this.Lbl_Restaurant = new System.Windows.Forms.Label();
             this.Lbl_RestaurantName = new System.Windows.Forms.Label();
@@ -65,13 +65,15 @@ namespace app
             this.Lbl_SelectedItemPhotograph = new System.Windows.Forms.Label();
             this.Lbl_SelectedItemName = new System.Windows.Forms.Label();
             this.Lbl_EditItem = new System.Windows.Forms.Label();
-            this.ListView_MenuItems = new System.Windows.Forms.ListView();
             this.Btn_RemoveItem = new System.Windows.Forms.Button();
             this.Btn_ManageCategories = new System.Windows.Forms.Button();
             this.Btn_ChangeRestaurant = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.DataGridView_MenuItems = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_MenuItems)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Menu
@@ -484,20 +486,6 @@ namespace app
             this.Lbl_EditItem.TabIndex = 5;
             this.Lbl_EditItem.Text = "Editar Item";
             // 
-            // ListView_MenuItems
-            // 
-            this.ListView_MenuItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ListView_MenuItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.ListView_MenuItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListView_MenuItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.ListView_MenuItems.HideSelection = false;
-            this.ListView_MenuItems.Location = new System.Drawing.Point(775, 163);
-            this.ListView_MenuItems.Margin = new System.Windows.Forms.Padding(0);
-            this.ListView_MenuItems.Name = "ListView_MenuItems";
-            this.ListView_MenuItems.Size = new System.Drawing.Size(622, 646);
-            this.ListView_MenuItems.TabIndex = 7;
-            this.ListView_MenuItems.UseCompatibleStateImageBehavior = false;
-            // 
             // Btn_RemoveItem
             // 
             this.Btn_RemoveItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -537,11 +525,57 @@ namespace app
             this.Btn_ChangeRestaurant.Text = "Mudar de Restaurante";
             this.Btn_ChangeRestaurant.UseVisualStyleBackColor = false;
             // 
-            // imageList1
+            // DataGridView_MenuItems
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "bacalhau.jpg");
+            this.DataGridView_MenuItems.AllowUserToAddRows = false;
+            this.DataGridView_MenuItems.AllowUserToDeleteRows = false;
+            this.DataGridView_MenuItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_MenuItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.DataGridView_MenuItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_MenuItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView_MenuItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_MenuItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_MenuItems.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_MenuItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.DataGridView_MenuItems.Location = new System.Drawing.Point(775, 163);
+            this.DataGridView_MenuItems.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_MenuItems.MultiSelect = false;
+            this.DataGridView_MenuItems.Name = "DataGridView_MenuItems";
+            this.DataGridView_MenuItems.ReadOnly = true;
+            this.DataGridView_MenuItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridView_MenuItems.Size = new System.Drawing.Size(622, 648);
+            this.DataGridView_MenuItems.TabIndex = 19;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Metodo";
+            this.Column1.HeaderText = "Método Pagamento";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 180;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ativo";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Menu
             // 
@@ -550,10 +584,10 @@ namespace app
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1424, 1041);
+            this.Controls.Add(this.DataGridView_MenuItems);
             this.Controls.Add(this.Btn_ChangeRestaurant);
             this.Controls.Add(this.Btn_ManageCategories);
             this.Controls.Add(this.Btn_RemoveItem);
-            this.Controls.Add(this.ListView_MenuItems);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Lbl_EditItem);
             this.Controls.Add(this.panel1);
@@ -572,6 +606,7 @@ namespace app
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_MenuItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,10 +648,11 @@ namespace app
         private System.Windows.Forms.Label Lbl_SelectedItemPhotograph;
         private System.Windows.Forms.Label Lbl_SelectedItemName;
         private System.Windows.Forms.Label Lbl_EditItem;
-        private System.Windows.Forms.ListView ListView_MenuItems;
         private System.Windows.Forms.Button Btn_RemoveItem;
         private System.Windows.Forms.Button Btn_ManageCategories;
         private System.Windows.Forms.Button Btn_ChangeRestaurant;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridView DataGridView_MenuItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

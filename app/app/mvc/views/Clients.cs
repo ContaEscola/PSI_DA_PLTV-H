@@ -175,6 +175,35 @@ namespace app
                 if (telemovel.Length != 11) throw new Exception("O novo cliente tem um número de telemóvel inválido!");
                 if (nif.Length != 9) throw new Exception("O novo cliente tem um nif inválido!");
 
+                Morada newMorada = new Morada
+                {
+                    Rua = TxtBox_NewClientStreet.Text,
+                    Cidade = TxtBox_NewClientCity.Text,
+                    CodPostal = codPostal,
+                    Pais = TxtBox_NewClientCountry.Text
+                };
+
+                Cliente newClient = new Cliente
+                {
+                    Nome = TxtBox_NewClientName.Text,
+                    Telemovel = telemovel,
+                    Ativo = "Ativo",
+                    TotalGasto = 0,
+                    NumContribuinte = nif
+
+                };
+
+                VerifyData.HasMoradaForPerson(newMorada);
+                VerifyData.HasCliente(newClient);
+
+                CRUD.AddMorada(newMorada);
+                Morada moradaInDB = CRUD.GetMorada(newMorada.Rua);
+
+                newClient.IdMorada = moradaInDB.Id;
+
+                CRUD.AddClient(newClient);
+                RefreshDataGridView();
+                ResetAddControls();
 
             }
             catch (Exception ex)

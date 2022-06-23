@@ -89,5 +89,16 @@ namespace app
                 throw new Exception("Este nome já está a ser utilizado!");
 
         }
+
+        public static void HasCliente(Cliente clientToCheck)
+        {
+            List<Cliente> allClients = (from client in SingleTown.AppDB.ClienteSet
+                                              where client.Nome == clientToCheck.Nome
+                                              select client).ToList<Cliente>();
+
+            if (allClients.Count > 0)
+                throw new Exception("Este nome já está a ser utilizado!");
+
+        }
     }
 }

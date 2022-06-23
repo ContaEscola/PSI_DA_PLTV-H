@@ -248,6 +248,7 @@ namespace app
             this.Btn_ClientsGlobalManagement.TabIndex = 4;
             this.Btn_ClientsGlobalManagement.Text = "Gestão Global";
             this.Btn_ClientsGlobalManagement.UseVisualStyleBackColor = false;
+            this.Btn_ClientsGlobalManagement.Click += new System.EventHandler(this.Btn_ClientsGlobalManagement_Click);
             // 
             // Lbl_Clientes
             // 

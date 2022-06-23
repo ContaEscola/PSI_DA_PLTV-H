@@ -34,6 +34,12 @@ namespace app
             this.Lbl_RestaurantName = new System.Windows.Forms.Label();
             this.Lbl_AddItem = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_AddItem = new System.Windows.Forms.Button();
+            this.Btn_AddExistentItem = new System.Windows.Forms.Button();
+            this.ComboBox_NewItemState = new System.Windows.Forms.ComboBox();
+            this.MaskedTxtBox_NewItemPrice = new System.Windows.Forms.MaskedTextBox();
+            this.Lbl_NewItemState = new System.Windows.Forms.Label();
+            this.Lbl_NewItemPrice = new System.Windows.Forms.Label();
             this.RichTxtBox_NewItemIngredients = new System.Windows.Forms.RichTextBox();
             this.Lbl_NewItemIngredients = new System.Windows.Forms.Label();
             this.ComboBox_NewItemCategory = new System.Windows.Forms.ComboBox();
@@ -42,12 +48,6 @@ namespace app
             this.TxtBox_NewItemName = new System.Windows.Forms.TextBox();
             this.Lbl_NewItemPhotograph = new System.Windows.Forms.Label();
             this.Lbl_NewItemName = new System.Windows.Forms.Label();
-            this.Lbl_NewItemPrice = new System.Windows.Forms.Label();
-            this.MaskedTxtBox_NewItemPrice = new System.Windows.Forms.MaskedTextBox();
-            this.Lbl_NewItemState = new System.Windows.Forms.Label();
-            this.ComboBox_NewItemState = new System.Windows.Forms.ComboBox();
-            this.Btn_AddExistentItem = new System.Windows.Forms.Button();
-            this.Btn_AddItem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_SaveChangesOnSelectedItem = new System.Windows.Forms.Button();
             this.ComboBox_SelectedItemState = new System.Windows.Forms.ComboBox();
@@ -143,6 +143,72 @@ namespace app
             this.panel1.Size = new System.Drawing.Size(433, 402);
             this.panel1.TabIndex = 4;
             // 
+            // Btn_AddItem
+            // 
+            this.Btn_AddItem.AutoSize = true;
+            this.Btn_AddItem.BackColor = System.Drawing.Color.White;
+            this.Btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddItem.Location = new System.Drawing.Point(322, 340);
+            this.Btn_AddItem.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_AddItem.Name = "Btn_AddItem";
+            this.Btn_AddItem.Size = new System.Drawing.Size(91, 40);
+            this.Btn_AddItem.TabIndex = 5;
+            this.Btn_AddItem.Text = "Adicionar";
+            this.Btn_AddItem.UseVisualStyleBackColor = false;
+            // 
+            // Btn_AddExistentItem
+            // 
+            this.Btn_AddExistentItem.AutoSize = true;
+            this.Btn_AddExistentItem.BackColor = System.Drawing.Color.White;
+            this.Btn_AddExistentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddExistentItem.Location = new System.Drawing.Point(20, 340);
+            this.Btn_AddExistentItem.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_AddExistentItem.Name = "Btn_AddExistentItem";
+            this.Btn_AddExistentItem.Size = new System.Drawing.Size(185, 40);
+            this.Btn_AddExistentItem.TabIndex = 5;
+            this.Btn_AddExistentItem.Text = "Adicionar Já Existente";
+            this.Btn_AddExistentItem.UseVisualStyleBackColor = false;
+            // 
+            // ComboBox_NewItemState
+            // 
+            this.ComboBox_NewItemState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.ComboBox_NewItemState.FormattingEnabled = true;
+            this.ComboBox_NewItemState.Location = new System.Drawing.Point(292, 302);
+            this.ComboBox_NewItemState.Margin = new System.Windows.Forms.Padding(0);
+            this.ComboBox_NewItemState.Name = "ComboBox_NewItemState";
+            this.ComboBox_NewItemState.Size = new System.Drawing.Size(121, 28);
+            this.ComboBox_NewItemState.TabIndex = 5;
+            // 
+            // MaskedTxtBox_NewItemPrice
+            // 
+            this.MaskedTxtBox_NewItemPrice.BackColor = System.Drawing.Color.White;
+            this.MaskedTxtBox_NewItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.MaskedTxtBox_NewItemPrice.Location = new System.Drawing.Point(77, 302);
+            this.MaskedTxtBox_NewItemPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.MaskedTxtBox_NewItemPrice.Name = "MaskedTxtBox_NewItemPrice";
+            this.MaskedTxtBox_NewItemPrice.Size = new System.Drawing.Size(122, 26);
+            this.MaskedTxtBox_NewItemPrice.TabIndex = 9;
+            // 
+            // Lbl_NewItemState
+            // 
+            this.Lbl_NewItemState.AutoSize = true;
+            this.Lbl_NewItemState.Location = new System.Drawing.Point(222, 305);
+            this.Lbl_NewItemState.Name = "Lbl_NewItemState";
+            this.Lbl_NewItemState.Size = new System.Drawing.Size(64, 20);
+            this.Lbl_NewItemState.TabIndex = 10;
+            this.Lbl_NewItemState.Text = "Estado:";
+            this.Lbl_NewItemState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Lbl_NewItemPrice
+            // 
+            this.Lbl_NewItemPrice.AutoSize = true;
+            this.Lbl_NewItemPrice.Location = new System.Drawing.Point(20, 305);
+            this.Lbl_NewItemPrice.Name = "Lbl_NewItemPrice";
+            this.Lbl_NewItemPrice.Size = new System.Drawing.Size(54, 20);
+            this.Lbl_NewItemPrice.TabIndex = 5;
+            this.Lbl_NewItemPrice.Text = "Preço:";
+            this.Lbl_NewItemPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // RichTxtBox_NewItemIngredients
             // 
             this.RichTxtBox_NewItemIngredients.BackColor = System.Drawing.Color.White;
@@ -234,72 +300,6 @@ namespace app
             this.Lbl_NewItemName.Size = new System.Drawing.Size(55, 20);
             this.Lbl_NewItemName.TabIndex = 5;
             this.Lbl_NewItemName.Text = "Nome:";
-            // 
-            // Lbl_NewItemPrice
-            // 
-            this.Lbl_NewItemPrice.AutoSize = true;
-            this.Lbl_NewItemPrice.Location = new System.Drawing.Point(20, 305);
-            this.Lbl_NewItemPrice.Name = "Lbl_NewItemPrice";
-            this.Lbl_NewItemPrice.Size = new System.Drawing.Size(54, 20);
-            this.Lbl_NewItemPrice.TabIndex = 5;
-            this.Lbl_NewItemPrice.Text = "Preço:";
-            this.Lbl_NewItemPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // MaskedTxtBox_NewItemPrice
-            // 
-            this.MaskedTxtBox_NewItemPrice.BackColor = System.Drawing.Color.White;
-            this.MaskedTxtBox_NewItemPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.MaskedTxtBox_NewItemPrice.Location = new System.Drawing.Point(77, 302);
-            this.MaskedTxtBox_NewItemPrice.Margin = new System.Windows.Forms.Padding(0);
-            this.MaskedTxtBox_NewItemPrice.Name = "MaskedTxtBox_NewItemPrice";
-            this.MaskedTxtBox_NewItemPrice.Size = new System.Drawing.Size(122, 26);
-            this.MaskedTxtBox_NewItemPrice.TabIndex = 9;
-            // 
-            // Lbl_NewItemState
-            // 
-            this.Lbl_NewItemState.AutoSize = true;
-            this.Lbl_NewItemState.Location = new System.Drawing.Point(222, 305);
-            this.Lbl_NewItemState.Name = "Lbl_NewItemState";
-            this.Lbl_NewItemState.Size = new System.Drawing.Size(64, 20);
-            this.Lbl_NewItemState.TabIndex = 10;
-            this.Lbl_NewItemState.Text = "Estado:";
-            this.Lbl_NewItemState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ComboBox_NewItemState
-            // 
-            this.ComboBox_NewItemState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.ComboBox_NewItemState.FormattingEnabled = true;
-            this.ComboBox_NewItemState.Location = new System.Drawing.Point(292, 302);
-            this.ComboBox_NewItemState.Margin = new System.Windows.Forms.Padding(0);
-            this.ComboBox_NewItemState.Name = "ComboBox_NewItemState";
-            this.ComboBox_NewItemState.Size = new System.Drawing.Size(121, 28);
-            this.ComboBox_NewItemState.TabIndex = 5;
-            // 
-            // Btn_AddExistentItem
-            // 
-            this.Btn_AddExistentItem.AutoSize = true;
-            this.Btn_AddExistentItem.BackColor = System.Drawing.Color.White;
-            this.Btn_AddExistentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddExistentItem.Location = new System.Drawing.Point(20, 340);
-            this.Btn_AddExistentItem.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_AddExistentItem.Name = "Btn_AddExistentItem";
-            this.Btn_AddExistentItem.Size = new System.Drawing.Size(185, 40);
-            this.Btn_AddExistentItem.TabIndex = 5;
-            this.Btn_AddExistentItem.Text = "Adicionar Já Existente";
-            this.Btn_AddExistentItem.UseVisualStyleBackColor = false;
-            // 
-            // Btn_AddItem
-            // 
-            this.Btn_AddItem.AutoSize = true;
-            this.Btn_AddItem.BackColor = System.Drawing.Color.White;
-            this.Btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddItem.Location = new System.Drawing.Point(322, 340);
-            this.Btn_AddItem.Margin = new System.Windows.Forms.Padding(0);
-            this.Btn_AddItem.Name = "Btn_AddItem";
-            this.Btn_AddItem.Size = new System.Drawing.Size(91, 40);
-            this.Btn_AddItem.TabIndex = 5;
-            this.Btn_AddItem.Text = "Adicionar";
-            this.Btn_AddItem.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 

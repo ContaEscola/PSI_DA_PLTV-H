@@ -174,5 +174,12 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+
+        public static void AddClient(Cliente clientToAdd)
+        {
+            SingleTown.AppDB.ClienteSet.Add(clientToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
     }
 }

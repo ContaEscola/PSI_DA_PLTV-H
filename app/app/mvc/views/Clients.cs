@@ -90,6 +90,97 @@ namespace app
 
             Lbl_AddClient.BringToFront();
             Lbl_EditClient.BringToFront();
+
+            RefreshDataGridView();
+            DisableEditControls();
+        }
+        
+        private void EnableEditControls()
+        {
+            TxtBox_ClientName.Enabled = true;
+            MaskedTxtBox_ClientPhone.Enabled = true;
+            MaskedTxtBox_ClientNIF.Enabled = true;
+            TxtBox_ClientCountry.Enabled = true;
+            TxtBox_ClientStreet.Enabled = true;
+            TxtBox_ClientCity.Enabled = true;
+            MaskedTxtBox_ClientPostalCode.Enabled = true;
+
+
+            Btn_SaveChangesOnClient.Enabled = true;
+
+            Btn_RemoveClient.Enabled = true;
+        }
+
+        private void DisableEditControls()
+        {
+            TxtBox_ClientName.Enabled = false;
+            MaskedTxtBox_ClientPhone.Enabled = false;
+            MaskedTxtBox_ClientNIF.Enabled = false;
+            TxtBox_ClientCountry.Enabled = false;
+            TxtBox_ClientStreet.Enabled = false;
+            TxtBox_ClientCity.Enabled = false;
+            MaskedTxtBox_ClientPostalCode.Enabled = false;
+
+
+            Btn_SaveChangesOnClient.Enabled = false;
+
+            Btn_RemoveClient.Enabled = false;
+        }
+
+        private void ResetAddControls()
+        {
+            TxtBox_NewClientName.ResetText();
+            MaskedTxtBox_NewClientPhone.ResetText();
+            MaskedTxtBox_NewClientNIF.ResetText();
+            TxtBox_NewClientCountry.ResetText();
+            TxtBox_NewClientStreet.ResetText();
+            TxtBox_NewClientCity.ResetText();
+            MaskedTxtBox_NewClientPostalCode.ResetText();
+        }
+
+
+        private void ResetEditControls()
+        {
+            TxtBox_ClientName.ResetText();
+            MaskedTxtBox_ClientPhone.ResetText();
+            MaskedTxtBox_ClientNIF.ResetText();
+            TxtBox_ClientCountry.ResetText();
+            TxtBox_ClientStreet.ResetText();
+            TxtBox_ClientCity.ResetText();
+            MaskedTxtBox_ClientPostalCode.ResetText();
+            DisableEditControls();
+        }
+
+        private void RefreshDataGridView()
+        {
+            PopulateData.PopulateClientsIntoBindingSource(BindingSource_AllClients, DataGridView_Clients);
+        }
+
+        private void Btn_AddClient_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_NewClientName, MaskedTxtBox_NewClientPhone, MaskedTxtBox_NewClientNIF, TxtBox_NewClientCountry, TxtBox_NewClientStreet, TxtBox_NewClientCity, MaskedTxtBox_NewClientPostalCode))
+                return;
+
+            try
+            {
+                string codPostal = MaskedTxtBox_NewClientPostalCode.Text;
+                string telemovel = MaskedTxtBox_NewClientPhone.Text;
+                string nif = MaskedTxtBox_NewClientNIF.Text;
+
+                StringHelper.TrimAllWhiteSpace(ref telemovel);
+                StringHelper.TrimAllWhiteSpace(ref codPostal);
+                StringHelper.TrimAllWhiteSpace(ref nif);
+
+                if (codPostal.Length != 8) throw new Exception("O novo cliente tem um código postal inválido!");
+                if (telemovel.Length != 11) throw new Exception("O novo cliente tem um número de telemóvel inválido!");
+                if (nif.Length != 9) throw new Exception("O novo cliente tem um nif inválido!");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -6,5 +6,6 @@
     public partial class BaseDadosContainer : DbContext
     {
         public virtual DbSet<Trabalhador> TrabalhadorSet { get; set; }
+        public virtual DbSet<Cliente> ClienteSet { get; set; }
     }
 }

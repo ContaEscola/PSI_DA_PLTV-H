@@ -83,5 +83,22 @@ namespace app
             }
 
         }
+
+        public static void PopulateClientsIntoBindingSource(BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            List<Cliente> allClients = (from client in SingleTown.AppDB.ClienteSet
+                                        where client.Ativo == "Ativo"
+                                        select client).ToList<Cliente>();
+
+
+            sourceToPopulate.DataSource = allClients;
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
+        }
     }
 }

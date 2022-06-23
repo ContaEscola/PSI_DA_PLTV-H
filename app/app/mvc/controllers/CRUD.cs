@@ -219,5 +219,12 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+        public static void RemoveClient()
+        {
+            SingleTown.SelectedClient.Ativo = "Inativo";
+            SingleTown.AppDB.SaveChanges();
+
+        }
     }
 }

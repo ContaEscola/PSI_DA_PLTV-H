@@ -288,5 +288,11 @@ namespace app
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_RemoveClient_Click(object sender, EventArgs e)
+        {
+            CRUD.RemoveClient();
+            RefreshDataGridView();
+        }
     }
 }

@@ -279,5 +279,20 @@ namespace app
             SingleTown.SelectedRestaurant.ItemMenu.Remove(SingleTown.SelectedItemMenu);
             SingleTown.AppDB.SaveChanges();
         }
+
+
+        public static void AddOrder(Pedido orderToAdd)
+        {
+            SingleTown.AppDB.PedidoSet.Add(orderToAdd);
+            SingleTown.AppDB.SaveChanges();
+        }
+        public static Pedido GetOrder(int orderId)
+        {
+            var allOrders = SingleTown.AppDB.PedidoSet;
+
+            Pedido order = (Pedido)allOrders.Where(o => o.Id == orderId).FirstOrDefault();
+
+            return order;
+        }
     }
 }

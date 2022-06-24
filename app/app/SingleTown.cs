@@ -16,6 +16,7 @@ namespace app
         private static Trabalhador selectedEmployee;
         private static Cliente selectedClient;
         private static ItemMenu selectedItemMenu;
+        private static Pedido selectedOrder;
         public static BaseDadosContainer AppDB { get { return appDB; } }
         public static MetodoPagamento SelectedPaymentMethod { get { return selectedPaymentMethod; } set { selectedPaymentMethod = value; } }
         public static Categoria SelectedCategory { get { return selectedCategory; } set { selectedCategory = value; } }
@@ -23,6 +24,7 @@ namespace app
         public static Trabalhador SelectedEmployee { get { return selectedEmployee; } set { selectedEmployee = value; } }
         public static Cliente SelectedClient { get { return selectedClient; } set { selectedClient = value; } }
         public static ItemMenu SelectedItemMenu { get { return selectedItemMenu; } set { selectedItemMenu = value; } }
+        public static Pedido SelectedOrder { get { return selectedOrder; } set { selectedOrder = value; } }
         public SingleTown()
         {
             appDB = new BaseDadosContainer();

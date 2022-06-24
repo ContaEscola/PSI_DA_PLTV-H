@@ -8,6 +8,10 @@ namespace app
 {
     public partial class Pedido
     {
+        public string ValorTotalFormated { get { 
+                return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", ValorTotal)}€"; 
+            } }
+
         public string ClienteFormated
         {
             get { return Cliente.Nome; }

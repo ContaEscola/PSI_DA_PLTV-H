@@ -295,9 +295,5 @@ namespace app
             RefreshDataGridView();
         }
 
-        private void Btn_AddClient_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

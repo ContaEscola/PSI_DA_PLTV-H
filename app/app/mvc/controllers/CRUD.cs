@@ -35,6 +35,9 @@ namespace app
             paymentMethodToUpdate.Metodo = updatedPaymentMethod.Metodo;
             paymentMethodToUpdate.Ativo = updatedPaymentMethod.Ativo;
 
+            
+            
+
             SingleTown.AppDB.SaveChanges();
 
         }
@@ -49,6 +52,15 @@ namespace app
 
             SingleTown.AppDB.CategoriaSet.Add(categoryToAdd);
             SingleTown.AppDB.SaveChanges();
+        }
+
+        public static Categoria GetCategory(string name)
+        {
+            var allCategories = SingleTown.AppDB.CategoriaSet;
+
+            Categoria category = (Categoria)allCategories.Where(c => c.Nome == name).FirstOrDefault();
+
+            return category;
         }
 
         public static void EditCategory(Categoria updatedCategory)
@@ -224,7 +236,22 @@ namespace app
         {
             SingleTown.SelectedClient.Ativo = "Inativo";
             SingleTown.AppDB.SaveChanges();
+        }
 
+        public static void AdItemMenuToRestaurant(Restaurante restaurantToAdd,ItemMenu itemToAdd)
+        {
+            restaurantToAdd.ItemMenu.Add(itemToAdd);
+
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static ItemMenu GetItem(string itemName)
+        {
+            var allItems = SingleTown.AppDB.ItemMenuSet;
+
+            ItemMenu item = (ItemMenu)allItems.Where(i => i.Nome == itemName).FirstOrDefault();
+
+            return item;
         }
     }
 }

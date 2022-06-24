@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -101,17 +102,128 @@ namespace app
             this.Text = $"Menu: {_restaurant.Nome}";
             Lbl_RestaurantName.Text = _restaurant.Nome;
 
-            RefreshDataGridView();
-            PopulateData.PopulateAllCategoriesIntoComboBox(ComboBox_NewItemCategory);
+            // https://stackoverflow.com/questions/1706454/c-multiline-text-in-datagridview-control?answertab=trending#tab-top
+            DataGridView_MenuItems.Columns[3].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
+            RefreshDataGridView();
+            PopulateData.PopulateCategoriesIntoComboBox(ComboBox_NewItemCategory);
+            PopulateData.PopulateItemStatesIntoComboBox(ComboBox_NewItemState);
+            DisableEditControls();
         }
 
-   
+        private void EnableEditControls()
+        {
+            TxtBox_SelectedItemName.Enabled = true;
+            ComboBox_SelectedItemCategory.Enabled = true;
+            RichTxtBox_SelectedItemIngredients.Enabled = true;
+            MaskedTxtBox_SelectedItemPrice.Enabled = true;
+            ComboBox_SelectedItemState.Enabled = true;
+            Btn_SelectedItemPhotograph.Enabled = true;
+
+            Btn_SaveChangesOnSelectedItem.Enabled = true;
+
+            Btn_RemoveItem.Enabled = true;
+        }
+
+        private void DisableEditControls()
+        {
+            TxtBox_SelectedItemName.Enabled = false;
+            ComboBox_SelectedItemCategory.Enabled = false;
+            RichTxtBox_SelectedItemIngredients.Enabled = false;
+            MaskedTxtBox_SelectedItemPrice.Enabled = false;
+            ComboBox_SelectedItemState.Enabled = false;
+            Btn_SelectedItemPhotograph.Enabled = false;
+
+            Btn_SaveChangesOnSelectedItem.Enabled = false;
+
+            Btn_RemoveItem.Enabled = false;
+        }
+
+        private void ResetAddControls()
+        {
+            TxtBox_NewItemName.ResetText();
+            RichTxtBox_NewItemIngredients.ResetText();
+            MaskedTxtBox_NewItemPrice.ResetText();
+
+            Resets.ResetSelectedIndex(ComboBox_NewItemCategory);
+            Resets.ResetSelectedIndex(ComboBox_NewItemState, 0);
+        }
+
+        private void ResetEditControls()
+        {
+            TxtBox_SelectedItemName.ResetText();
+            ComboBox_SelectedItemCategory.ResetText();
+            RichTxtBox_SelectedItemIngredients.ResetText();
+            MaskedTxtBox_SelectedItemPrice.ResetText();
+            ComboBox_SelectedItemState.ResetText();
+
+            DisableEditControls();
+        }
 
         private void RefreshDataGridView()
         {
-            PopulateData.PopulateMenuItems(BindingSource_MenuItems, DataGridView_MenuItems);
+            PopulateData.PopulateMenuItemsIntoBindingSource(_restaurant,BindingSource_MenuItems, DataGridView_MenuItems);
         }
 
+        private void Btn_AddItem_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_NewItemName, ComboBox_NewItemCategory, RichTxtBox_NewItemIngredients, MaskedTxtBox_NewItemPrice))
+                return;
+
+            try
+            {
+                string preco = MaskedTxtBox_NewItemPrice.Text;
+                decimal precoConverted = Decimal.Parse(preco, CultureInfo.GetCultureInfo("pt-PT"));
+
+                Categoria category = CRUD.GetCategory(ComboBox_NewItemCategory.Text);
+
+                ItemMenu newItemMenu = new ItemMenu
+                {
+                    Nome = TxtBox_NewItemName.Text,
+                    Ingredientes = RichTxtBox_NewItemIngredients.Text,
+                    Preco = precoConverted,
+                    Fotografia = "",
+                    Categoria = category,
+                    Ativo = ComboBox_NewItemState.Text
+                };
+
+                VerifyData.ExistsItemMenu(newItemMenu);
+
+                CRUD.AdItemMenuToRestaurant(_restaurant, newItemMenu);
+
+                RefreshDataGridView();
+                ResetAddControls();
+                
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O preço inserido é inválido!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Btn_AddExistentItem_Click(object sender, EventArgs e)
+        {
+            ItemMenu itemWanted = (ItemMenu)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.AddExistentItem));
+            
+            try 
+            {
+                VerifyData.HasItemOnMenu(itemWanted,_restaurant);
+
+                CRUD.AdItemMenuToRestaurant(_restaurant, itemWanted);
+
+                RefreshDataGridView();
+                ResetAddControls();
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
+        }
     }
 }

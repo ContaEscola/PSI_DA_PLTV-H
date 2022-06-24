@@ -70,10 +70,11 @@ namespace app
             this.Btn_ManageCategories = new System.Windows.Forms.Button();
             this.Btn_ChangeRestaurant = new System.Windows.Forms.Button();
             this.DataGridView_MenuItems = new System.Windows.Forms.DataGridView();
-            this.BindingSource_MenuItems = new System.Windows.Forms.BindingSource(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_MenuItems = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_MenuItems)).BeginInit();
@@ -156,6 +157,7 @@ namespace app
             // 
             this.Btn_AddItem.AutoSize = true;
             this.Btn_AddItem.BackColor = System.Drawing.Color.White;
+            this.Btn_AddItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddItem.Location = new System.Drawing.Point(322, 340);
             this.Btn_AddItem.Margin = new System.Windows.Forms.Padding(0);
@@ -164,11 +166,13 @@ namespace app
             this.Btn_AddItem.TabIndex = 5;
             this.Btn_AddItem.Text = "Adicionar";
             this.Btn_AddItem.UseVisualStyleBackColor = false;
+            this.Btn_AddItem.Click += new System.EventHandler(this.Btn_AddItem_Click);
             // 
             // Btn_AddExistentItem
             // 
             this.Btn_AddExistentItem.AutoSize = true;
             this.Btn_AddExistentItem.BackColor = System.Drawing.Color.White;
+            this.Btn_AddExistentItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddExistentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddExistentItem.Location = new System.Drawing.Point(20, 340);
             this.Btn_AddExistentItem.Margin = new System.Windows.Forms.Padding(0);
@@ -177,6 +181,7 @@ namespace app
             this.Btn_AddExistentItem.TabIndex = 5;
             this.Btn_AddExistentItem.Text = "Adicionar Já Existente";
             this.Btn_AddExistentItem.UseVisualStyleBackColor = false;
+            this.Btn_AddExistentItem.Click += new System.EventHandler(this.Btn_AddExistentItem_Click);
             // 
             // ComboBox_NewItemState
             // 
@@ -258,6 +263,7 @@ namespace app
             // 
             this.Btn_ChoosePhotographForNewItem.AutoSize = true;
             this.Btn_ChoosePhotographForNewItem.BackColor = System.Drawing.Color.White;
+            this.Btn_ChoosePhotographForNewItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ChoosePhotographForNewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Btn_ChoosePhotographForNewItem.Location = new System.Drawing.Point(117, 96);
             this.Btn_ChoosePhotographForNewItem.Margin = new System.Windows.Forms.Padding(0);
@@ -337,6 +343,7 @@ namespace app
             // 
             this.Btn_SaveChangesOnSelectedItem.AutoSize = true;
             this.Btn_SaveChangesOnSelectedItem.BackColor = System.Drawing.Color.White;
+            this.Btn_SaveChangesOnSelectedItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_SaveChangesOnSelectedItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_SaveChangesOnSelectedItem.Location = new System.Drawing.Point(25, 340);
             this.Btn_SaveChangesOnSelectedItem.Margin = new System.Windows.Forms.Padding(0);
@@ -425,6 +432,7 @@ namespace app
             // 
             this.Btn_SelectedItemPhotograph.AutoSize = true;
             this.Btn_SelectedItemPhotograph.BackColor = System.Drawing.Color.White;
+            this.Btn_SelectedItemPhotograph.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_SelectedItemPhotograph.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.Btn_SelectedItemPhotograph.Location = new System.Drawing.Point(117, 96);
             this.Btn_SelectedItemPhotograph.Margin = new System.Windows.Forms.Padding(0);
@@ -494,6 +502,7 @@ namespace app
             this.Btn_RemoveItem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_RemoveItem.AutoSize = true;
             this.Btn_RemoveItem.BackColor = System.Drawing.Color.White;
+            this.Btn_RemoveItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_RemoveItem.Location = new System.Drawing.Point(775, 819);
             this.Btn_RemoveItem.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_RemoveItem.Name = "Btn_RemoveItem";
@@ -507,6 +516,7 @@ namespace app
             this.Btn_ManageCategories.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ManageCategories.AutoSize = true;
             this.Btn_ManageCategories.BackColor = System.Drawing.Color.White;
+            this.Btn_ManageCategories.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ManageCategories.Location = new System.Drawing.Point(775, 971);
             this.Btn_ManageCategories.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ManageCategories.Name = "Btn_ManageCategories";
@@ -520,6 +530,7 @@ namespace app
             this.Btn_ChangeRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_ChangeRestaurant.AutoSize = true;
             this.Btn_ChangeRestaurant.BackColor = System.Drawing.Color.White;
+            this.Btn_ChangeRestaurant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ChangeRestaurant.Location = new System.Drawing.Point(1174, 819);
             this.Btn_ChangeRestaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ChangeRestaurant.Name = "Btn_ChangeRestaurant";
@@ -534,6 +545,8 @@ namespace app
             this.DataGridView_MenuItems.AllowUserToDeleteRows = false;
             this.DataGridView_MenuItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DataGridView_MenuItems.AutoGenerateColumns = false;
+            this.DataGridView_MenuItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridView_MenuItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView_MenuItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_MenuItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -547,8 +560,9 @@ namespace app
             this.DataGridView_MenuItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_MenuItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column3,
-            this.Column2});
+            this.Column4,
+            this.Column2,
+            this.Column3});
             this.DataGridView_MenuItems.DataSource = this.BindingSource_MenuItems;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -574,15 +588,15 @@ namespace app
             this.Column1.HeaderText = "Nome";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 76;
             // 
-            // Column3
+            // Column4
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column3.DataPropertyName = "Ingredientes";
-            this.Column3.HeaderText = "Ingredientes";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 123;
+            this.Column4.DataPropertyName = "CategoriaFormated";
+            this.Column4.HeaderText = "Categoria";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 103;
             // 
             // Column2
             // 
@@ -590,6 +604,15 @@ namespace app
             this.Column2.HeaderText = "Preço";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 75;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "IngredientesFormated";
+            this.Column3.HeaderText = "Ingredientes";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 123;
             // 
             // Menu
             // 
@@ -669,7 +692,8 @@ namespace app
         private System.Windows.Forms.DataGridView DataGridView_MenuItems;
         private System.Windows.Forms.BindingSource BindingSource_MenuItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

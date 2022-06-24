@@ -107,7 +107,10 @@ namespace app
             {
                 case "AddExistentItem":
 
-                    List<ItemMenu> allItems = SingleTown.AppDB.ItemMenuSet.ToList<ItemMenu>();
+                    List<ItemMenu> allItems = (from menuItem in SingleTown.AppDB.ItemMenuSet
+                                               where menuItem.Ativo == "Ativo"
+                                               select menuItem).ToList<ItemMenu>();
+
                     List<ItemMenu> correctItems = new List<ItemMenu>();
 
                     foreach(ItemMenu item in allItems)
@@ -123,7 +126,10 @@ namespace app
 
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (_dataToReturn == null)
+                MessageBox.Show("Escolha um item primeiro!");
+            else
+                DialogResult = DialogResult.OK;
         }
 
         private void DataGridView_AvailableStuff_SelectionChanged(object sender, EventArgs e)

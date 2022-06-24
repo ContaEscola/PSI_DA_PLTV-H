@@ -111,6 +111,40 @@ namespace app
             DisableEditControls();
         }
 
+        private void SelectCurrentItemMenuCategory(ComboBox control, ItemMenu currentItemMenu)
+        {
+            string currentStateToSelect = currentItemMenu.Categoria.Nome;
+            int counter = -1;
+
+
+            foreach (string state in control.Items)
+            {
+                counter++;
+                if (state == currentStateToSelect)
+                {
+                    control.SelectedIndex = counter;
+                }
+
+            }
+        }
+
+        private void SelectCurrentItemMenuState(ComboBox control, ItemMenu currentItemMenu)
+        {
+            string currentStateToSelect = currentItemMenu.Ativo;
+            int counter = -1;
+
+
+            foreach (string state in control.Items)
+            {
+                counter++;
+                if (state == currentStateToSelect)
+                {
+                    control.SelectedIndex = counter;
+                }
+
+            }
+        }
+
         private void EnableEditControls()
         {
             TxtBox_SelectedItemName.Enabled = true;
@@ -147,6 +181,16 @@ namespace app
 
             Resets.ResetSelectedIndex(ComboBox_NewItemCategory);
             Resets.ResetSelectedIndex(ComboBox_NewItemState, 0);
+        }
+
+        private void PopulateEditControls()
+        {
+            TxtBox_SelectedItemName.Text = SingleTown.SelectedItemMenu.Nome;
+            RichTxtBox_SelectedItemIngredients.Text = SingleTown.SelectedItemMenu.IngredientesFormated;
+            MaskedTxtBox_SelectedItemPrice.Text = String.Format(CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", SingleTown.SelectedItemMenu.Preco);
+            
+            SelectCurrentItemMenuState(ComboBox_SelectedItemState, SingleTown.SelectedItemMenu);
+            SelectCurrentItemMenuCategory(ComboBox_SelectedItemCategory, SingleTown.SelectedItemMenu);
         }
 
         private void ResetEditControls()
@@ -189,7 +233,7 @@ namespace app
 
                 VerifyData.ExistsItemMenu(newItemMenu);
 
-                CRUD.AdItemMenuToRestaurant(_restaurant, newItemMenu);
+                CRUD.AddItemMenuToRestaurant(_restaurant, newItemMenu);
 
                 RefreshDataGridView();
                 ResetAddControls();
@@ -208,12 +252,13 @@ namespace app
         private void Btn_AddExistentItem_Click(object sender, EventArgs e)
         {
             ItemMenu itemWanted = (ItemMenu)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.AddExistentItem));
-            
+            if (itemWanted == null) return;
+
             try 
             {
                 VerifyData.HasItemOnMenu(itemWanted,_restaurant);
 
-                CRUD.AdItemMenuToRestaurant(_restaurant, itemWanted);
+                CRUD.AddItemMenuToRestaurant(_restaurant, itemWanted);
 
                 RefreshDataGridView();
                 ResetAddControls();
@@ -224,6 +269,69 @@ namespace app
             }
 
             
+        }
+
+        private void Btn_ManageCategories_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new Categories());
+        }
+
+        private void DataGridView_MenuItems_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_MenuItems.SelectedRows.Count > 0)
+            {
+                EnableEditControls();
+                string selectedItemName = DataGridView_MenuItems.CurrentRow.Cells[0].Value.ToString();
+
+                ItemMenu selectedItem = CRUD.GetItem(selectedItemName);
+
+                SingleTown.SelectedItemMenu = selectedItem;
+
+                PopulateData.PopulateCategoriesIntoComboBox(ComboBox_SelectedItemCategory);
+                PopulateData.PopulateItemStatesIntoComboBox(ComboBox_SelectedItemState);
+
+                PopulateEditControls();
+            }
+            else
+            {
+                ResetEditControls();
+            }
+        }
+
+        private void Btn_SaveChangesOnSelectedItem_Click(object sender, EventArgs e)
+        {
+            if (StringHelper.IsEmptyOrNull(TxtBox_SelectedItemName, ComboBox_SelectedItemCategory, RichTxtBox_SelectedItemIngredients, MaskedTxtBox_SelectedItemPrice))
+                return;
+
+            try
+            {
+                string preco = MaskedTxtBox_SelectedItemPrice.Text;
+                decimal precoConverted = Decimal.Parse(preco, CultureInfo.GetCultureInfo("pt-PT"));
+
+                Categoria category = CRUD.GetCategory(ComboBox_SelectedItemCategory.Text);
+
+                ItemMenu updatedItemMenu = new ItemMenu
+                {
+                    Nome = TxtBox_SelectedItemName.Text,
+                    Ingredientes = RichTxtBox_SelectedItemIngredients.Text,
+                    Preco = precoConverted,
+                    Fotografia = "",
+                    Categoria = category,
+                    Ativo = ComboBox_SelectedItemState.Text
+                };
+
+                CRUD.EditItemMenu(updatedItemMenu);
+
+                RefreshDataGridView();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O preço inserido é inválido!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

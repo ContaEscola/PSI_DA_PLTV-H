@@ -105,6 +105,7 @@ namespace app
         {
 
             List<ItemMenu> allMenuItems = (from menuItem in SingleTown.AppDB.ItemMenuSet
+                                           where menuItem.Ativo == "Ativo"
                                             select menuItem).ToList<ItemMenu>();
 
             List<ItemMenu> allItemsInRestaurante = new List<ItemMenu>();
@@ -159,7 +160,11 @@ namespace app
 
         public static void PopulateAllItemsIntoBindingSource(BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
         {
-            sourceToPopulate.DataSource = SingleTown.AppDB.ItemMenuSet.ToList<ItemMenu>();
+            List<ItemMenu> allMenuItems = (from menuItem in SingleTown.AppDB.ItemMenuSet
+                                           where menuItem.Ativo == "Ativo"
+                                           select menuItem).ToList<ItemMenu>();
+
+            sourceToPopulate.DataSource = allMenuItems;
 
             if (gridViewToAdjustContents != null)
             {

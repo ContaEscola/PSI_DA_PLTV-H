@@ -125,6 +125,8 @@ namespace app
 
         public static void HasItemOnMenu(ItemMenu itemMenu, Restaurante restaurantToCheck)
         {
+            if (itemMenu == null || restaurantToCheck == null) return;
+
             bool foundItem = false;
 
             foreach(ItemMenu itemOnRestaurant in restaurantToCheck.ItemMenu)

@@ -238,7 +238,7 @@ namespace app
             SingleTown.AppDB.SaveChanges();
         }
 
-        public static void AdItemMenuToRestaurant(Restaurante restaurantToAdd,ItemMenu itemToAdd)
+        public static void AddItemMenuToRestaurant(Restaurante restaurantToAdd,ItemMenu itemToAdd)
         {
             restaurantToAdd.ItemMenu.Add(itemToAdd);
 
@@ -252,6 +252,26 @@ namespace app
             ItemMenu item = (ItemMenu)allItems.Where(i => i.Nome == itemName).FirstOrDefault();
 
             return item;
+        }
+
+
+        public static void EditItemMenu(ItemMenu updatedItemMenu)
+        {
+            var allItemMenus = SingleTown.AppDB.ItemMenuSet;
+
+            ItemMenu checkForExistentNames = (ItemMenu)allItemMenus.Where(i => i.Nome == updatedItemMenu.Nome && i.Id != SingleTown.SelectedItemMenu.Id).FirstOrDefault();
+
+            if (checkForExistentNames != null)
+                throw new Exception("Já existe um item com esse nome!");
+
+            SingleTown.SelectedItemMenu.Nome = updatedItemMenu.Nome;
+            SingleTown.SelectedItemMenu.Ingredientes = updatedItemMenu.Ingredientes;
+            SingleTown.SelectedItemMenu.Preco = updatedItemMenu.Preco;
+            SingleTown.SelectedItemMenu.Categoria = updatedItemMenu.Categoria;
+            SingleTown.SelectedItemMenu.Ativo = updatedItemMenu.Ativo;
+
+            SingleTown.AppDB.SaveChanges();
+
         }
     }
 }

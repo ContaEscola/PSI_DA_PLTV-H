@@ -98,6 +98,7 @@ namespace app
             // 
             // Lbl_Title
             // 
+            this.Lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.Lbl_Title.Location = new System.Drawing.Point(0, 107);
             this.Lbl_Title.Margin = new System.Windows.Forms.Padding(0);

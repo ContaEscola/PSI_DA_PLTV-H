@@ -19,6 +19,7 @@ namespace app
             public static string SelectMenu = "SelectMenu";
             public static string SelectEmployee = "SelectEmployee";
             public static string SelectClient = "SelectClient";
+            public static string SelectMetodoPagamento = "SelectMetodoPagamento";
         }
 
         private string _reasonToOpen;
@@ -155,6 +156,22 @@ namespace app
 
                     break;
 
+                case "SelectMetodoPagamento":
+
+                    this.Text = "Selecione o metodo pagamento";
+                    Lbl_Title.Text = "Selecione o metodo de pagamento!";
+
+                    DataGridViewTextBoxColumn columnMetodoPagamento = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Metodo",
+                        DataPropertyName = "Metodo",
+                        ReadOnly = true
+                    };
+
+
+                    allColumnsToDataGrid.Add(columnMetodoPagamento);
+
+                    break;
             }
 
             AddColumnsToDataGrid(allColumnsToDataGrid);
@@ -185,6 +202,10 @@ namespace app
 
                 case "SelectClient":
                     PopulateData.PopulateClientsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
+                    break;
+
+                case "SelectMetodoPagamento":
+                    PopulateData.PopulateOnlyActivePaymentMethodsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
                     break;
             }
         }
@@ -267,6 +288,26 @@ namespace app
                     BindingSource_AllStuff.DataSource = correctClients;
 
                     break;
+
+                case "SelectMetodoPagamento":
+
+                    List<MetodoPagamento> allMetodos = (from metodo in SingleTown.AppDB.MetodoPagamentoSet
+                                                where metodo.Ativo == "Ativo"
+                                                select metodo).ToList<MetodoPagamento>();
+
+                    List<MetodoPagamento> correctMetodos = new List<MetodoPagamento>();
+
+                    foreach (MetodoPagamento metodo in correctMetodos)
+                    {
+                        if (metodo.Metodo.Contains(TxtBox_Name.Text))
+                            correctMetodos.Add(metodo);
+                    }
+
+                    BindingSource_AllStuff.DataSource = correctMetodos;
+
+                    break;
+
+             
             }
         }
 
@@ -310,6 +351,16 @@ namespace app
                         Cliente client = CRUD.GetClient(clientName);
 
                         _dataToReturn = client;
+                        break;
+
+                    case "SelectMetodoPagamento":
+
+                        string metodoDescricao = DataGridView_AvailableStuff.CurrentRow.Cells[0].Value.ToString();
+                        MetodoPagamento metodo = CRUD.GetPaymentMethod(metodoDescricao);
+
+                        _dataToReturn = metodo;
+
+
                         break;
                 }
             else

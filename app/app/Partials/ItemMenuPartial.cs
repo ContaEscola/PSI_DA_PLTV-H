@@ -10,10 +10,13 @@ namespace app
     {
         public string PrecoFormated { get { return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", Preco)}€"; } }
 
-        public string CategoriaFormated { get { return $"{Categoria.Nome}"; } }
+        public string CategoriaFormated { get { if (Categoria == null) return "";
+                return $"{Categoria.Nome}"; } }
 
         public string IngredientesFormated { get
             {
+                if (Ingredientes == null) return "";
+
                 // https://stackoverflow.com/questions/1547476/easiest-way-to-split-a-string-on-newlines-in-net
                 string[] allIngredients = Ingredientes.Split(new string[] { "\\n" },StringSplitOptions.None);
 

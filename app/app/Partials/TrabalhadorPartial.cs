@@ -11,6 +11,8 @@ namespace app
         // https://www.code-sample.net/CSharp/Format-Number
         public string SalarioFormated { get { return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"),"{0:#,0.00}", Salario)}€"; } }
 
-        public string PaisExtracted { get { return Morada.Pais; } }
+        public string PaisExtracted { get {
+                if (Morada == null) return "";
+                return Morada.Pais; } }
     }
 }

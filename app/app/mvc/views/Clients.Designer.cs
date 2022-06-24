@@ -213,7 +213,7 @@
             this.Btn_AddClient.TabIndex = 11;
             this.Btn_AddClient.Text = "Adicionar";
             this.Btn_AddClient.UseVisualStyleBackColor = false;
-            this.Btn_AddClient.Click += new System.EventHandler(this.Btn_AddClient_Click);
+
             // 
             // MaskedTxtBox_NewClientPostalCode
             // 

@@ -111,5 +111,36 @@ namespace app
                 throw new Exception("Este nif já está a ser utilizado!");
 
         }
+
+        public static void ExistsItemMenu(ItemMenu itemMenu)
+        {
+            List<ItemMenu> allItemsMenu = (from item in SingleTown.AppDB.ItemMenuSet
+                                        where item.Nome == itemMenu.Nome
+                                        select item).ToList<ItemMenu>();
+
+            if (allItemsMenu.Count > 0)
+                throw new Exception("Este nome já está a ser utilizado num item!");
+
+        }
+
+        public static void HasItemOnMenu(ItemMenu itemMenu, Restaurante restaurantToCheck)
+        {
+            if (itemMenu == null || restaurantToCheck == null) return;
+
+            bool foundItem = false;
+
+            foreach(ItemMenu itemOnRestaurant in restaurantToCheck.ItemMenu)
+            {
+                if(itemOnRestaurant.Nome == itemMenu.Nome)
+                {
+                    foundItem = true;
+                    break;
+                }
+            }
+
+            if (foundItem)
+                throw new Exception("Este item já existe no seu menu!");
+
+        }
     }
 }

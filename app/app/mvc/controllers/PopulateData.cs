@@ -68,7 +68,7 @@ namespace app
 
         public static void PopulateEmployeesIntoBindingSource(Restaurante restaurantAssociated,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
         {
-            List<Trabalhador> allEmployees = (from people in SingleTown.AppDB.PessoaSet
+            List<Trabalhador>  allEmployees = (from people in SingleTown.AppDB.PessoaSet
                                join employee in SingleTown.AppDB.TrabalhadorSet on people.Id equals employee.Id
                                where employee.IdRestaurante == restaurantAssociated.Id && employee.Ativo == "Ativo"
                                select employee).ToList<Trabalhador>();
@@ -92,6 +92,79 @@ namespace app
 
 
             sourceToPopulate.DataSource = allClients;
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
+        }
+
+        public static void PopulateMenuItemsIntoBindingSource(Restaurante selectedRestaurant,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+
+            List<ItemMenu> allMenuItems = (from menuItem in SingleTown.AppDB.ItemMenuSet
+                                           where menuItem.Ativo == "Ativo"
+                                            select menuItem).ToList<ItemMenu>();
+
+            List<ItemMenu> allItemsInRestaurante = new List<ItemMenu>();
+
+            foreach (ItemMenu itemMenu in allMenuItems)
+            {
+                foreach (ItemMenu itemInRestaurant in selectedRestaurant.ItemMenu)
+                {
+                    if(itemMenu.Id == itemInRestaurant.Id)
+                    {
+                        allItemsInRestaurante.Add(itemMenu);
+                    }
+                }
+            }
+
+            sourceToPopulate.DataSource = allItemsInRestaurante;
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+        }
+
+        public static void PopulateCategoriesIntoComboBox(ComboBox combobox)
+        {
+
+            List<Categoria> allCategories = (from categorie in SingleTown.AppDB.CategoriaSet
+                                             where categorie.Ativo == "Ativo"
+                                             select categorie).ToList<Categoria>();
+
+            combobox.Items.Clear();
+            foreach (Categoria categorie in allCategories)
+            {
+                combobox.Items.Add(categorie.Nome);
+            }
+
+
+            combobox.SelectedIndex = -1;
+        }
+
+        public static void PopulateItemStatesIntoComboBox(ComboBox comboBox)
+        {
+
+            comboBox.Items.Clear();
+
+            comboBox.Items.Add("Ativo");
+            comboBox.Items.Add("Inativo");
+
+            comboBox.SelectedIndex = 0;
+        }
+
+        public static void PopulateAllItemsIntoBindingSource(BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            List<ItemMenu> allMenuItems = (from menuItem in SingleTown.AppDB.ItemMenuSet
+                                           where menuItem.Ativo == "Ativo"
+                                           select menuItem).ToList<ItemMenu>();
+
+            sourceToPopulate.DataSource = allMenuItems;
 
             if (gridViewToAdjustContents != null)
             {

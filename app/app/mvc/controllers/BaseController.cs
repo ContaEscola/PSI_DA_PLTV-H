@@ -30,7 +30,7 @@ namespace app
             viewToRender.ShowDialog();
         }
 
-        public static Hashtable RenderViewAsDialogWithReturn(Dialog viewToRender)
+        public static object RenderViewAsDialogWithReturn(Dialog viewToRender)
         {
             viewToRender.TopLevel = true;
             viewToRender.TopMost = true;
@@ -38,11 +38,15 @@ namespace app
             CloseForm(viewToRender.Name);
 
  
-            Hashtable dataToReturn = new Hashtable();
+            object dataToReturn;
 
             if (viewToRender.ShowDialog() == DialogResult.OK)
             {
                 dataToReturn = viewToRender.GetData();
+                viewToRender.Close();
+            } else
+            {
+                dataToReturn = null;
                 viewToRender.Close();
             }
     

@@ -10,14 +10,9 @@ namespace app
 {
     public class Dialog : Form
     {
-        private Hashtable _dataToReturn;
+        protected object _dataToReturn;
 
-        public Dialog()
-        {
-            _dataToReturn = new Hashtable();
-        }
-
-        public  Hashtable GetData()
+        public  object GetData()
         {
             return _dataToReturn;
         }

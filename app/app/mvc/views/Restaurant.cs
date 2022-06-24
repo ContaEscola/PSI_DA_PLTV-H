@@ -332,8 +332,7 @@ namespace app
 
         private void Btn_ManageMenu_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            BaseController.RenderView(menu);
+            BaseController.RenderView(new Menu(_restaurant));
         }
     }
 }

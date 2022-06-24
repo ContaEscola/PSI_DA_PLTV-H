@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Partials\ItemMenuPartial.cs" />
     <Compile Include="Partials\ClientePartial.cs" />
     <Compile Include="Partials\DBPartial.cs" />
     <Compile Include="mvc\controllers\CRUD.cs" />

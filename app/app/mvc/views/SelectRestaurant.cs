@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace app
 {
-    public partial class SelectRestaurant : Form
+    public partial class SelectRestaurant : Dialog
     {
 
         private FontLoader _fontLoader;
+
         public SelectRestaurant()
         {
             InitializeComponent();
@@ -45,56 +46,72 @@ namespace app
 
 
             RefreshDataGridView();
-
-
+            DisableConfirmControls();
         }
 
+        private void EnableConfirmControls()
+        {
+            Btn_Confirm.Enabled = true;
+        }
 
+        private void DisableConfirmControls()
+        {
+            Btn_Confirm.Enabled = false;
+        }
 
         private void RefreshDataGridView()
         {
-            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants);
+            PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllRestaurants, DataGridView_AvailableRestaurants);
         }
 
         private void Btn_CreateRestaurant_Click(object sender, EventArgs e)
         {
-            AddEditRestaurant novorestaurante = new AddEditRestaurant();
-            BaseController.RenderViewAsDialog(novorestaurante);
+            AddEditRestaurant novoRestaurante = new AddEditRestaurant();
+            BaseController.RenderViewAsDialog(novoRestaurante);
             RefreshDataGridView();
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView_AvailableRestaurants_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
-            Restaurant selectedCategory = new Restaurant
+
+            if (_dataToReturn == null)
+                MessageBox.Show("Escolha um restaurante primeiro!");
+            else
+                DialogResult = DialogResult.OK;
+        }
+
+        private void DataGridView_AvailableRestaurants_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGridView_AvailableRestaurants.SelectedRows.Count > 0)
             {
-                Nome = DataGridView_AvailableRestaurants.CurrentRow.Cells[0].Value.ToString(),
+                EnableConfirmControls();
+                string selectedRestaurantName = DataGridView_AvailableRestaurants.CurrentRow.Cells[0].Value.ToString();
 
+                _dataToReturn = CRUD.GetRestaurant(selectedRestaurantName);
 
-            };
+            }       
+            else
+            {
+                DisableConfirmControls();
+                _dataToReturn = null;
+            }
+               
+        }
 
+        private void Btn_Filter_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(TxtBox_Name.Text)) return;
 
+            List<Restaurante> allRestaurants = SingleTown.AppDB.RestauranteSet.ToList<Restaurante>();
+            List<Restaurante> correctRestaurants = new List<Restaurante>();
 
-            Restaurant novorestaurante = new AddEditRestaurant();
-            BaseController.RenderViewAsDialog(novorestaurante);
+            foreach (Restaurante restaurant in allRestaurants)
+            {
+                if (restaurant.Nome.Contains(TxtBox_Name.Text))
+                    correctRestaurants.Add(restaurant);
+            }
 
-
-            
-
-
-
-
-
-
+            BindingSource_AllRestaurants.DataSource = correctRestaurants;
         }
     }
 }

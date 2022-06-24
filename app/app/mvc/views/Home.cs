@@ -37,7 +37,7 @@ namespace app
             fontsForToolStripItems.Add( ToolStripMenuItem_Orders, FontLoader.RobotoSlabRegular);
 
             fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleRestaurant, FontLoader.RobotoSlabRegular);
-            fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleClient, FontLoader.RobotoSlabRegular);
+            fontsForToolStripItems.Add( ToolStripMenuItem_ManageAllClients, FontLoader.RobotoSlabRegular);
             fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleMenu, FontLoader.RobotoSlabRegular);
             fontsForToolStripItems.Add( ToolStripMenuItem_ManageSingleOrder, FontLoader.RobotoSlabRegular);
 
@@ -78,14 +78,20 @@ namespace app
 
         private void ToolStripMenuItem_ManageSingleRestaurant_Click(object sender, EventArgs e)
         {
-            SelectRestaurant restauranteview = new SelectRestaurant();
-            BaseController.RenderView(restauranteview);
+            Restaurante selectedRestaurante = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new SelectRestaurant());
+            BaseController.RenderView(new Restaurant(selectedRestaurante));
         }
 
-        private void ToolStripMenuItem_ManageSingleClient_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_ManageAllClients_Click(object sender, EventArgs e)
         {
-            GenericSelection genericview = new GenericSelection();
-            BaseController.RenderView(genericview);
+            Clients globalClients = new Clients();
+            BaseController.RenderView(globalClients);
+        }
+
+        private void ToolStripMenuItem_ManageSingleMenu_Click(object sender, EventArgs e)
+        {
+            Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
+            BaseController.RenderView(new Menu(selectedRestaurant));
         }
     }
 }

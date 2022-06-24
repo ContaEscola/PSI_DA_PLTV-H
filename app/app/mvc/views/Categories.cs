@@ -177,15 +177,5 @@ namespace app
             }
 
         }
-
-        private void ComboBox_NewCategorieState_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataGridView_Categories_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

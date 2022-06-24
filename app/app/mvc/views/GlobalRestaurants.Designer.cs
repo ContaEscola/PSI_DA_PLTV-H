@@ -226,6 +226,7 @@ namespace app
             this.Controls.Add(this.DataGridView_Restaurants);
             this.Controls.Add(this.Lbl_Restaurantes);
             this.Name = "GlobalRestaurants";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Global de Restaurantes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GlobalRestaurants_Load);

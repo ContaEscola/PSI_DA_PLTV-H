@@ -273,5 +273,11 @@ namespace app
             SingleTown.AppDB.SaveChanges();
 
         }
+
+        public static void RemoveItemFromMenu()
+        {
+            SingleTown.SelectedRestaurant.ItemMenu.Remove(SingleTown.SelectedItemMenu);
+            SingleTown.AppDB.SaveChanges();
+        }
     }
 }

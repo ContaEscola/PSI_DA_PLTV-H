@@ -333,5 +333,11 @@ namespace app
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Btn_RemoveItem_Click(object sender, EventArgs e)
+        {
+            CRUD.RemoveItemFromMenu();
+            RefreshDataGridView();
+        }
     }
 }

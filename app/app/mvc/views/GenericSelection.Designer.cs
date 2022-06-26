@@ -29,15 +29,18 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Confirm = new System.Windows.Forms.Button();
             this.DataGridView_AvailableStuff = new System.Windows.Forms.DataGridView();
+            this.BindingSource_AllStuff = new System.Windows.Forms.BindingSource(this.components);
             this.Lbl_Title = new System.Windows.Forms.Label();
             this.Btn_Filter = new System.Windows.Forms.Button();
             this.Lbl_Name = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableStuff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllStuff)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Confirm
@@ -45,6 +48,7 @@ namespace app
             this.Btn_Confirm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Confirm.AutoSize = true;
             this.Btn_Confirm.BackColor = System.Drawing.Color.White;
+            this.Btn_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_Confirm.Location = new System.Drawing.Point(257, 554);
             this.Btn_Confirm.Margin = new System.Windows.Forms.Padding(0);
@@ -53,10 +57,14 @@ namespace app
             this.Btn_Confirm.TabIndex = 28;
             this.Btn_Confirm.Text = "Confirmar";
             this.Btn_Confirm.UseVisualStyleBackColor = false;
+            this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
             // DataGridView_AvailableStuff
             // 
+            this.DataGridView_AvailableStuff.AllowUserToAddRows = false;
+            this.DataGridView_AvailableStuff.AllowUserToDeleteRows = false;
             this.DataGridView_AvailableStuff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_AvailableStuff.AutoGenerateColumns = false;
             this.DataGridView_AvailableStuff.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_AvailableStuff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -68,6 +76,7 @@ namespace app
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_AvailableStuff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_AvailableStuff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_AvailableStuff.DataSource = this.BindingSource_AllStuff;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,9 +88,13 @@ namespace app
             this.DataGridView_AvailableStuff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_AvailableStuff.Location = new System.Drawing.Point(102, 301);
             this.DataGridView_AvailableStuff.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_AvailableStuff.MultiSelect = false;
             this.DataGridView_AvailableStuff.Name = "DataGridView_AvailableStuff";
+            this.DataGridView_AvailableStuff.ReadOnly = true;
+            this.DataGridView_AvailableStuff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_AvailableStuff.Size = new System.Drawing.Size(433, 203);
             this.DataGridView_AvailableStuff.TabIndex = 26;
+            this.DataGridView_AvailableStuff.SelectionChanged += new System.EventHandler(this.DataGridView_AvailableStuff_SelectionChanged);
             // 
             // Lbl_Title
             // 
@@ -99,6 +112,7 @@ namespace app
             this.Btn_Filter.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Filter.AutoSize = true;
             this.Btn_Filter.BackColor = System.Drawing.Color.White;
+            this.Btn_Filter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.Btn_Filter.Location = new System.Drawing.Point(468, 230);
             this.Btn_Filter.Margin = new System.Windows.Forms.Padding(0);
@@ -107,6 +121,7 @@ namespace app
             this.Btn_Filter.TabIndex = 25;
             this.Btn_Filter.Text = "Filtrar";
             this.Btn_Filter.UseVisualStyleBackColor = false;
+            this.Btn_Filter.Click += new System.EventHandler(this.Btn_Filter_Click);
             // 
             // Lbl_Name
             // 
@@ -150,6 +165,7 @@ namespace app
             this.Text = "Secione o";
             this.Load += new System.EventHandler(this.GenericSelection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableStuff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllStuff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +179,6 @@ namespace app
         private System.Windows.Forms.Button Btn_Filter;
         private System.Windows.Forms.Label Lbl_Name;
         private System.Windows.Forms.TextBox TxtBox_Name;
+        private System.Windows.Forms.BindingSource BindingSource_AllStuff;
     }
 }

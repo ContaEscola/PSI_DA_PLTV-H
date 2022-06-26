@@ -294,5 +294,6 @@ namespace app
             CRUD.RemoveClient();
             RefreshDataGridView();
         }
+
     }
 }

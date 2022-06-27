@@ -109,6 +109,7 @@
             this.ComboBox_NewCategorieState.Name = "ComboBox_NewCategorieState";
             this.ComboBox_NewCategorieState.Size = new System.Drawing.Size(121, 28);
             this.ComboBox_NewCategorieState.TabIndex = 3;
+            this.ComboBox_NewCategorieState.SelectedIndexChanged += new System.EventHandler(this.ComboBox_NewCategorieState_SelectedIndexChanged);
             // 
             // Lbl_NewCategorieState
             // 
@@ -281,6 +282,7 @@
             this.DataGridView_Categories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Categories.Size = new System.Drawing.Size(622, 447);
             this.DataGridView_Categories.TabIndex = 12;
+            this.DataGridView_Categories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_Categories_CellContentClick);
             this.DataGridView_Categories.SelectionChanged += new System.EventHandler(this.DataGridView_Categories_SelectionChanged);
             // 
             // Column1

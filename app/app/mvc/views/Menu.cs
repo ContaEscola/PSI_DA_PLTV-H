@@ -343,7 +343,8 @@ namespace app
         private void Btn_ChangeRestaurant_Click(object sender, EventArgs e)
         {
             Restaurante selectedRestaurante = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new SelectRestaurant());
-            BaseController.RenderView(new Menu(selectedRestaurante));
+            if(selectedRestaurante != null)
+                BaseController.RenderView(new Menu(selectedRestaurante));
         }
     }
 }

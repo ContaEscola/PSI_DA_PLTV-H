@@ -19,6 +19,14 @@ namespace app
             SingleTown.AppDB.MetodoPagamentoSet.Add(paymentMethodToAdd);
             SingleTown.AppDB.SaveChanges();
         }
+        public static MetodoPagamento GetPaymentMethod(string metodoDescricao)
+        {
+            var allMetodos = SingleTown.AppDB.MetodoPagamentoSet;
+
+            MetodoPagamento metodo = (MetodoPagamento)allMetodos.Where(m => m.Metodo == metodoDescricao).FirstOrDefault();
+
+            return metodo;
+        }
 
         public static void EditPaymentMethod(MetodoPagamento updatedPaymentMethod)
         {
@@ -293,6 +301,44 @@ namespace app
             Pedido order = (Pedido)allOrders.Where(o => o.Id == orderId).FirstOrDefault();
 
             return order;
+        }
+
+        public static void ProgressOrder(Pedido orderToProgress)
+        {
+            var allStates = SingleTown.AppDB.EstadoSet;
+
+            Estado processingState = (Estado)allStates.Where(s => s.State == "Em Processamento").FirstOrDefault();
+
+            orderToProgress.Estado = processingState;
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        
+
+        public static void AddPaymentToOrder(Pagamento pagamento)
+        {
+            SingleTown.SelectedOrder.Pagamento.Add(pagamento);
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static void ConcludeOrder(Pedido orderToProgress)
+        {
+            var allStates = SingleTown.AppDB.EstadoSet;
+
+            Estado completedState = (Estado)allStates.Where(s => s.State == "Concluído").FirstOrDefault();
+
+            orderToProgress.Estado = completedState;
+            SingleTown.AppDB.SaveChanges();
+        }
+
+        public static void CancelOrder(Pedido orderToProgress)
+        {
+            var allStates = SingleTown.AppDB.EstadoSet;
+
+            Estado cancelState = (Estado)allStates.Where(s => s.State == "Cancelado").FirstOrDefault();
+
+            orderToProgress.Estado = cancelState;
+            SingleTown.AppDB.SaveChanges();
         }
     }
 }

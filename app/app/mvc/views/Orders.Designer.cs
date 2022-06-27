@@ -30,8 +30,8 @@ namespace app
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Orders = new System.Windows.Forms.Label();
             this.Lbl_Restaurant = new System.Windows.Forms.Label();
             this.Lbl_RestaurantName = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@ namespace app
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -363,6 +364,7 @@ namespace app
             // 
             this.Btn_AddPayment.AutoSize = true;
             this.Btn_AddPayment.BackColor = System.Drawing.Color.White;
+            this.Btn_AddPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Btn_AddPayment.Location = new System.Drawing.Point(20, 122);
@@ -372,6 +374,7 @@ namespace app
             this.Btn_AddPayment.TabIndex = 7;
             this.Btn_AddPayment.Text = "Adicionar";
             this.Btn_AddPayment.UseVisualStyleBackColor = false;
+            this.Btn_AddPayment.Click += new System.EventHandler(this.Btn_AddPayment_Click);
             // 
             // Btn_ChoosePaymentMethod
             // 
@@ -387,6 +390,7 @@ namespace app
             this.Btn_ChoosePaymentMethod.TabIndex = 7;
             this.Btn_ChoosePaymentMethod.Text = "escolher";
             this.Btn_ChoosePaymentMethod.UseVisualStyleBackColor = false;
+            this.Btn_ChoosePaymentMethod.Click += new System.EventHandler(this.Btn_ChoosePaymentMethod_Click);
             // 
             // Lbl_PaymentMethod
             // 
@@ -445,17 +449,18 @@ namespace app
             this.Column5,
             this.Column1,
             this.Column2,
+            this.Column6,
             this.Column3,
             this.Column4});
             this.DataGridView_Orders.DataSource = this.BindingSource_AllOrders;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_Orders.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Orders.DefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView_Orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_Orders.Location = new System.Drawing.Point(617, 217);
             this.DataGridView_Orders.Margin = new System.Windows.Forms.Padding(0);
@@ -499,6 +504,7 @@ namespace app
             this.Btn_ProgressOrder.TabIndex = 13;
             this.Btn_ProgressOrder.Text = "Progredir Pedido";
             this.Btn_ProgressOrder.UseVisualStyleBackColor = false;
+            this.Btn_ProgressOrder.Click += new System.EventHandler(this.Btn_ProgressOrder_Click);
             // 
             // Btn_ExportOrder
             // 
@@ -515,6 +521,7 @@ namespace app
             this.Btn_ExportOrder.TabIndex = 14;
             this.Btn_ExportOrder.Text = "Exportar Pedido";
             this.Btn_ExportOrder.UseVisualStyleBackColor = false;
+            this.Btn_ExportOrder.Click += new System.EventHandler(this.Btn_ExportOrder_Click);
             // 
             // Btn_ConcludeOrder
             // 
@@ -531,6 +538,7 @@ namespace app
             this.Btn_ConcludeOrder.TabIndex = 15;
             this.Btn_ConcludeOrder.Text = "Concluir Pedido";
             this.Btn_ConcludeOrder.UseVisualStyleBackColor = false;
+            this.Btn_ConcludeOrder.Click += new System.EventHandler(this.Btn_ConcludeOrder_Click);
             // 
             // Btn_CancelOrder
             // 
@@ -547,6 +555,63 @@ namespace app
             this.Btn_CancelOrder.TabIndex = 16;
             this.Btn_CancelOrder.Text = "Cancelar Pedido";
             this.Btn_CancelOrder.UseVisualStyleBackColor = false;
+            this.Btn_CancelOrder.Click += new System.EventHandler(this.Btn_CancelOrder_Click);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Id";
+            this.Column5.FillWeight = 49.56971F;
+            this.Column5.HeaderText = "Id";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 48;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ClienteFormated";
+            this.Column1.FillWeight = 90.0349F;
+            this.Column1.HeaderText = "Cliente";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 87;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ValorTotalFormated";
+            this.Column2.FillWeight = 117.3882F;
+            this.Column2.HeaderText = "Valor Total";
+            this.Column2.MinimumWidth = 140;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 140;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ValorPorPagarFormated";
+            this.Column6.FillWeight = 170.424F;
+            this.Column6.HeaderText = "Valor Por Pagar";
+            this.Column6.MinimumWidth = 165;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 165;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "EstadoFormated";
+            this.Column3.FillWeight = 71.9558F;
+            this.Column3.HeaderText = "Estado";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 70;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TrabalhadorFormated";
+            this.Column4.FillWeight = 100.6275F;
+            this.Column4.HeaderText = "Funcionário";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 97;
             // 
             // Column5
             // 
@@ -662,6 +727,7 @@ namespace app
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }

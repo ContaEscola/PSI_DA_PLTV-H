@@ -12,6 +12,21 @@ namespace app
                 return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", ValorTotal)}€"; 
             } }
 
+        public string ValorPorPagarFormated
+        {
+            get
+            {
+                if (Pagamento == null) return "";
+
+                decimal totalValue = ValorTotal;
+
+                foreach (Pagamento pagamento in Pagamento)
+                    totalValue -= pagamento.Valor;
+
+                return $"{String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-PT"), "{0:#,0.00}", ValorTotal)}€";
+            }
+        }
+
         public string ClienteFormated
         {
             get { return Cliente.Nome; }
@@ -24,7 +39,8 @@ namespace app
 
         public string EstadoFormated
         {
-            get { return Estado.State; }
+            get {   if (Estado == null) return ""; 
+                    return Estado.State; }
         }
     }
 }

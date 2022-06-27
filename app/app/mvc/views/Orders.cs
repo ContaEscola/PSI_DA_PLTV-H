@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace app
 
         private Trabalhador _selectedEmployee;
         private Cliente _selectedClient;
+        private MetodoPagamento _selectedPagamento;
 
         public Orders(Restaurante restaurant)
         {
@@ -189,6 +191,7 @@ namespace app
             Btn_ChooseItem.Text = "escolher";
             Btn_ChoosePaymentMethod.Text = "escolher";
             MaskedTxtBox_PaymentValue.ResetText();
+            _selectedPagamento = null;
 
             DisableEditControls();
         }
@@ -201,27 +204,31 @@ namespace app
             _selectedClient = null;
             _selectedEmployee = null;
         }
-        private void RefreshDataGridView()
+        private void RefreshDataGridView(bool clearSelection = true)
         {
-            PopulateData.PopulateOrdersIntoBindingSource(_restaurant, BindingSource_AllOrders, DataGridView_Orders);
+            PopulateData.PopulateOrdersIntoBindingSource(_restaurant, BindingSource_AllOrders, DataGridView_Orders, clearSelection);
         }
 
         private void Btn_ChangeRestaurant_Click(object sender, EventArgs e)
         {
             Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
-            BaseController.RenderView(new Orders(selectedRestaurant));
+            if(selectedRestaurant != null)
+                BaseController.RenderView(new Orders(selectedRestaurant));
         }
 
         private void Btn_ChooseWorker_Click(object sender, EventArgs e)
         {
+
             _selectedEmployee = (Trabalhador)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectEmployee,_restaurant));
-            Btn_ChooseWorker.Text = _selectedEmployee.Nome;
+            if(_selectedEmployee != null)
+                Btn_ChooseWorker.Text = _selectedEmployee.Nome;
         }
 
         private void Btn_ChooseClient_Click(object sender, EventArgs e)
         {
             _selectedClient = (Cliente)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectClient));
-            Btn_ChooseClient.Text = _selectedClient.Nome;
+            if(_selectedClient != null)
+                Btn_ChooseClient.Text = _selectedClient.Nome;
         }
 
         private void Btn_AddNewOrder_Click(object sender, EventArgs e)
@@ -281,6 +288,101 @@ namespace app
             else
             {
                 ResetEditControls();
+            }
+        }
+
+        private void Btn_ProgressOrder_Click(object sender, EventArgs e)
+        {
+            CRUD.ProgressOrder(SingleTown.SelectedOrder);
+            RefreshDataGridView(false);
+        }
+
+        private void Btn_ChoosePaymentMethod_Click(object sender, EventArgs e)
+        {
+            _selectedPagamento = (MetodoPagamento)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMetodoPagamento));
+            if(_selectedPagamento != null)
+                Btn_ChoosePaymentMethod.Text = _selectedPagamento.Metodo;
+        }
+
+        private void Btn_AddPayment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_selectedPagamento == null)
+                    throw new Exception("Escolha um método de pagamento!");
+
+                string pagamentoValue = MaskedTxtBox_PaymentValue.Text;
+                decimal pagamentoValueConverted = Decimal.Parse(pagamentoValue, CultureInfo.GetCultureInfo("pt-PT"));
+
+                Pagamento newPagamento = new Pagamento
+                {
+                    Valor = pagamentoValueConverted,
+                    IdPedido = SingleTown.SelectedOrder.Id,
+                    IdMetodoPagamento = _selectedPagamento.Id
+                };
+
+
+                CRUD.AddPaymentToOrder(newPagamento);
+                RefreshDataGridView(false);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O valor de pagamento inserido é inválido!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void Btn_ConcludeOrder_Click(object sender, EventArgs e)
+        {
+            CRUD.ConcludeOrder(SingleTown.SelectedOrder);
+            RefreshDataGridView(false);
+        }
+
+        private void Btn_CancelOrder_Click(object sender, EventArgs e)
+        {
+            CRUD.CancelOrder(SingleTown.SelectedOrder);
+            RefreshDataGridView();
+        }
+
+        private void Btn_ExportOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var dirInfo = new DirectoryInfo(@"C:\PedidosExportados");
+
+                if (!dirInfo.Exists)
+                    dirInfo.Create();
+
+                var fileName = $"{SingleTown.SelectedOrder.Id.ToString()}_{SingleTown.SelectedOrder.Cliente.Nome}";
+                var directory = @"C:\PedidosExportados";
+
+                string filePath = Path.Combine(directory, fileName);
+
+                string formatedContent = $"Pedido: {SingleTown.SelectedOrder.Id};{Environment.NewLine}" +
+                                         $"Cliente: {SingleTown.SelectedOrder.Cliente.Nome};{Environment.NewLine}" +
+                                         $"Funcionário: {SingleTown.SelectedOrder.Trabalhador.Nome};{Environment.NewLine}" +
+                                         $"------------------------------------------------------------------------------{Environment.NewLine}" +
+                                         $"Valor Total: {SingleTown.SelectedOrder.ValorTotalFormated};{Environment.NewLine}";
+
+                int counter = 0;
+                foreach(Pagamento pagamento in SingleTown.SelectedOrder.Pagamento)
+                {
+                    counter++;
+                    formatedContent += $"{counter}º Pagamento: {pagamento.MetodoPagamento.Metodo}; Valor: {pagamento.Valor};{Environment.NewLine}";
+                }
+
+                File.WriteAllText(filePath,formatedContent);
+
+                MessageBox.Show("Pedido exportado com sucesso para: C:\\PedidosExportados");
+
+            } catch(Exception)
+            {
+                MessageBox.Show("Não foi possível exportar o ficheiro txt para a localização C:\\PedidosExportados");
+
             }
         }
     }

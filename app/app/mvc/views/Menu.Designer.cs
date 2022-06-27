@@ -619,6 +619,82 @@ namespace app
             this.Column3.ReadOnly = true;
             this.Column3.Width = 123;
             // 
+            // DataGridView_MenuItems
+            // 
+            this.DataGridView_MenuItems.AllowUserToAddRows = false;
+            this.DataGridView_MenuItems.AllowUserToDeleteRows = false;
+            this.DataGridView_MenuItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_MenuItems.AutoGenerateColumns = false;
+            this.DataGridView_MenuItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridView_MenuItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridView_MenuItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.DataGridView_MenuItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_MenuItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView_MenuItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_MenuItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column4,
+            this.Column2,
+            this.Column3});
+            this.DataGridView_MenuItems.DataSource = this.BindingSource_MenuItems;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_MenuItems.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridView_MenuItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.DataGridView_MenuItems.Location = new System.Drawing.Point(775, 163);
+            this.DataGridView_MenuItems.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_MenuItems.MultiSelect = false;
+            this.DataGridView_MenuItems.Name = "DataGridView_MenuItems";
+            this.DataGridView_MenuItems.ReadOnly = true;
+            this.DataGridView_MenuItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridView_MenuItems.Size = new System.Drawing.Size(622, 648);
+            this.DataGridView_MenuItems.TabIndex = 19;
+            this.DataGridView_MenuItems.SelectionChanged += new System.EventHandler(this.DataGridView_MenuItems_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 76;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CategoriaFormated";
+            this.Column4.HeaderText = "Categoria";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 103;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "PrecoFormated";
+            this.Column2.HeaderText = "Preço";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 75;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "IngredientesFormated";
+            this.Column3.HeaderText = "Ingredientes";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 123;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

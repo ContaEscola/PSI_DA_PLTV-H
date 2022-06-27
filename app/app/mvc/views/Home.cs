@@ -79,7 +79,8 @@ namespace app
         private void ToolStripMenuItem_ManageSingleRestaurant_Click(object sender, EventArgs e)
         {
             Restaurante selectedRestaurante = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new SelectRestaurant());
-            BaseController.RenderView(new Restaurant(selectedRestaurante));
+            if(selectedRestaurante != null)
+                BaseController.RenderView(new Restaurant(selectedRestaurante));
         }
 
         private void ToolStripMenuItem_ManageAllClients_Click(object sender, EventArgs e)
@@ -91,13 +92,15 @@ namespace app
         private void ToolStripMenuItem_ManageSingleMenu_Click(object sender, EventArgs e)
         {
             Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
-            BaseController.RenderView(new Menu(selectedRestaurant));
+            if(selectedRestaurant != null)
+                BaseController.RenderView(new Menu(selectedRestaurant));
         }
 
         private void ToolStripMenuItem_ManageSingleOrder_Click(object sender, EventArgs e)
         {
             Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
-            BaseController.RenderView(new Orders(selectedRestaurant));
+            if(selectedRestaurant != null)
+                BaseController.RenderView(new Orders(selectedRestaurant));
         }
     }
 }

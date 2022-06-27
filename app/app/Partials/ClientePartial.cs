@@ -8,6 +8,7 @@ namespace app
 {
     public partial class Cliente : Pessoa
     {
-        public string PaisExtracted { get { return Morada.Pais; } }
+        public string PaisExtracted { get { if (Morada == null) return "";
+                return Morada.Pais; } }
     }
 }

@@ -33,6 +33,20 @@ namespace app
                 
         }
 
+        public static void PopulateOnlyActivePaymentMethodsIntoBindingSource(BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            sourceToPopulate.DataSource = (from metodo in SingleTown.AppDB.MetodoPagamentoSet
+                                           where metodo.Ativo == "Ativo"
+                                           select metodo).ToList<MetodoPagamento>();
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
+        }
+
         public static void PopulatePaymentMethodsStatesIntoComboBox(ComboBox comboBox)
         {
             comboBox.Items.Clear();
@@ -174,7 +188,7 @@ namespace app
 
         }
 
-        public static void PopulateOrdersIntoBindingSource(Restaurante restauranteToOrders,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        public static void PopulateOrdersIntoBindingSource(Restaurante restauranteToOrders,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null, bool clearSelection = true)
         {
             List<Pedido> allOrders = (from pedido in SingleTown.AppDB.PedidoSet
                                            where pedido.IdRestaurante == restauranteToOrders.Id
@@ -185,7 +199,9 @@ namespace app
             if (gridViewToAdjustContents != null)
             {
                 gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                gridViewToAdjustContents.ClearSelection();
+
+                if(clearSelection)
+                    gridViewToAdjustContents.ClearSelection();
             }
 
         }

@@ -19,6 +19,7 @@ namespace app
             public static string SelectMenu = "SelectMenu";
             public static string SelectEmployee = "SelectEmployee";
             public static string SelectClient = "SelectClient";
+            public static string SelectMetodoPagamento = "SelectMetodoPagamento";
         }
 
         private string _reasonToOpen;
@@ -61,6 +62,7 @@ namespace app
             switch (_reasonToOpen)
             {
                 case "AddExistentItem":
+
                     this.Text = "Selecione o item";
                     Lbl_Title.Text = "Selecione o item a adicionar!";
 
@@ -80,6 +82,94 @@ namespace app
 
                     allColumnsToDataGrid.Add(columnNomeItem);
                     allColumnsToDataGrid.Add(columnCategoryItem);
+
+                    break;
+
+                case "SelectMenu":
+
+                    this.Text = "Selecione o restaurante";
+                    Lbl_Title.Text = "Selecione o restaurante!";
+
+                    DataGridViewTextBoxColumn columnNomeRestaurant = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryRestaurant = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeRestaurant);
+                    allColumnsToDataGrid.Add(columnCategoryRestaurant);
+
+                    break;
+
+                case "SelectEmployee":
+
+                    this.Text = "Selecione o funcionário";
+                    Lbl_Title.Text = "Selecione o funcionário!";
+
+                    DataGridViewTextBoxColumn columnNomeEmployee = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryEmployee = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeEmployee);
+                    allColumnsToDataGrid.Add(columnCategoryEmployee);
+
+                    break;
+                case "SelectClient":
+
+                    this.Text = "Selecione o cliente";
+                    Lbl_Title.Text = "Selecione o cliente!";
+
+                    DataGridViewTextBoxColumn columnNomeClient = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryClient = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeClient);
+                    allColumnsToDataGrid.Add(columnCategoryClient);
+
+                    break;
+
+                case "SelectMetodoPagamento":
+
+                    this.Text = "Selecione o metodo pagamento";
+                    Lbl_Title.Text = "Selecione o metodo de pagamento!";
+
+                    DataGridViewTextBoxColumn columnMetodoPagamento = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Metodo",
+                        DataPropertyName = "Metodo",
+                        ReadOnly = true
+                    };
+
+
+                    allColumnsToDataGrid.Add(columnMetodoPagamento);
 
                     break;
 
@@ -184,6 +274,10 @@ namespace app
                 case "SelectClient":
                     PopulateData.PopulateClientsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
                     break;
+
+                case "SelectMetodoPagamento":
+                    PopulateData.PopulateOnlyActivePaymentMethodsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
+                    break;
             }
         }
         private void Btn_Filter_Click(object sender, EventArgs e)
@@ -265,6 +359,26 @@ namespace app
                     BindingSource_AllStuff.DataSource = correctClients;
 
                     break;
+
+                case "SelectMetodoPagamento":
+
+                    List<MetodoPagamento> allMetodos = (from metodo in SingleTown.AppDB.MetodoPagamentoSet
+                                                where metodo.Ativo == "Ativo"
+                                                select metodo).ToList<MetodoPagamento>();
+
+                    List<MetodoPagamento> correctMetodos = new List<MetodoPagamento>();
+
+                    foreach (MetodoPagamento metodo in correctMetodos)
+                    {
+                        if (metodo.Metodo.Contains(TxtBox_Name.Text))
+                            correctMetodos.Add(metodo);
+                    }
+
+                    BindingSource_AllStuff.DataSource = correctMetodos;
+
+                    break;
+
+             
             }
         }
 
@@ -308,6 +422,16 @@ namespace app
                         Cliente client = CRUD.GetClient(clientName);
 
                         _dataToReturn = client;
+                        break;
+
+                    case "SelectMetodoPagamento":
+
+                        string metodoDescricao = DataGridView_AvailableStuff.CurrentRow.Cells[0].Value.ToString();
+                        MetodoPagamento metodo = CRUD.GetPaymentMethod(metodoDescricao);
+
+                        _dataToReturn = metodo;
+
+
                         break;
                 }
             else

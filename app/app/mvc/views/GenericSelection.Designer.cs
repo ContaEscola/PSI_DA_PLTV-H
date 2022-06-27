@@ -163,6 +163,7 @@ namespace app
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GenericSelection";
             this.Padding = new System.Windows.Forms.Padding(0, 107, 0, 0);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secione o";
             this.Load += new System.EventHandler(this.GenericSelection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableStuff)).EndInit();

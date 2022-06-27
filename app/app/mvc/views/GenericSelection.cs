@@ -16,6 +16,7 @@ namespace app
         public struct Reasons
         {
             public static string AddExistentItem = "AddExistentItem";
+            public static string SelectMenu = "SelectMenu";
         }
 
         private string _reasonToOpen;
@@ -60,24 +61,48 @@ namespace app
                     this.Text = "Selecione o item";
                     Lbl_Title.Text = "Selecione o item a adicionar!";
 
-                    DataGridViewTextBoxColumn columnNome = new DataGridViewTextBoxColumn
+                    DataGridViewTextBoxColumn columnNomeItem = new DataGridViewTextBoxColumn
                     {
                         HeaderText = "Nome",
                         DataPropertyName = "Nome",
                         ReadOnly = true
                     };
 
-                    DataGridViewTextBoxColumn columnCategory = new DataGridViewTextBoxColumn
+                    DataGridViewTextBoxColumn columnCategoryItem = new DataGridViewTextBoxColumn
                     {
                         HeaderText = "Categoria",
                         DataPropertyName = "CategoriaFormated",
                         ReadOnly = true
                     };
 
-                    allColumnsToDataGrid.Add(columnNome);
-                    allColumnsToDataGrid.Add(columnCategory);
+                    allColumnsToDataGrid.Add(columnNomeItem);
+                    allColumnsToDataGrid.Add(columnCategoryItem);
 
                     break;
+
+                case "SelectMenu":
+                    this.Text = "Selecione o restaurante";
+                    Lbl_Title.Text = "Selecione o restaurante!";
+
+                    DataGridViewTextBoxColumn columnNomeRestaurant = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryRestaurant = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeRestaurant);
+                    allColumnsToDataGrid.Add(columnCategoryRestaurant);
+
+                    break;
+
             }
 
             AddColumnsToDataGrid(allColumnsToDataGrid);
@@ -96,6 +121,10 @@ namespace app
             {
                 case "AddExistentItem":
                     PopulateData.PopulateAllItemsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
+                    break;
+
+                case "SelectMenu":
+                    PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
                     break;
             }
         }
@@ -121,6 +150,22 @@ namespace app
 
                     BindingSource_AllStuff.DataSource = correctItems;
                     break;
+
+                case "SelectMenu":
+
+                    List<Restaurante> allRestaurants = (from restaurante in SingleTown.AppDB.RestauranteSet
+                                               select restaurante).ToList<Restaurante>();
+
+                    List<Restaurante> correctRestaurants = new List<Restaurante>();
+
+                    foreach (Restaurante restaurant in allRestaurants)
+                    {
+                        if (restaurant.Nome.Contains(TxtBox_Name.Text))
+                            correctRestaurants.Add(restaurant);
+                    }
+
+                    BindingSource_AllStuff.DataSource = correctRestaurants;
+                    break;
             }
         }
 
@@ -143,6 +188,13 @@ namespace app
                         ItemMenu item = CRUD.GetItem(itemName);
 
                         _dataToReturn = item;
+                        break;
+
+                    case "SelectMenu":
+                        string restaurantName = DataGridView_AvailableStuff.CurrentRow.Cells[0].Value.ToString();
+                        Restaurante restaurante = CRUD.GetRestaurant(restaurantName);
+
+                        _dataToReturn = restaurante;
                         break;
                 }
             else

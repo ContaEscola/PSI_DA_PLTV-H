@@ -114,5 +114,10 @@ namespace app
                 DisableEditControls();
             }
         }
+
+        private void BindingSource_AllRestaurants_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

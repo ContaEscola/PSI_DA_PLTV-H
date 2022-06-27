@@ -29,6 +29,7 @@ namespace app
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Lbl_Title = new System.Windows.Forms.Label();
@@ -36,9 +37,13 @@ namespace app
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
             this.Btn_Filter = new System.Windows.Forms.Button();
             this.DataGridView_AvailableRestaurants = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource_AllRestaurants = new System.Windows.Forms.BindingSource(this.components);
             this.Btn_CreateRestaurant = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableRestaurants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllRestaurants)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_Title
@@ -79,6 +84,7 @@ namespace app
             this.Btn_Filter.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Filter.AutoSize = true;
             this.Btn_Filter.BackColor = System.Drawing.Color.White;
+            this.Btn_Filter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F);
             this.Btn_Filter.Location = new System.Drawing.Point(468, 230);
             this.Btn_Filter.Margin = new System.Windows.Forms.Padding(0);
@@ -87,10 +93,15 @@ namespace app
             this.Btn_Filter.TabIndex = 3;
             this.Btn_Filter.Text = "Filtrar";
             this.Btn_Filter.UseVisualStyleBackColor = false;
+            this.Btn_Filter.Click += new System.EventHandler(this.Btn_Filter_Click);
             // 
             // DataGridView_AvailableRestaurants
             // 
-            this.DataGridView_AvailableRestaurants.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataGridView_AvailableRestaurants.AllowUserToAddRows = false;
+            this.DataGridView_AvailableRestaurants.AllowUserToDeleteRows = false;
+            this.DataGridView_AvailableRestaurants.AutoGenerateColumns = false;
+            this.DataGridView_AvailableRestaurants.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridView_AvailableRestaurants.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView_AvailableRestaurants.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.DataGridView_AvailableRestaurants.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -102,6 +113,10 @@ namespace app
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_AvailableRestaurants.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_AvailableRestaurants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_AvailableRestaurants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Morada});
+            this.DataGridView_AvailableRestaurants.DataSource = this.BindingSource_AllRestaurants;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -113,15 +128,36 @@ namespace app
             this.DataGridView_AvailableRestaurants.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.DataGridView_AvailableRestaurants.Location = new System.Drawing.Point(102, 301);
             this.DataGridView_AvailableRestaurants.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView_AvailableRestaurants.MultiSelect = false;
             this.DataGridView_AvailableRestaurants.Name = "DataGridView_AvailableRestaurants";
+            this.DataGridView_AvailableRestaurants.ReadOnly = true;
+            this.DataGridView_AvailableRestaurants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_AvailableRestaurants.Size = new System.Drawing.Size(433, 203);
             this.DataGridView_AvailableRestaurants.TabIndex = 19;
+            this.DataGridView_AvailableRestaurants.SelectionChanged += new System.EventHandler(this.DataGridView_AvailableRestaurants_SelectionChanged);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 76;
+            // 
+            // Morada
+            // 
+            this.Morada.DataPropertyName = "Morada";
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            this.Morada.Width = 88;
             // 
             // Btn_CreateRestaurant
             // 
             this.Btn_CreateRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_CreateRestaurant.AutoSize = true;
             this.Btn_CreateRestaurant.BackColor = System.Drawing.Color.White;
+            this.Btn_CreateRestaurant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_CreateRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_CreateRestaurant.Location = new System.Drawing.Point(102, 554);
             this.Btn_CreateRestaurant.Margin = new System.Windows.Forms.Padding(0);
@@ -130,12 +166,14 @@ namespace app
             this.Btn_CreateRestaurant.TabIndex = 20;
             this.Btn_CreateRestaurant.Text = "Criar Novo";
             this.Btn_CreateRestaurant.UseVisualStyleBackColor = false;
+            this.Btn_CreateRestaurant.Click += new System.EventHandler(this.Btn_CreateRestaurant_Click);
             // 
             // Btn_Confirm
             // 
             this.Btn_Confirm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Btn_Confirm.AutoSize = true;
             this.Btn_Confirm.BackColor = System.Drawing.Color.White;
+            this.Btn_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_Confirm.Location = new System.Drawing.Point(407, 554);
             this.Btn_Confirm.Margin = new System.Windows.Forms.Padding(0);
@@ -144,6 +182,7 @@ namespace app
             this.Btn_Confirm.TabIndex = 21;
             this.Btn_Confirm.Text = "Confirmar";
             this.Btn_Confirm.UseVisualStyleBackColor = false;
+            this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
             // SelectRestaurant
             // 
@@ -163,9 +202,11 @@ namespace app
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SelectRestaurant";
             this.Padding = new System.Windows.Forms.Padding(0, 107, 0, 0);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecione o Restaurante";
             this.Load += new System.EventHandler(this.SelectRestaurant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_AvailableRestaurants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_AllRestaurants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +221,8 @@ namespace app
         private System.Windows.Forms.DataGridView DataGridView_AvailableRestaurants;
         private System.Windows.Forms.Button Btn_CreateRestaurant;
         private System.Windows.Forms.Button Btn_Confirm;
+        private System.Windows.Forms.BindingSource BindingSource_AllRestaurants;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
     }
 }

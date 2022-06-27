@@ -33,7 +33,7 @@ namespace app
             this.ToolStripMenuItem_Restaurants = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_ManageSingleRestaurant = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Clients = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_ManageSingleClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_ManageAllClients = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_ManageSingleMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Orders = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,12 +88,13 @@ namespace app
             this.ToolStripMenuItem_ManageSingleRestaurant.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ToolStripMenuItem_ManageSingleRestaurant.Size = new System.Drawing.Size(210, 24);
             this.ToolStripMenuItem_ManageSingleRestaurant.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageSingleRestaurant.Click += new System.EventHandler(this.ToolStripMenuItem_ManageSingleRestaurant_Click);
             // 
             // ToolStripMenuItem_Clients
             // 
             this.ToolStripMenuItem_Clients.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem_Clients.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_ManageSingleClient});
+            this.ToolStripMenuItem_ManageAllClients});
             this.ToolStripMenuItem_Clients.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ToolStripMenuItem_Clients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_Clients.Name = "ToolStripMenuItem_Clients";
@@ -101,15 +102,16 @@ namespace app
             this.ToolStripMenuItem_Clients.Size = new System.Drawing.Size(89, 45);
             this.ToolStripMenuItem_Clients.Text = "Clientes";
             // 
-            // ToolStripMenuItem_ManageSingleClient
+            // ToolStripMenuItem_ManageAllClients
             // 
-            this.ToolStripMenuItem_ManageSingleClient.BackColor = System.Drawing.Color.White;
-            this.ToolStripMenuItem_ManageSingleClient.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.ToolStripMenuItem_ManageSingleClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.ToolStripMenuItem_ManageSingleClient.Name = "ToolStripMenuItem_ManageSingleClient";
-            this.ToolStripMenuItem_ManageSingleClient.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ToolStripMenuItem_ManageSingleClient.Size = new System.Drawing.Size(210, 24);
-            this.ToolStripMenuItem_ManageSingleClient.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageAllClients.BackColor = System.Drawing.Color.White;
+            this.ToolStripMenuItem_ManageAllClients.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.ToolStripMenuItem_ManageAllClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.ToolStripMenuItem_ManageAllClients.Name = "ToolStripMenuItem_ManageAllClients";
+            this.ToolStripMenuItem_ManageAllClients.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.ToolStripMenuItem_ManageAllClients.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItem_ManageAllClients.Text = "Gerir Todos";
+            this.ToolStripMenuItem_ManageAllClients.Click += new System.EventHandler(this.ToolStripMenuItem_ManageAllClients_Click);
             // 
             // ToolStripMenuItem_Menu
             // 
@@ -132,6 +134,7 @@ namespace app
             this.ToolStripMenuItem_ManageSingleMenu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ToolStripMenuItem_ManageSingleMenu.Size = new System.Drawing.Size(210, 24);
             this.ToolStripMenuItem_ManageSingleMenu.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageSingleMenu.Click += new System.EventHandler(this.ToolStripMenuItem_ManageSingleMenu_Click);
             // 
             // ToolStripMenuItem_Orders
             // 
@@ -152,8 +155,8 @@ namespace app
             this.ToolStripMenuItem_ManageSingleOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageSingleOrder.Name = "ToolStripMenuItem_ManageSingleOrder";
             this.ToolStripMenuItem_ManageSingleOrder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ToolStripMenuItem_ManageSingleOrder.Size = new System.Drawing.Size(210, 24);
-            this.ToolStripMenuItem_ManageSingleOrder.Text = "Gerir individualmente";
+            this.ToolStripMenuItem_ManageSingleOrder.Size = new System.Drawing.Size(211, 24);
+            this.ToolStripMenuItem_ManageSingleOrder.Text = "Gerir Individualmente";
             // 
             // Lbl_ChooseFunctionalities
             // 
@@ -275,6 +278,7 @@ namespace app
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
@@ -302,7 +306,7 @@ namespace app
         private System.Windows.Forms.Button Btn_ClientsGlobalManagement;
         private System.Windows.Forms.Label Lbl_Clientes;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ManageSingleRestaurant;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ManageSingleClient;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ManageAllClients;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ManageSingleMenu;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_ManageSingleOrder;
     }

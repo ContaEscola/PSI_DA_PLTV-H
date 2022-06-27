@@ -818,6 +818,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Restaurant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Restaurant_Load);

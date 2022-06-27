@@ -213,7 +213,6 @@
             this.Btn_AddClient.TabIndex = 11;
             this.Btn_AddClient.Text = "Adicionar";
             this.Btn_AddClient.UseVisualStyleBackColor = false;
-
             // 
             // MaskedTxtBox_NewClientPostalCode
             // 
@@ -628,6 +627,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Clients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Clients_Load);

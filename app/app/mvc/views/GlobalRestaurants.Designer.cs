@@ -123,6 +123,10 @@ namespace app
             this.Morada.Name = "Morada";
             this.Morada.ReadOnly = true;
             // 
+            // BindingSource_AllRestaurants
+            // 
+            this.BindingSource_AllRestaurants.CurrentChanged += new System.EventHandler(this.BindingSource_AllRestaurants_CurrentChanged);
+            // 
             // Btn_RegisterNewRestaurant
             // 
             this.Btn_RegisterNewRestaurant.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -222,6 +226,7 @@ namespace app
             this.Controls.Add(this.DataGridView_Restaurants);
             this.Controls.Add(this.Lbl_Restaurantes);
             this.Name = "GlobalRestaurants";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Global de Restaurantes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GlobalRestaurants_Load);

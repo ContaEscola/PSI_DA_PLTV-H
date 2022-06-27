@@ -17,18 +17,21 @@ namespace app
         {
             public static string AddExistentItem = "AddExistentItem";
             public static string SelectMenu = "SelectMenu";
+            public static string SelectEmployee = "SelectEmployee";
+            public static string SelectClient = "SelectClient";
         }
 
         private string _reasonToOpen;
         private FontLoader _fontLoader;
-       
+        private Restaurante _restaurant;
 
-        public GenericSelection(string reasonToOpen)
+        public GenericSelection(string reasonToOpen, Restaurante restaurant = null)
         {
             InitializeComponent();
 
             _reasonToOpen = reasonToOpen;
             _fontLoader = new FontLoader();
+            _restaurant = restaurant;
         }
 
         //Irá dar load das fontes nos controlos
@@ -103,6 +106,53 @@ namespace app
 
                     break;
 
+                case "SelectEmployee":
+
+                    this.Text = "Selecione o funcionário";
+                    Lbl_Title.Text = "Selecione o funcionário!";
+
+                    DataGridViewTextBoxColumn columnNomeEmployee = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryEmployee = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeEmployee);
+                    allColumnsToDataGrid.Add(columnCategoryEmployee);
+
+                    break;
+                case "SelectClient":
+
+                    this.Text = "Selecione o cliente";
+                    Lbl_Title.Text = "Selecione o cliente!";
+
+                    DataGridViewTextBoxColumn columnNomeClient = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Nome",
+                        DataPropertyName = "Nome",
+                        ReadOnly = true
+                    };
+
+                    DataGridViewTextBoxColumn columnCategoryClient = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "Morada",
+                        DataPropertyName = "Morada",
+                        ReadOnly = true
+                    };
+
+                    allColumnsToDataGrid.Add(columnNomeClient);
+                    allColumnsToDataGrid.Add(columnCategoryClient);
+
+                    break;
+
             }
 
             AddColumnsToDataGrid(allColumnsToDataGrid);
@@ -126,11 +176,24 @@ namespace app
                 case "SelectMenu":
                     PopulateData.PopulateRestaurantsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
                     break;
+
+                case "SelectEmployee":
+                    PopulateData.PopulateEmployeesIntoBindingSource(_restaurant,BindingSource_AllStuff, DataGridView_AvailableStuff);
+                    break;
+
+                case "SelectClient":
+                    PopulateData.PopulateClientsIntoBindingSource(BindingSource_AllStuff, DataGridView_AvailableStuff);
+                    break;
             }
         }
         private void Btn_Filter_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(TxtBox_Name.Text)) return;
+            if (String.IsNullOrEmpty(TxtBox_Name.Text)) {
+                RefreshDataGridView();
+                return;
+            }
+
+                
 
             switch (_reasonToOpen)
             {
@@ -166,6 +229,42 @@ namespace app
 
                     BindingSource_AllStuff.DataSource = correctRestaurants;
                     break;
+
+                case "SelectEmployee":
+
+                    List<Trabalhador> allEmployees = (from trabalhador in SingleTown.AppDB.TrabalhadorSet
+                                                      where trabalhador.Ativo == "Ativo"
+                                                        select trabalhador).ToList<Trabalhador>();
+
+                    List<Trabalhador> correctEmployees = new List<Trabalhador>();
+
+                    foreach (Trabalhador trabalhador in allEmployees)
+                    {
+                        if (trabalhador.Nome.Contains(TxtBox_Name.Text))
+                            correctEmployees.Add(trabalhador);
+                    }
+
+                    BindingSource_AllStuff.DataSource = correctEmployees;
+
+                    break;
+
+                case "SelectClient":
+
+                    List<Cliente> allClients = (from cliente in SingleTown.AppDB.ClienteSet
+                                                      where cliente.Ativo == "Ativo"
+                                                      select cliente).ToList<Cliente>();
+
+                    List<Cliente> correctClients = new List<Cliente>();
+
+                    foreach (Cliente client in correctClients)
+                    {
+                        if (client.Nome.Contains(TxtBox_Name.Text))
+                            correctClients.Add(client);
+                    }
+
+                    BindingSource_AllStuff.DataSource = correctClients;
+
+                    break;
             }
         }
 
@@ -195,6 +294,20 @@ namespace app
                         Restaurante restaurante = CRUD.GetRestaurant(restaurantName);
 
                         _dataToReturn = restaurante;
+                        break;
+
+                    case "SelectEmployee":
+                        string employeeName = DataGridView_AvailableStuff.CurrentRow.Cells[0].Value.ToString();
+                        Trabalhador employee = CRUD.GetEmployee(employeeName);
+
+                        _dataToReturn = employee;
+                        break;
+
+                    case "SelectClient":
+                        string clientName = DataGridView_AvailableStuff.CurrentRow.Cells[0].Value.ToString();
+                        Cliente client = CRUD.GetClient(clientName);
+
+                        _dataToReturn = client;
                         break;
                 }
             else

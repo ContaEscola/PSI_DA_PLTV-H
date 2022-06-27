@@ -100,7 +100,10 @@ namespace app
 
         private void Btn_Filter_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(TxtBox_Name.Text)) return;
+            if (String.IsNullOrEmpty(TxtBox_Name.Text)) { 
+                RefreshDataGridView();
+                return; 
+            }
 
             List<Restaurante> allRestaurants = SingleTown.AppDB.RestauranteSet.ToList<Restaurante>();
             List<Restaurante> correctRestaurants = new List<Restaurante>();

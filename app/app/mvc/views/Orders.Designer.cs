@@ -37,6 +37,8 @@ namespace app
             this.Lbl_RestaurantName = new System.Windows.Forms.Label();
             this.Lbl_AddOrder = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaskedTxtBox_OrderPrice = new System.Windows.Forms.MaskedTextBox();
+            this.Lbl_OrderPrice = new System.Windows.Forms.Label();
             this.Btn_AddNewOrder = new System.Windows.Forms.Button();
             this.Btn_ChooseClient = new System.Windows.Forms.Button();
             this.Lbl_Client = new System.Windows.Forms.Label();
@@ -62,6 +64,7 @@ namespace app
             this.Btn_ExportOrder = new System.Windows.Forms.Button();
             this.Btn_ConcludeOrder = new System.Windows.Forms.Button();
             this.Btn_CancelOrder = new System.Windows.Forms.Button();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +82,7 @@ namespace app
             this.Lbl_Orders.AutoSize = true;
             this.Lbl_Orders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_Orders.Location = new System.Drawing.Point(73, 108);
+            this.Lbl_Orders.Location = new System.Drawing.Point(37, 108);
             this.Lbl_Orders.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_Orders.Name = "Lbl_Orders";
             this.Lbl_Orders.Size = new System.Drawing.Size(132, 37);
@@ -92,7 +95,7 @@ namespace app
             this.Lbl_Restaurant.AutoSize = true;
             this.Lbl_Restaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Restaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_Restaurant.Location = new System.Drawing.Point(75, 150);
+            this.Lbl_Restaurant.Location = new System.Drawing.Point(39, 150);
             this.Lbl_Restaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_Restaurant.Name = "Lbl_Restaurant";
             this.Lbl_Restaurant.Size = new System.Drawing.Size(123, 25);
@@ -106,7 +109,7 @@ namespace app
             this.Lbl_RestaurantName.AutoSize = true;
             this.Lbl_RestaurantName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_RestaurantName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_RestaurantName.Location = new System.Drawing.Point(198, 154);
+            this.Lbl_RestaurantName.Location = new System.Drawing.Point(162, 154);
             this.Lbl_RestaurantName.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_RestaurantName.Name = "Lbl_RestaurantName";
             this.Lbl_RestaurantName.Size = new System.Drawing.Size(63, 20);
@@ -119,7 +122,7 @@ namespace app
             this.Lbl_AddOrder.AutoSize = true;
             this.Lbl_AddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_AddOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddOrder.Location = new System.Drawing.Point(100, 217);
+            this.Lbl_AddOrder.Location = new System.Drawing.Point(64, 217);
             this.Lbl_AddOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_AddOrder.Name = "Lbl_AddOrder";
             this.Lbl_AddOrder.Size = new System.Drawing.Size(198, 29);
@@ -131,16 +134,43 @@ namespace app
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.MaskedTxtBox_OrderPrice);
+            this.panel1.Controls.Add(this.Lbl_OrderPrice);
             this.panel1.Controls.Add(this.Btn_AddNewOrder);
             this.panel1.Controls.Add(this.Btn_ChooseClient);
             this.panel1.Controls.Add(this.Lbl_Client);
             this.panel1.Controls.Add(this.Btn_ChooseWorker);
             this.panel1.Controls.Add(this.Lbl_Worker);
-            this.panel1.Location = new System.Drawing.Point(80, 236);
+            this.panel1.Location = new System.Drawing.Point(44, 236);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 171);
             this.panel1.TabIndex = 4;
+            // 
+            // MaskedTxtBox_OrderPrice
+            // 
+            this.MaskedTxtBox_OrderPrice.BackColor = System.Drawing.Color.White;
+            this.MaskedTxtBox_OrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaskedTxtBox_OrderPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.MaskedTxtBox_OrderPrice.Location = new System.Drawing.Point(83, 76);
+            this.MaskedTxtBox_OrderPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.MaskedTxtBox_OrderPrice.Name = "MaskedTxtBox_OrderPrice";
+            this.MaskedTxtBox_OrderPrice.Size = new System.Drawing.Size(182, 23);
+            this.MaskedTxtBox_OrderPrice.TabIndex = 18;
+            // 
+            // Lbl_OrderPrice
+            // 
+            this.Lbl_OrderPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Lbl_OrderPrice.AutoSize = true;
+            this.Lbl_OrderPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_OrderPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
+            this.Lbl_OrderPrice.Location = new System.Drawing.Point(21, 77);
+            this.Lbl_OrderPrice.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_OrderPrice.Name = "Lbl_OrderPrice";
+            this.Lbl_OrderPrice.Size = new System.Drawing.Size(50, 20);
+            this.Lbl_OrderPrice.TabIndex = 8;
+            this.Lbl_OrderPrice.Text = "Valor:";
+            this.Lbl_OrderPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Btn_AddNewOrder
             // 
@@ -149,13 +179,14 @@ namespace app
             this.Btn_AddNewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_AddNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_AddNewOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_AddNewOrder.Location = new System.Drawing.Point(20, 91);
+            this.Btn_AddNewOrder.Location = new System.Drawing.Point(20, 112);
             this.Btn_AddNewOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_AddNewOrder.Name = "Btn_AddNewOrder";
             this.Btn_AddNewOrder.Size = new System.Drawing.Size(480, 40);
             this.Btn_AddNewOrder.TabIndex = 5;
             this.Btn_AddNewOrder.Text = "Adicionar";
             this.Btn_AddNewOrder.UseVisualStyleBackColor = false;
+            this.Btn_AddNewOrder.Click += new System.EventHandler(this.Btn_AddNewOrder_Click);
             // 
             // Btn_ChooseClient
             // 
@@ -171,6 +202,7 @@ namespace app
             this.Btn_ChooseClient.TabIndex = 6;
             this.Btn_ChooseClient.Text = "escolher";
             this.Btn_ChooseClient.UseVisualStyleBackColor = false;
+            this.Btn_ChooseClient.Click += new System.EventHandler(this.Btn_ChooseClient_Click);
             // 
             // Lbl_Client
             // 
@@ -200,6 +232,7 @@ namespace app
             this.Btn_ChooseWorker.TabIndex = 5;
             this.Btn_ChooseWorker.Text = "escolher";
             this.Btn_ChooseWorker.UseVisualStyleBackColor = false;
+            this.Btn_ChooseWorker.Click += new System.EventHandler(this.Btn_ChooseWorker_Click);
             // 
             // Lbl_Worker
             // 
@@ -221,7 +254,7 @@ namespace app
             this.Lbl_AddItem.AutoSize = true;
             this.Lbl_AddItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_AddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddItem.Location = new System.Drawing.Point(100, 473);
+            this.Lbl_AddItem.Location = new System.Drawing.Point(64, 473);
             this.Lbl_AddItem.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_AddItem.Name = "Lbl_AddItem";
             this.Lbl_AddItem.Size = new System.Drawing.Size(166, 29);
@@ -236,7 +269,7 @@ namespace app
             this.panel2.Controls.Add(this.Btn_AddItem);
             this.panel2.Controls.Add(this.Btn_ChooseItem);
             this.panel2.Controls.Add(this.Lbl_Item);
-            this.panel2.Location = new System.Drawing.Point(80, 492);
+            this.panel2.Location = new System.Drawing.Point(44, 492);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 171);
@@ -295,7 +328,7 @@ namespace app
             this.panel3.Controls.Add(this.Btn_AddPayment);
             this.panel3.Controls.Add(this.Btn_ChoosePaymentMethod);
             this.panel3.Controls.Add(this.Lbl_PaymentMethod);
-            this.panel3.Location = new System.Drawing.Point(80, 747);
+            this.panel3.Location = new System.Drawing.Point(44, 747);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(402, 202);
@@ -318,7 +351,7 @@ namespace app
             this.Lbl_PaymentValue.AutoSize = true;
             this.Lbl_PaymentValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_PaymentValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_PaymentValue.Location = new System.Drawing.Point(21, 73);
+            this.Lbl_PaymentValue.Location = new System.Drawing.Point(21, 71);
             this.Lbl_PaymentValue.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_PaymentValue.Name = "Lbl_PaymentValue";
             this.Lbl_PaymentValue.Size = new System.Drawing.Size(50, 20);
@@ -375,7 +408,7 @@ namespace app
             this.Lbl_AddPayment.AutoSize = true;
             this.Lbl_AddPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_AddPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Lbl_AddPayment.Location = new System.Drawing.Point(100, 728);
+            this.Lbl_AddPayment.Location = new System.Drawing.Point(64, 728);
             this.Lbl_AddPayment.Margin = new System.Windows.Forms.Padding(0);
             this.Lbl_AddPayment.Name = "Lbl_AddPayment";
             this.Lbl_AddPayment.Size = new System.Drawing.Size(243, 29);
@@ -409,6 +442,7 @@ namespace app
             this.DataGridView_Orders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_Orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_Orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -423,7 +457,7 @@ namespace app
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView_Orders.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView_Orders.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.DataGridView_Orders.Location = new System.Drawing.Point(653, 217);
+            this.DataGridView_Orders.Location = new System.Drawing.Point(617, 217);
             this.DataGridView_Orders.Margin = new System.Windows.Forms.Padding(0);
             this.DataGridView_Orders.MultiSelect = false;
             this.DataGridView_Orders.Name = "DataGridView_Orders";
@@ -431,6 +465,7 @@ namespace app
             this.DataGridView_Orders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_Orders.Size = new System.Drawing.Size(622, 601);
             this.DataGridView_Orders.TabIndex = 11;
+            this.DataGridView_Orders.SelectionChanged += new System.EventHandler(this.DataGridView_Orders_SelectionChanged);
             // 
             // Btn_ChangeRestaurant
             // 
@@ -440,7 +475,7 @@ namespace app
             this.Btn_ChangeRestaurant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ChangeRestaurant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ChangeRestaurant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ChangeRestaurant.Location = new System.Drawing.Point(1052, 108);
+            this.Btn_ChangeRestaurant.Location = new System.Drawing.Point(1016, 108);
             this.Btn_ChangeRestaurant.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ChangeRestaurant.Name = "Btn_ChangeRestaurant";
             this.Btn_ChangeRestaurant.Size = new System.Drawing.Size(223, 51);
@@ -457,7 +492,7 @@ namespace app
             this.Btn_ProgressOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ProgressOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ProgressOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ProgressOrder.Location = new System.Drawing.Point(653, 839);
+            this.Btn_ProgressOrder.Location = new System.Drawing.Point(617, 839);
             this.Btn_ProgressOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ProgressOrder.Name = "Btn_ProgressOrder";
             this.Btn_ProgressOrder.Size = new System.Drawing.Size(179, 51);
@@ -473,7 +508,7 @@ namespace app
             this.Btn_ExportOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ExportOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ExportOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ExportOrder.Location = new System.Drawing.Point(1102, 898);
+            this.Btn_ExportOrder.Location = new System.Drawing.Point(1066, 898);
             this.Btn_ExportOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ExportOrder.Name = "Btn_ExportOrder";
             this.Btn_ExportOrder.Size = new System.Drawing.Size(173, 51);
@@ -489,7 +524,7 @@ namespace app
             this.Btn_ConcludeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_ConcludeOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ConcludeOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_ConcludeOrder.Location = new System.Drawing.Point(653, 898);
+            this.Btn_ConcludeOrder.Location = new System.Drawing.Point(617, 898);
             this.Btn_ConcludeOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_ConcludeOrder.Name = "Btn_ConcludeOrder";
             this.Btn_ConcludeOrder.Size = new System.Drawing.Size(179, 51);
@@ -505,13 +540,20 @@ namespace app
             this.Btn_CancelOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_CancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_CancelOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
-            this.Btn_CancelOrder.Location = new System.Drawing.Point(858, 898);
+            this.Btn_CancelOrder.Location = new System.Drawing.Point(822, 898);
             this.Btn_CancelOrder.Margin = new System.Windows.Forms.Padding(0);
             this.Btn_CancelOrder.Name = "Btn_CancelOrder";
             this.Btn_CancelOrder.Size = new System.Drawing.Size(174, 51);
             this.Btn_CancelOrder.TabIndex = 16;
             this.Btn_CancelOrder.Text = "Cancelar Pedido";
             this.Btn_CancelOrder.UseVisualStyleBackColor = false;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Id";
+            this.Column5.HeaderText = "Id";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column1
             // 
@@ -522,7 +564,7 @@ namespace app
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "ValorTotal";
+            this.Column2.DataPropertyName = "ValorTotalFormated";
             this.Column2.HeaderText = "ValorTotal";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -615,6 +657,9 @@ namespace app
         private System.Windows.Forms.MaskedTextBox MaskedTxtBox_PaymentValue;
         private System.Windows.Forms.Label Lbl_PaymentValue;
         private System.Windows.Forms.BindingSource BindingSource_AllOrders;
+        private System.Windows.Forms.Label Lbl_OrderPrice;
+        private System.Windows.Forms.MaskedTextBox MaskedTxtBox_OrderPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

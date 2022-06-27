@@ -61,7 +61,6 @@ namespace app
             switch (_reasonToOpen)
             {
                 case "AddExistentItem":
-
                     this.Text = "Selecione o item";
                     Lbl_Title.Text = "Selecione o item a adicionar!";
 
@@ -85,7 +84,6 @@ namespace app
                     break;
 
                 case "SelectMenu":
-
                     this.Text = "Selecione o restaurante";
                     Lbl_Title.Text = "Selecione o restaurante!";
 

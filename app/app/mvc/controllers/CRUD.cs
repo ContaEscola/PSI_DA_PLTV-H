@@ -272,20 +272,12 @@ namespace app
 
             SingleTown.AppDB.SaveChanges();
 
-        public static void AdItemMenuToRestaurant(Restaurante restaurantToAdd,ItemMenu itemToAdd)
-        {
-            restaurantToAdd.ItemMenu.Add(itemToAdd);
-
-            SingleTown.AppDB.SaveChanges();
         }
 
-        public static ItemMenu GetItem(string itemName)
+        public static void RemoveItemFromMenu()
         {
-            var allItems = SingleTown.AppDB.ItemMenuSet;
-
-            ItemMenu item = (ItemMenu)allItems.Where(i => i.Nome == itemName).FirstOrDefault();
-
-            return item;
+            SingleTown.SelectedRestaurant.ItemMenu.Remove(SingleTown.SelectedItemMenu);
+            SingleTown.AppDB.SaveChanges();
         }
     }
 }

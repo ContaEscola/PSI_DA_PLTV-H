@@ -334,5 +334,10 @@ namespace app
         {
             BaseController.RenderView(new Menu(_restaurant));
         }
+
+        private void Btn_ManageOrders_Click(object sender, EventArgs e)
+        {
+            BaseController.RenderView(new Orders(_restaurant));
+        }
     }
 }

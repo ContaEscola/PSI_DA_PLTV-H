@@ -173,5 +173,21 @@ namespace app
             }
 
         }
+
+        public static void PopulateOrdersIntoBindingSource(Restaurante restauranteToOrders,BindingSource sourceToPopulate, DataGridView gridViewToAdjustContents = null)
+        {
+            List<Pedido> allOrders = (from pedido in SingleTown.AppDB.PedidoSet
+                                           where pedido.IdRestaurante == restauranteToOrders.Id
+                                           select pedido).ToList<Pedido>();
+
+            sourceToPopulate.DataSource = allOrders;
+
+            if (gridViewToAdjustContents != null)
+            {
+                gridViewToAdjustContents.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                gridViewToAdjustContents.ClearSelection();
+            }
+
+        }
     }
 }

@@ -109,7 +109,7 @@ namespace app
             this.ToolStripMenuItem_ManageAllClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(52)))), ((int)(((byte)(22)))));
             this.ToolStripMenuItem_ManageAllClients.Name = "ToolStripMenuItem_ManageAllClients";
             this.ToolStripMenuItem_ManageAllClients.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ToolStripMenuItem_ManageAllClients.Size = new System.Drawing.Size(180, 24);
+            this.ToolStripMenuItem_ManageAllClients.Size = new System.Drawing.Size(149, 24);
             this.ToolStripMenuItem_ManageAllClients.Text = "Gerir Todos";
             this.ToolStripMenuItem_ManageAllClients.Click += new System.EventHandler(this.ToolStripMenuItem_ManageAllClients_Click);
             // 
@@ -157,6 +157,7 @@ namespace app
             this.ToolStripMenuItem_ManageSingleOrder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ToolStripMenuItem_ManageSingleOrder.Size = new System.Drawing.Size(211, 24);
             this.ToolStripMenuItem_ManageSingleOrder.Text = "Gerir Individualmente";
+            this.ToolStripMenuItem_ManageSingleOrder.Click += new System.EventHandler(this.ToolStripMenuItem_ManageSingleOrder_Click);
             // 
             // Lbl_ChooseFunctionalities
             // 

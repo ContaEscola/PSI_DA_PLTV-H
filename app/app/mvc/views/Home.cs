@@ -93,5 +93,11 @@ namespace app
             Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
             BaseController.RenderView(new Menu(selectedRestaurant));
         }
+
+        private void ToolStripMenuItem_ManageSingleOrder_Click(object sender, EventArgs e)
+        {
+            Restaurante selectedRestaurant = (Restaurante)BaseController.RenderViewAsDialogWithReturn(new GenericSelection(GenericSelection.Reasons.SelectMenu));
+            BaseController.RenderView(new Orders(selectedRestaurant));
+        }
     }
 }

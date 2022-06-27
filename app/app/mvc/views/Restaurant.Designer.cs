@@ -790,6 +790,7 @@
             this.Btn_ManageOrders.TabIndex = 22;
             this.Btn_ManageOrders.Text = "Gerir Pedidos";
             this.Btn_ManageOrders.UseVisualStyleBackColor = false;
+            this.Btn_ManageOrders.Click += new System.EventHandler(this.Btn_ManageOrders_Click);
             // 
             // Restaurant
             // 
